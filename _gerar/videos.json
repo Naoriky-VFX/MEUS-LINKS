@@ -566,5 +566,41 @@
  "tony1223/better-agent-terminal": {
   "id": "825iWmUC4e0",
   "titulo": "Claude Code: Pare de Programar Sozinho e Crie Agentes"
+ },
+ "AUTOMATIC1111/stable-diffusion-webui": {
+  "id": "BVXit0swEVU",
+  "titulo": "Como instalar e usar o Stable Diffusion em 6 minutos"
+ },
+ "LibreChat-AI/LibreChat": {
+  "id": "tWtc5DRbogE",
+  "titulo": "LibreChat: Configurando seu próprio hub de IAs"
+ },
+ "Lllyasviel/Fooocus": {
+  "id": "MHl7SDF7AV4",
+  "titulo": "Baixar e Instalar a Fooocus AI - inteligência artificial GRÁTIS"
+ },
+ "RVC-Boss/GPT-SoVITS": {
+  "id": "DbVgXnzyOBY",
+  "titulo": "Como clonar sua voz usando GPT-SoVITS GRATUITAMENTE"
+ },
+ "Significant-Gravitas/AutoGPT": {
+  "id": "Mlehr1DUnQc",
+  "titulo": "AutoGPT NA PRÁTICA: Não saiu como o esperado 🥵"
+ },
+ "janhq/jan": {
+  "id": "z6vNsMTGRbM",
+  "titulo": "✅TURISTA PORTUGUÊS VIRALIZA AO NARRAR ASSALTO NO RIO DE JANEIRO - Deixe seu comentário"
+ },
+ "microsoft/markitdown": {
+  "id": "He0hLkmxT_Y",
+  "titulo": "Markdown - O que é e Como Funciona?"
+ },
+ "openai/whisper": {
+  "id": "y15070biffg",
+  "titulo": "Whisper OpenAI: Guia Completo de Transcrição com Inteligência Artificial (vídeo e áudio)"
+ },
+ "presenton/presenton": {
+  "id": "TQXuSxfJGdE",
+  "titulo": "Presenton GitHub Tutorial: Self-Hosted AI Presentations With Presenton"
  }
 }

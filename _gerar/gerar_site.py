@@ -82,6 +82,7 @@ ITENS = {
     ],
     "ia/api": [
         ("firecrawl/firecrawl", "201k★ · qualquer site vira conteúdo limpo pra IA (crawl + MCP)."),
+        ("microsoft/markitdown", "195k★ · PDF, Word, Excel e PowerPoint viram texto limpo pra IA."),
         ("browser-use/browser-use", "120k★ · agente que clica, preenche e pesquisa no navegador."),
         ("punkpeye/awesome-mcp-servers", "97k★ · catálogo gigante de servidores MCP."),
         ("modelcontextprotocol/servers", "91k★ · servidores MCP de referência (oficial)."),
@@ -119,6 +120,7 @@ ITENS = {
     ],
     "ia/agentes": [
         ("langchain-ai/langchain", "149k★ · plataforma de engenharia de agentes (base de muita coisa)."),
+        ("Significant-Gravitas/AutoGPT", "187k★ · agentes que trabalham sozinhos, sem você mandar prompt."),
         ("paperclipai/paperclip", "113k★ · app open-source pra gerenciar agentes no trabalho."),
         ("stablyai/orca", "123k★ · roda uma frota de agentes de código com a sua assinatura."),
         ("FoundationAgents/MetaGPT", "71k★ · framework multi-agente que simula uma empresa de software."),
@@ -140,7 +142,6 @@ ITENS = {
     "ia/paineis": [
         ("n8n-io/n8n", "210k★ · automação com IA no seu servidor (funcionário digital 24h)."),
         ("langgenius/dify", "161k★ · apps e agentes montados arrastando blocos."),
-        ("lobehub/lobehub", "85k★ · “super-agentes” com tarefas, horários e relatórios."),
         ("FlowiseAI/Flowise", "55k★ · agentes de IA montados ligando blocos na tela."),
         ("appsmithorg/appsmith", "41k★ · painéis administrativos e ferramentas internas."),
         ("ToolJet/ToolJet", "41k★ · plataforma de apps internos e dashboards."),
@@ -149,6 +150,7 @@ ITENS = {
         ("lissy93/dashy", "26k★ · dashboard pessoal com status e widgets."),
         ("TwiN/gatus", "12k★ · página de status com alertas (health checks)."),
         ("illacloud/illa-builder", "12k★ · low-code para apps internos."),
+        ("presenton/presenton", "11.6k★ · apresentação inteira com IA a partir de um tema ou documento (self-hosted)."),
         ("bastienwirtz/homer", "11k★ · homepage estática simples pro servidor."),
     ],
     "ia/reverse": [
@@ -170,8 +172,15 @@ ITENS = {
         ("open-webui/open-webui", "158k★ · interface estilo ChatGPT ligada em modelos locais."),
         ("Comfy-Org/ComfyUI", "146k★ · imagem e vídeo por nós, rodando local."),
         ("ggml-org/llama.cpp", "134k★ · motor de inferência que roda até em notebook."),
+        ("AUTOMATIC1111/stable-diffusion-webui", "165k★ · a interface mais conhecida para gerar imagens no PC."),
+        ("openai/whisper", "111k★ · transcrição de áudio em dezenas de idiomas (inclusive português)."),
+        ("lobehub/lobehub", "85k★ · “super-agentes” com tarefas, horários e relatórios."),
+        ("Lllyasviel/Fooocus", "53.8k★ · imagens com IA sem mexer em mil configurações."),
+        ("LibreChat-AI/LibreChat", "46.6k★ · todos os modelos numa tela só, hospedada por você."),
+        ("janhq/jan", "45.3k★ · alternativa ao ChatGPT que roda sem internet."),
         ("infiniflow/ragflow", "94k★ · RAG nos seus documentos mostrando de onde tirou."),
         ("unslothai/unsloth", "79k★ · treina e roda LLM local (GGUF/MLX)."),
+        ("RVC-Boss/GPT-SoVITS", "64.6k★ · clona uma voz com um minuto de áudio (só com permissão)."),
         ("Mintplex-Labs/anything-llm", "68k★ · conversa com PDFs e planilhas sem mandar pra fora."),
         ("mudler/LocalAI", "50k★ · engine local para LLM, visão, voz e imagem."),
         ("PurpleDoubleD/locally-uncensored", "Estúdio de IA local: chat, imagem e vídeo sem filtro."),

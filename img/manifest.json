@@ -152,5 +152,14 @@
  "Devin-AXIS/iPolloWork": "Devin-AXIS_iPolloWork.png",
  "kdcokenny/opencode-workspace": "kdcokenny_opencode-workspace.png",
  "termux/termux-app": "termux__termux-app.png",
- "termux/termux-packages": "termux__termux-packages.png"
+ "termux/termux-packages": "termux__termux-packages.png",
+ "AUTOMATIC1111/stable-diffusion-webui": "AUTOMATIC1111__stable-diffusion-webui.png",
+ "LibreChat-AI/LibreChat": "LibreChat-AI__LibreChat.svg",
+ "Lllyasviel/Fooocus": "Lllyasviel__Fooocus.png",
+ "RVC-Boss/GPT-SoVITS": "RVC-Boss__GPT-SoVITS.png",
+ "Significant-Gravitas/AutoGPT": "Significant-Gravitas__AutoGPT.webp",
+ "janhq/jan": "janhq__jan.png",
+ "microsoft/markitdown": "microsoft__markitdown.png",
+ "openai/whisper": "openai__whisper.png",
+ "presenton/presenton": "presenton__presenton.gif"
 }
