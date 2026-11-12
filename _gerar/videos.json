@@ -750,5 +750,9 @@
  "rhasspy/piper": {
   "id": "Zpg4PkqfF9w",
   "titulo": "COMO JOGAR DE PIPER - GUIA COMPLETO"
+ },
+ "ggml-org/whisper.cpp": {
+  "id": "qEmRZPUdEiw",
+  "titulo": "Transcrição e Sumarização de vídeos com OpenAI Whisper"
  }
 }

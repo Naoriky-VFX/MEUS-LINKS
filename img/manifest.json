@@ -195,5 +195,7 @@
  "k2-fsa/sherpa-onnx": "k2-fsa__sherpa-onnx.png",
  "myshell-ai/OpenVoice": "myshell-ai__OpenVoice.jpg",
  "rany2/edge-tts": "rany2__edge-tts.png",
- "rhasspy/piper": "rhasspy__piper.png"
+ "rhasspy/piper": "rhasspy__piper.png",
+ "ggml-org/whisper.cpp": "ggml-org__whisper.cpp.png",
+ "moonshine-ai/moonshine": "moonshine-ai__moonshine.png"
 }

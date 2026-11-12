@@ -186,6 +186,8 @@ ITENS = {
     ],
 
     "ia/voz": [
+        ("openai/whisper", "111k★ · transcrição de áudio em dezenas de idiomas (base do whisper.cpp que você usa)."),
+        ("ggml-org/whisper.cpp", "45k★ · Whisper em C/C++ — o servidor local que roda no seu PC."),
         ("debpalash/VoiceStudio", "109k★ · estúdio de voz local: clonagem, TTS e dublagem (alternativa ao ElevenLabs)."),
         ("RVC-Boss/GPT-SoVITS", "64.9k★ · clona uma voz com 1 minuto de áudio (few-shot)."),
         ("jamiepine/voicebox", "60.5k★ · estúdio de voz open-source: clonar, ditar e criar."),
