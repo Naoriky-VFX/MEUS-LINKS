@@ -197,6 +197,8 @@ ITENS = {
     ],
 
     "software": [
+        ("termux/termux-app", "Termux: terminal Linux no Android (apt, Python, git e SSH no celular)."),
+        ("termux/termux-packages", "Pacotes do Termux: repositório de programas prontos para instalar no Android."),
         ("massgravel/Microsoft-Activation-Scripts", "Ativador open-source de Windows e Office (HWID, Ohook, TSforge)."),
         ("ProjectBukkit/CapcutVersions", "Links oficiais das versões do CapCut para PC."),
         ("juliusjus/Capcut-pro-activator", "Ativador do CapCut Pro (projeto de terceiros)."),
@@ -474,7 +476,7 @@ def pagina_grupo(relativo, titulo, dica, subpastas, voltar, raiz_rel):
 
 # limpa a pasta antes de gerar (menos img/ e _gerar/)
 for nome in os.listdir(RAIZ):
-    if nome in ("img", "_gerar"):
+    if nome in ("img", "_gerar", ".git"):
         continue
     caminho = os.path.join(RAIZ, nome)
     if os.path.isdir(caminho):
