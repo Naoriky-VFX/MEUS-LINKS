@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IA local - Links</title><style>
+:root{--fundo:#0b0710;--card:#160f22;--card2:#1d1429;--borda:#3a2f4e;--texto:#f4f0ff;--suave:#9a8bb5;--roxo:#a855f7}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#2a1145 0,#0b0710 60%);
+color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:32px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:1.7rem}
+header p{margin:0;color:var(--suave)}
+.voltar{display:inline-block;margin-bottom:18px;color:var(--roxo);text-decoration:none;font-weight:700;font-size:.9rem}
+.voltar:hover{text-decoration:underline}
+.categorias{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:26px}
+.categoria{display:block;background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:20px;
+text-decoration:none;color:var(--texto);transition:.15s}
+.categoria:hover{border-color:var(--roxo);background:var(--card2)}
+.categoria h2{margin:0 0 6px;font-size:1.05rem}
+.categoria p{margin:0;color:var(--suave);font-size:.84rem}
+.categoria .num{margin-top:12px;font-size:.78rem;color:var(--roxo);font-weight:800}
+.destaque-area{margin-top:26px;padding-top:20px;border-top:1px dashed var(--borda);display:flex;flex-direction:column;gap:10px;max-width:300px}
+.destaque-rotulo{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.categoria.destaque{border-color:var(--roxo);box-shadow:0 0 0 1px rgba(168,85,247,.45),0 0 22px rgba(168,85,247,.18)}
+.categoria.destaque:hover{background:#241534}
+.busca{width:100%;margin-top:18px;padding:13px 16px;border-radius:12px;border:1px solid var(--borda);
+background:#120c1c;color:var(--texto);font-size:.95rem}
+.busca:focus{outline:none;border-color:var(--roxo)}
+.contagem{margin-top:10px;font-size:.8rem;color:var(--suave)}
+table{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--borda);
+border-radius:14px;overflow:hidden}
+th{text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);
+padding:12px 14px;background:#1a1126;border-bottom:1px solid var(--borda);white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid #241a33;font-size:.88rem;vertical-align:top}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:#1b1228}
+td a{color:var(--texto);text-decoration:none;font-family:ui-monospace,Consolas,monospace;font-weight:600}
+td a:hover{color:var(--roxo);text-decoration:underline}
+td.desc{color:#cfc3e6}
+td.pasta{color:#6b5d85;font-size:.72rem;font-family:ui-monospace,Consolas,monospace}
+td.thumb{width:180px}
+td.thumb img{width:160px;border-radius:8px;border:1px solid var(--borda);display:block;background:#0e0916}
+td.thumb a:hover img{border-color:var(--roxo)}
+td.video{width:170px}
+td.video img{width:150px;border-radius:8px;border:1px solid var(--borda);display:block}
+td.video a{text-decoration:none}
+td.video a:hover img{border-color:var(--roxo)}
+.titulo-video{display:block;margin-top:4px;font-size:.68rem;color:var(--suave);line-height:1.25;
+font-family:system-ui,sans-serif;font-weight:500}
+.sem-img{color:#4d4266;font-size:.72rem}
+footer{margin-top:40px;color:#5d5175;font-size:.76rem;text-align:center}
+@media (max-width:720px){ td.pasta{display:none} th.col-pasta{display:none} }
+</style></head>
+<body><div class="wrap">
+<a class="voltar" href="../index.html">← todos os grupos</a>
+<header><h1>IA local</h1><p>Rodar IA no seu próprio PC: motores, interfaces, imagem/vídeo e agentes.</p></header>
+<div class="categorias"><a class="categoria" href="motores/index.html"><h2>Motores (runtimes)</h2><p>Ollama, llama.cpp, vLLM, GPT4All, LocalAI e afins.</p><div class="num">11 links</div></a><a class="categoria" href="interfaces/index.html"><h2>Interfaces de chat</h2><p>Open WebUI, LobeHub, AnythingLLM, LibreChat, SillyTavern.</p><div class="num">7 links</div></a><a class="categoria" href="imagem-video/index.html"><h2>Imagem &amp; vídeo local</h2><p>Stable Diffusion, ComfyUI, Fooocus e InvokeAI.</p><div class="num">5 links</div></a><a class="categoria" href="agentes-locais/index.html"><h2>Agentes locais</h2><p>Agentes que rodam na sua máquina, sem API paga.</p><div class="num">4 links</div></a></div>
+
+<footer>IA local · links salvos em 12/11/2026</footer>
+</div></body></html>

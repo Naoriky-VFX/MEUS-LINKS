@@ -224,6 +224,42 @@ ITENS = {
         ("jianchang512/clone-voice", "9k★ · ferramenta de clonagem de voz com interface web."),
         ("Plachtaa/seed-vc", "3.9k★ · conversão de voz e de canto (zero-shot, tempo real)."),
     ],
+    "ia-local/motores": [
+        ("ollama/ollama", "186.8k★ · DeepSeek, Qwen e Gemma no seu PC com um comando."),
+        ("ggml-org/llama.cpp", "134k★ · motor de inferência que roda até em notebook."),
+        ("vllm-project/vllm", "96.8k★ · servidor de inferência rápido (o padrão em GPU)."),
+        ("unslothai/unsloth", "79k★ · treina e roda LLM local (GGUF/MLX), 2× mais rápido."),
+        ("nomic-ai/gpt4all", "77k★ · roda LLM local em qualquer máquina (app pronto)."),
+        ("mudler/LocalAI", "50k★ · engine local para LLM, visão, voz e imagem."),
+        ("oobabooga/textgen", "47.7k★ · app desktop local para LLM (texto, visão, ferramentas)."),
+        ("janhq/jan", "45.7k★ · alternativa ao ChatGPT que roda sem internet."),
+        ("mozilla-ai/llamafile", "26.6k★ · modelo + motor num arquivo só, executa sem instalar nada."),
+        ("LostRuins/koboldcpp", "12.3k★ · roda GGUF com interface simples (o clássico do pessoal)."),
+        ("withcatai/node-llama-cpp", "2.2k★ · llama.cpp com bindings para Node.js."),
+    ],
+    "ia-local/interfaces": [
+        ("open-webui/open-webui", "158.5k★ · interface estilo ChatGPT ligada em modelos locais."),
+        ("lobehub/lobehub", "85k★ · “super-agentes” com tarefas, horários e relatórios."),
+        ("Mintplex-Labs/anything-llm", "68k★ · conversa com PDFs e planilhas sem mandar pra fora."),
+        ("LibreChat-AI/LibreChat", "47k★ · todos os modelos numa tela só, hospedada por você."),
+        ("khoj-ai/khoj", "38k★ · “segundo cérebro” com seus documentos, self-hosted."),
+        ("SillyTavern/SillyTavern", "35.6k★ · interface de chat com personagens (roleplay local)."),
+        ("mckaywrigley/chatbot-ui", "33.3k★ · clone do ChatGPT para os seus modelos."),
+    ],
+    "ia-local/imagem-video": [
+        ("AUTOMATIC1111/stable-diffusion-webui", "165.3k★ · a interface mais conhecida para gerar imagens no PC."),
+        ("Comfy-Org/ComfyUI", "146.5k★ · imagem e vídeo por nós, rodando local."),
+        ("Lllyasviel/Fooocus", "53.9k★ · imagens com IA sem mexer em mil configurações."),
+        ("invoke-ai/InvokeAI", "29k★ · studio de imagem local com canvas e inpainting."),
+        ("PurpleDoubleD/locally-uncensored", "4k★ · estúdio local: chat, imagem e vídeo sem filtro."),
+    ],
+    "ia-local/agentes-locais": [
+        ("Fosowl/agenticSeek", "27.7k★ · agente autônomo 100% local (sem API, sem mensalidade)."),
+        ("dyad-sh/dyad", "22.3k★ · construtor de apps com IA local (tipo Lovable/Replit)."),
+        ("KunAgent/Kun", "6.4k★ · workspace de agente local para código, escrita e pesquisa."),
+        ("AtomicBot-ai/Atomic-Chat", "2k★ · app local com motor de inferência próprio."),
+    ],
+
     "ia/whatsapp": [
         ("WhiskeySockets/Baileys", "API não oficial do WhatsApp Web em TypeScript/JavaScript (sessão por QR)."),
         ("evolution-foundation/evolution-api", "API de WhatsApp open-source, multi-instância, com webhooks."),
@@ -283,6 +319,8 @@ ITENS = {
 
 # grupo -> (titulo, dica, subpastas)
 GRUPOS = {
+    "ia-local": ("IA local", "Rodar IA no seu próprio PC: motores, interfaces, imagem/vídeo e agentes.",
+                 ["motores", "interfaces", "imagem-video", "agentes-locais"]),
     "painel-apis": ("Painel de APIs", "Gateways e roteadores de LLM: uma chave, vários modelos.",
                     ["roteadores", "observabilidade"]),
     "consoles": ("Consoles", "Desbloqueio, payloads, instaladores e emuladores por console.",
@@ -290,7 +328,7 @@ GRUPOS = {
     "servidores": ("Servidores de jogos online", "Servidores e ferramentas de Lineage II e Palworld.",
                    ["lineage-ii", "palworld"]),
     "ia": ("IA", "Agentes, terminal, APIs/MCP, painéis, engenharia reversa e modelos locais.",
-           ["terminal", "agentes", "workspaces", "canal", "api", "paineis", "voz", "reverse", "modelos-locais", "whatsapp"]),
+           ["terminal", "agentes", "workspaces", "canal", "api", "paineis", "voz", "reverse", "whatsapp"]),
 }
 
 NOMES_SUB = {
@@ -307,6 +345,10 @@ NOMES_SUB = {
     "workspaces": "Workspaces de agentes",
     "canal": "Canais",
     "voz": "Voz & áudio",
+    "motores": "Motores (runtimes)",
+    "interfaces": "Interfaces de chat",
+    "imagem-video": "Imagem & vídeo local",
+    "agentes-locais": "Agentes locais",
     "terminal": "Terminal / CLI",
     "paineis": "Painéis & automação",
     "reverse": "Engenharia reversa",
@@ -330,6 +372,10 @@ DICAS_SUB = {
     "workspaces": "Mesas de trabalho para rodar e organizar vários agentes (tipo a Alethe).",
     "canal": "Canais e perfis que ensinam, com os vídeos de cada um.",
     "voz": "TTS, clonagem de voz, transcrição e conversão de fala.",
+    "motores": "Ollama, llama.cpp, vLLM, GPT4All, LocalAI e afins.",
+    "interfaces": "Open WebUI, LobeHub, AnythingLLM, LibreChat, SillyTavern.",
+    "imagem-video": "Stable Diffusion, ComfyUI, Fooocus e InvokeAI.",
+    "agentes-locais": "Agentes que rodam na sua máquina, sem API paga.",
     "terminal": "Agentes que vivem no terminal: Gemini CLI, Aider, OpenHands e afins.",
     "paineis": "Painéis e automação: n8n, Dify, Flowise, dashboards.",
     "reverse": "Ghidra, x64dbg, radare2, Frida e IA para engenharia reversa.",

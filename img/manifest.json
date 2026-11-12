@@ -208,5 +208,21 @@
  "pipecat-ai/pipecat": "pipecat-ai__pipecat.png",
  "pyannote/pyannote-audio": "pyannote__pyannote-audio.png",
  "speechbrain/speechbrain": "speechbrain__speechbrain.png",
- "vocodedev/vocode-core": "vocodedev__vocode-core.png"
+ "vocodedev/vocode-core": "vocodedev__vocode-core.png",
+ "AtomicBot-ai/Atomic-Chat": "AtomicBot-ai__Atomic-Chat.png",
+ "BerriAI/litellm": "BerriAI__litellm.png",
+ "Fosowl/agenticSeek": "Fosowl__agenticSeek.png",
+ "KunAgent/Kun": "KunAgent__Kun.webp",
+ "SWivid/F5-TTS": "SWivid__F5-TTS.png",
+ "SYSTRAN/faster-whisper": "SYSTRAN__faster-whisper.png",
+ "SillyTavern/SillyTavern": "SillyTavern__SillyTavern.png",
+ "dyad-sh/dyad": "dyad-sh__dyad.gif",
+ "invoke-ai/InvokeAI": "invoke-ai__InvokeAI.png",
+ "khoj-ai/khoj": "khoj-ai__khoj.png",
+ "mckaywrigley/chatbot-ui": "mckaywrigley__chatbot-ui.png",
+ "mozilla-ai/llamafile": "mozilla-ai__llamafile.png",
+ "nomic-ai/gpt4all": "nomic-ai__gpt4all.png",
+ "oobabooga/textgen": "oobabooga__textgen.png",
+ "vllm-project/vllm": "vllm-project__vllm.png",
+ "withcatai/node-llama-cpp": "withcatai__node-llama-cpp.heif"
 }

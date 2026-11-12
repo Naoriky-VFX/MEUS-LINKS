@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motores (runtimes) - Links</title><style>
+:root{--fundo:#0b0710;--card:#160f22;--card2:#1d1429;--borda:#3a2f4e;--texto:#f4f0ff;--suave:#9a8bb5;--roxo:#a855f7}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#2a1145 0,#0b0710 60%);
+color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:32px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:1.7rem}
+header p{margin:0;color:var(--suave)}
+.voltar{display:inline-block;margin-bottom:18px;color:var(--roxo);text-decoration:none;font-weight:700;font-size:.9rem}
+.voltar:hover{text-decoration:underline}
+.categorias{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:26px}
+.categoria{display:block;background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:20px;
+text-decoration:none;color:var(--texto);transition:.15s}
+.categoria:hover{border-color:var(--roxo);background:var(--card2)}
+.categoria h2{margin:0 0 6px;font-size:1.05rem}
+.categoria p{margin:0;color:var(--suave);font-size:.84rem}
+.categoria .num{margin-top:12px;font-size:.78rem;color:var(--roxo);font-weight:800}
+.destaque-area{margin-top:26px;padding-top:20px;border-top:1px dashed var(--borda);display:flex;flex-direction:column;gap:10px;max-width:300px}
+.destaque-rotulo{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.categoria.destaque{border-color:var(--roxo);box-shadow:0 0 0 1px rgba(168,85,247,.45),0 0 22px rgba(168,85,247,.18)}
+.categoria.destaque:hover{background:#241534}
+.busca{width:100%;margin-top:18px;padding:13px 16px;border-radius:12px;border:1px solid var(--borda);
+background:#120c1c;color:var(--texto);font-size:.95rem}
+.busca:focus{outline:none;border-color:var(--roxo)}
+.contagem{margin-top:10px;font-size:.8rem;color:var(--suave)}
+table{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--borda);
+border-radius:14px;overflow:hidden}
+th{text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);
+padding:12px 14px;background:#1a1126;border-bottom:1px solid var(--borda);white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid #241a33;font-size:.88rem;vertical-align:top}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:#1b1228}
+td a{color:var(--texto);text-decoration:none;font-family:ui-monospace,Consolas,monospace;font-weight:600}
+td a:hover{color:var(--roxo);text-decoration:underline}
+td.desc{color:#cfc3e6}
+td.pasta{color:#6b5d85;font-size:.72rem;font-family:ui-monospace,Consolas,monospace}
+td.thumb{width:180px}
+td.thumb img{width:160px;border-radius:8px;border:1px solid var(--borda);display:block;background:#0e0916}
+td.thumb a:hover img{border-color:var(--roxo)}
+td.video{width:170px}
+td.video img{width:150px;border-radius:8px;border:1px solid var(--borda);display:block}
+td.video a{text-decoration:none}
+td.video a:hover img{border-color:var(--roxo)}
+.titulo-video{display:block;margin-top:4px;font-size:.68rem;color:var(--suave);line-height:1.25;
+font-family:system-ui,sans-serif;font-weight:500}
+.sem-img{color:#4d4266;font-size:.72rem}
+footer{margin-top:40px;color:#5d5175;font-size:.76rem;text-align:center}
+@media (max-width:720px){ td.pasta{display:none} th.col-pasta{display:none} }
+</style></head>
+<body><div class="wrap">
+<a class="voltar" href="../index.html">← IA local</a>
+<header><h1>Motores (runtimes)</h1><p>Ollama, llama.cpp, vLLM, GPT4All, LocalAI e afins.</p></header>
+<input class="busca" placeholder="Procurar por nome, descrição ou pasta…" oninput="filtrar(this.value)">
+<div class="contagem" id="contagem">11 links</div>
+<table><thead><tr><th>Vídeo</th><th>Print</th><th>Projeto</th><th>O que faz</th><th class="col-pasta">Pasta de origem</th></tr></thead>
+<tbody id="corpo"><tr data-busca="ollama/ollama 186.8k★ · deepseek, qwen e gemma no seu pc com um comando. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=XzEc6teAufU" target="_blank" rel="noopener" title="Ollama: o que é e como configurar (primeiros passos)."><img src="../../img/yt/XzEc6teAufU.jpg" loading="lazy" alt=""><span class="titulo-video">Ollama: o que é e como configurar (primeiros pas</span></a></td><td class="thumb"><a href="https://github.com/ollama/ollama" target="_blank" rel="noopener"><img src="../../img/ollama__ollama.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/ollama/ollama" target="_blank" rel="noopener">ollama/ollama</a></td><td class="desc">186.8k★ · DeepSeek, Qwen e Gemma no seu PC com um comando.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="ggml-org/llama.cpp 134k★ · motor de inferência que roda até em notebook. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=Xh8RmqPtN3k" target="_blank" rel="noopener" title="Como usar MTP no llama.cpp pra aumentar ABSURDAMENTE a velocidade da s"><img src="../../img/yt/Xh8RmqPtN3k.jpg" loading="lazy" alt=""><span class="titulo-video">Como usar MTP no llama.cpp pra aumentar ABSURDAM</span></a></td><td class="thumb"><a href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noopener"><img src="../../img/ggml-org__llama.cpp.svg" loading="lazy" alt=""></a></td><td><a href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noopener">ggml-org/llama.cpp</a></td><td class="desc">134k★ · motor de inferência que roda até em notebook.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="vllm-project/vllm 96.8k★ · servidor de inferência rápido (o padrão em gpu). curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=vN33_xsjKrY" target="_blank" rel="noopener" title="Como Rodar IA na GPU com VLLM"><img src="../../img/yt/vN33_xsjKrY.jpg" loading="lazy" alt=""><span class="titulo-video">Como Rodar IA na GPU com VLLM</span></a></td><td class="thumb"><a href="https://github.com/vllm-project/vllm" target="_blank" rel="noopener"><img src="../../img/vllm-project__vllm.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/vllm-project/vllm" target="_blank" rel="noopener">vllm-project/vllm</a></td><td class="desc">96.8k★ · servidor de inferência rápido (o padrão em GPU).</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="unslothai/unsloth 79k★ · treina e roda llm local (gguf/mlx), 2× mais rápido. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=Yr0G1QbAsEE" target="_blank" rel="noopener" title="How to Fine-Tune an AI Model Locally with Unsloth - Method That Actual"><img src="../../img/yt/Yr0G1QbAsEE.jpg" loading="lazy" alt=""><span class="titulo-video">How to Fine-Tune an AI Model Locally with Unslot</span></a></td><td class="thumb"><a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener"><img src="../../img/unslothai__unsloth.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener">unslothai/unsloth</a></td><td class="desc">79k★ · treina e roda LLM local (GGUF/MLX), 2× mais rápido.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="nomic-ai/gpt4all 77k★ · roda llm local em qualquer máquina (app pronto). curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=Ar1lF4yVIss" target="_blank" rel="noopener" title="IA Grátis no seu PC | Ollama, LM Studio, GPT4All"><img src="../../img/yt/Ar1lF4yVIss.jpg" loading="lazy" alt=""><span class="titulo-video">IA Grátis no seu PC | Ollama, LM Studio, GPT4All</span></a></td><td class="thumb"><a href="https://github.com/nomic-ai/gpt4all" target="_blank" rel="noopener"><img src="../../img/nomic-ai__gpt4all.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/nomic-ai/gpt4all" target="_blank" rel="noopener">nomic-ai/gpt4all</a></td><td class="desc">77k★ · roda LLM local em qualquer máquina (app pronto).</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="mudler/localai 50k★ · engine local para llm, visão, voz e imagem. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=LybDNqFcpxE" target="_blank" rel="noopener" title="LocalAI Tutorial - Run Any AI Model Locally (No GPU Required)"><img src="../../img/yt/LybDNqFcpxE.jpg" loading="lazy" alt=""><span class="titulo-video">LocalAI Tutorial - Run Any AI Model Locally (No </span></a></td><td class="thumb"><a href="https://github.com/mudler/LocalAI" target="_blank" rel="noopener"><img src="../../img/mudler__LocalAI.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/mudler/LocalAI" target="_blank" rel="noopener">mudler/LocalAI</a></td><td class="desc">50k★ · engine local para LLM, visão, voz e imagem.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="oobabooga/textgen 47.7k★ · app desktop local para llm (texto, visão, ferramentas). curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=uu9kfT5CjCU" target="_blank" rel="noopener" title="Tutorial - Rode QUALQUER LLM com TextGen WebUI"><img src="../../img/yt/uu9kfT5CjCU.jpg" loading="lazy" alt=""><span class="titulo-video">Tutorial - Rode QUALQUER LLM com TextGen WebUI</span></a></td><td class="thumb"><a href="https://github.com/oobabooga/textgen" target="_blank" rel="noopener"><img src="../../img/oobabooga__textgen.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/oobabooga/textgen" target="_blank" rel="noopener">oobabooga/textgen</a></td><td class="desc">47.7k★ · app desktop local para LLM (texto, visão, ferramentas).</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="janhq/jan 45.7k★ · alternativa ao chatgpt que roda sem internet. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=z6vNsMTGRbM" target="_blank" rel="noopener" title="✅TURISTA PORTUGUÊS VIRALIZA AO NARRAR ASSALTO NO RIO DE JANEIRO - Deix"><img src="../../img/yt/z6vNsMTGRbM.jpg" loading="lazy" alt=""><span class="titulo-video">✅TURISTA PORTUGUÊS VIRALIZA AO NARRAR ASSALTO NO</span></a></td><td class="thumb"><a href="https://github.com/janhq/jan" target="_blank" rel="noopener"><img src="../../img/janhq__jan.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/janhq/jan" target="_blank" rel="noopener">janhq/jan</a></td><td class="desc">45.7k★ · alternativa ao ChatGPT que roda sem internet.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="mozilla-ai/llamafile 26.6k★ · modelo + motor num arquivo só, executa sem instalar nada. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=bid3IIWzxQw" target="_blank" rel="noopener" title="DECOM IA + LLAMAFILE + MODEL QUANTIZADO GGUF = IA GRATIS LOCAL NO WIND"><img src="../../img/yt/bid3IIWzxQw.jpg" loading="lazy" alt=""><span class="titulo-video">DECOM IA + LLAMAFILE + MODEL QUANTIZADO GGUF = I</span></a></td><td class="thumb"><a href="https://github.com/mozilla-ai/llamafile" target="_blank" rel="noopener"><img src="../../img/mozilla-ai__llamafile.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/mozilla-ai/llamafile" target="_blank" rel="noopener">mozilla-ai/llamafile</a></td><td class="desc">26.6k★ · modelo + motor num arquivo só, executa sem instalar nada.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="lostruins/koboldcpp 12.3k★ · roda gguf com interface simples (o clássico do pessoal). curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=Py5rEMWi82E" target="_blank" rel="noopener" title="KOBOLDCPP - Sua IA local simples e facil."><img src="../../img/yt/Py5rEMWi82E.jpg" loading="lazy" alt=""><span class="titulo-video">KOBOLDCPP - Sua IA local simples e facil.</span></a></td><td class="thumb"><span class="sem-img">sem print</span></td><td><a href="https://github.com/LostRuins/koboldcpp" target="_blank" rel="noopener">LostRuins/koboldcpp</a></td><td class="desc">12.3k★ · roda GGUF com interface simples (o clássico do pessoal).</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="withcatai/node-llama-cpp 2.2k★ · llama.cpp com bindings para node.js. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=ZR9S9zXm4ZU" target="_blank" rel="noopener" title="Execute modelos de IA localmente com llama.cpp"><img src="../../img/yt/ZR9S9zXm4ZU.jpg" loading="lazy" alt=""><span class="titulo-video">Execute modelos de IA localmente com llama.cpp</span></a></td><td class="thumb"><a href="https://github.com/withcatai/node-llama-cpp" target="_blank" rel="noopener"><img src="../../img/withcatai__node-llama-cpp.heif" loading="lazy" alt=""></a></td><td><a href="https://github.com/withcatai/node-llama-cpp" target="_blank" rel="noopener">withcatai/node-llama-cpp</a></td><td class="desc">2.2k★ · llama.cpp com bindings para Node.js.</td><td class="pasta">curado — busca na internet</td></tr></tbody></table>
+<footer>Motores (runtimes) · links salvos em 12/11/2026</footer>
+</div>
+<script>
+function filtrar(termo) {
+  termo = (termo || '').toLowerCase().trim();
+  let visiveis = 0;
+  document.querySelectorAll('#corpo tr').forEach(tr => {
+    const mostra = !termo || tr.dataset.busca.includes(termo);
+    tr.style.display = mostra ? '' : 'none';
+    if (mostra) visiveis++;
+  });
+  document.getElementById('contagem').textContent =
+    visiveis + (visiveis === 1 ? ' link' : ' links');
+}
+</script></body></html>

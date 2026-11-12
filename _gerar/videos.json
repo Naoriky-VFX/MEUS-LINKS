@@ -814,5 +814,61 @@
  "yl4579/StyleTTS2": {
   "id": "JoGk4wvebPc",
   "titulo": "Instalando o Pinokio na GTX 1070TI Em 2025 + Testes no StyleTTS2"
+ },
+ "AtomicBot-ai/Atomic-Chat": {
+  "id": "IIe6WCRvR2Y",
+  "titulo": "ATOMIC CHAT - IA LOCAL GRATUITA E PRIVADA"
+ },
+ "Fosowl/agenticSeek": {
+  "id": "mBRdA2qSITA",
+  "titulo": "AgenticSeek: Alternativa ao Manus TOTALMENTE GRATUITA com interface de usuário! Agente de IA gene..."
+ },
+ "KunAgent/Kun": {
+  "id": "5ScwNEaGaJo",
+  "titulo": "[BASIC] Adicionando o KUN Basic ao Aliemination"
+ },
+ "LostRuins/koboldcpp": {
+  "id": "Py5rEMWi82E",
+  "titulo": "KOBOLDCPP - Sua IA local simples e facil."
+ },
+ "SillyTavern/SillyTavern": {
+  "id": "yDDeTv2FKyE",
+  "titulo": "SillyTavern - Introdução, instalação e Interface"
+ },
+ "dyad-sh/dyad": {
+  "id": "HuxvvHspHwg",
+  "titulo": "DYAD É A Plataforma GRATUITA MAIS PODEROSA Para Criar Apps?"
+ },
+ "invoke-ai/InvokeAI": {
+  "id": "piJ2h19fC-s",
+  "titulo": "Invoke AI - Come Installare Invoke AI (tutorial) ITA"
+ },
+ "khoj-ai/khoj": {
+  "id": "T63g7hDU3cE",
+  "titulo": "Khoj.dev - Descubra o Poder do Desenvolvimento de Agentes com LLMs"
+ },
+ "mckaywrigley/chatbot-ui": {
+  "id": "CPRx_WVkJ8g",
+  "titulo": "Chatbot do ZERO com Next, AI SDK, OpenAI e Shadcn/UI"
+ },
+ "mozilla-ai/llamafile": {
+  "id": "bid3IIWzxQw",
+  "titulo": "DECOM IA + LLAMAFILE + MODEL QUANTIZADO GGUF = IA GRATIS LOCAL NO WINDOWS"
+ },
+ "nomic-ai/gpt4all": {
+  "id": "Ar1lF4yVIss",
+  "titulo": "IA Grátis no seu PC | Ollama, LM Studio, GPT4All"
+ },
+ "oobabooga/textgen": {
+  "id": "uu9kfT5CjCU",
+  "titulo": "Tutorial - Rode QUALQUER LLM com TextGen WebUI"
+ },
+ "vllm-project/vllm": {
+  "id": "vN33_xsjKrY",
+  "titulo": "Como Rodar IA na GPU com VLLM"
+ },
+ "withcatai/node-llama-cpp": {
+  "id": "ZR9S9zXm4ZU",
+  "titulo": "Execute modelos de IA localmente com llama.cpp"
  }
 }

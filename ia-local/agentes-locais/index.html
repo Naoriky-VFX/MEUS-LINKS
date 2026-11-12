@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agentes locais - Links</title><style>
+:root{--fundo:#0b0710;--card:#160f22;--card2:#1d1429;--borda:#3a2f4e;--texto:#f4f0ff;--suave:#9a8bb5;--roxo:#a855f7}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#2a1145 0,#0b0710 60%);
+color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:32px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:1.7rem}
+header p{margin:0;color:var(--suave)}
+.voltar{display:inline-block;margin-bottom:18px;color:var(--roxo);text-decoration:none;font-weight:700;font-size:.9rem}
+.voltar:hover{text-decoration:underline}
+.categorias{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:26px}
+.categoria{display:block;background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:20px;
+text-decoration:none;color:var(--texto);transition:.15s}
+.categoria:hover{border-color:var(--roxo);background:var(--card2)}
+.categoria h2{margin:0 0 6px;font-size:1.05rem}
+.categoria p{margin:0;color:var(--suave);font-size:.84rem}
+.categoria .num{margin-top:12px;font-size:.78rem;color:var(--roxo);font-weight:800}
+.destaque-area{margin-top:26px;padding-top:20px;border-top:1px dashed var(--borda);display:flex;flex-direction:column;gap:10px;max-width:300px}
+.destaque-rotulo{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.categoria.destaque{border-color:var(--roxo);box-shadow:0 0 0 1px rgba(168,85,247,.45),0 0 22px rgba(168,85,247,.18)}
+.categoria.destaque:hover{background:#241534}
+.busca{width:100%;margin-top:18px;padding:13px 16px;border-radius:12px;border:1px solid var(--borda);
+background:#120c1c;color:var(--texto);font-size:.95rem}
+.busca:focus{outline:none;border-color:var(--roxo)}
+.contagem{margin-top:10px;font-size:.8rem;color:var(--suave)}
+table{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--borda);
+border-radius:14px;overflow:hidden}
+th{text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);
+padding:12px 14px;background:#1a1126;border-bottom:1px solid var(--borda);white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid #241a33;font-size:.88rem;vertical-align:top}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:#1b1228}
+td a{color:var(--texto);text-decoration:none;font-family:ui-monospace,Consolas,monospace;font-weight:600}
+td a:hover{color:var(--roxo);text-decoration:underline}
+td.desc{color:#cfc3e6}
+td.pasta{color:#6b5d85;font-size:.72rem;font-family:ui-monospace,Consolas,monospace}
+td.thumb{width:180px}
+td.thumb img{width:160px;border-radius:8px;border:1px solid var(--borda);display:block;background:#0e0916}
+td.thumb a:hover img{border-color:var(--roxo)}
+td.video{width:170px}
+td.video img{width:150px;border-radius:8px;border:1px solid var(--borda);display:block}
+td.video a{text-decoration:none}
+td.video a:hover img{border-color:var(--roxo)}
+.titulo-video{display:block;margin-top:4px;font-size:.68rem;color:var(--suave);line-height:1.25;
+font-family:system-ui,sans-serif;font-weight:500}
+.sem-img{color:#4d4266;font-size:.72rem}
+footer{margin-top:40px;color:#5d5175;font-size:.76rem;text-align:center}
+@media (max-width:720px){ td.pasta{display:none} th.col-pasta{display:none} }
+</style></head>
+<body><div class="wrap">
+<a class="voltar" href="../index.html">← IA local</a>
+<header><h1>Agentes locais</h1><p>Agentes que rodam na sua máquina, sem API paga.</p></header>
+<input class="busca" placeholder="Procurar por nome, descrição ou pasta…" oninput="filtrar(this.value)">
+<div class="contagem" id="contagem">4 links</div>
+<table><thead><tr><th>Vídeo</th><th>Print</th><th>Projeto</th><th>O que faz</th><th class="col-pasta">Pasta de origem</th></tr></thead>
+<tbody id="corpo"><tr data-busca="fosowl/agenticseek 27.7k★ · agente autônomo 100% local (sem api, sem mensalidade). curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=mBRdA2qSITA" target="_blank" rel="noopener" title="AgenticSeek: Alternativa ao Manus TOTALMENTE GRATUITA com interface de"><img src="../../img/yt/mBRdA2qSITA.jpg" loading="lazy" alt=""><span class="titulo-video">AgenticSeek: Alternativa ao Manus TOTALMENTE GRA</span></a></td><td class="thumb"><a href="https://github.com/Fosowl/agenticSeek" target="_blank" rel="noopener"><img src="../../img/Fosowl__agenticSeek.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/Fosowl/agenticSeek" target="_blank" rel="noopener">Fosowl/agenticSeek</a></td><td class="desc">27.7k★ · agente autônomo 100% local (sem API, sem mensalidade).</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="dyad-sh/dyad 22.3k★ · construtor de apps com ia local (tipo lovable/replit). curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=HuxvvHspHwg" target="_blank" rel="noopener" title="DYAD É A Plataforma GRATUITA MAIS PODEROSA Para Criar Apps?"><img src="../../img/yt/HuxvvHspHwg.jpg" loading="lazy" alt=""><span class="titulo-video">DYAD É A Plataforma GRATUITA MAIS PODEROSA Para </span></a></td><td class="thumb"><a href="https://github.com/dyad-sh/dyad" target="_blank" rel="noopener"><img src="../../img/dyad-sh__dyad.gif" loading="lazy" alt=""></a></td><td><a href="https://github.com/dyad-sh/dyad" target="_blank" rel="noopener">dyad-sh/dyad</a></td><td class="desc">22.3k★ · construtor de apps com IA local (tipo Lovable/Replit).</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="kunagent/kun 6.4k★ · workspace de agente local para código, escrita e pesquisa. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=5ScwNEaGaJo" target="_blank" rel="noopener" title="[BASIC] Adicionando o KUN Basic ao Aliemination"><img src="../../img/yt/5ScwNEaGaJo.jpg" loading="lazy" alt=""><span class="titulo-video">[BASIC] Adicionando o KUN Basic ao Aliemination</span></a></td><td class="thumb"><a href="https://github.com/KunAgent/Kun" target="_blank" rel="noopener"><img src="../../img/KunAgent__Kun.webp" loading="lazy" alt=""></a></td><td><a href="https://github.com/KunAgent/Kun" target="_blank" rel="noopener">KunAgent/Kun</a></td><td class="desc">6.4k★ · workspace de agente local para código, escrita e pesquisa.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="atomicbot-ai/atomic-chat 2k★ · app local com motor de inferência próprio. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=IIe6WCRvR2Y" target="_blank" rel="noopener" title="ATOMIC CHAT - IA LOCAL GRATUITA E PRIVADA"><img src="../../img/yt/IIe6WCRvR2Y.jpg" loading="lazy" alt=""><span class="titulo-video">ATOMIC CHAT - IA LOCAL GRATUITA E PRIVADA</span></a></td><td class="thumb"><a href="https://github.com/AtomicBot-ai/Atomic-Chat" target="_blank" rel="noopener"><img src="../../img/AtomicBot-ai__Atomic-Chat.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/AtomicBot-ai/Atomic-Chat" target="_blank" rel="noopener">AtomicBot-ai/Atomic-Chat</a></td><td class="desc">2k★ · app local com motor de inferência próprio.</td><td class="pasta">curado — busca na internet</td></tr></tbody></table>
+<footer>Agentes locais · links salvos em 12/11/2026</footer>
+</div>
+<script>
+function filtrar(termo) {
+  termo = (termo || '').toLowerCase().trim();
+  let visiveis = 0;
+  document.querySelectorAll('#corpo tr').forEach(tr => {
+    const mostra = !termo || tr.dataset.busca.includes(termo);
+    tr.style.display = mostra ? '' : 'none';
+    if (mostra) visiveis++;
+  });
+  document.getElementById('contagem').textContent =
+    visiveis + (visiveis === 1 ? ' link' : ' links');
+}
+</script></body></html>
