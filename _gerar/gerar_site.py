@@ -254,7 +254,7 @@ GRUPOS = {
     "servidores": ("Servidores de jogos online", "Servidores e ferramentas de Lineage II e Palworld.",
                    ["lineage-ii", "palworld"]),
     "ia": ("IA", "Agentes, terminal, APIs/MCP, painéis, engenharia reversa e modelos locais.",
-           ["terminal", "agentes", "workspaces", "api", "paineis", "reverse", "modelos-locais", "whatsapp"]),
+           ["terminal", "agentes", "workspaces", "canal", "api", "paineis", "reverse", "modelos-locais", "whatsapp"]),
 }
 
 NOMES_SUB = {
@@ -269,6 +269,7 @@ NOMES_SUB = {
     "api": "APIs de IA",
     "agentes": "Agentes",
     "workspaces": "Workspaces de agentes",
+    "canal": "Canais",
     "terminal": "Terminal / CLI",
     "paineis": "Painéis & automação",
     "reverse": "Engenharia reversa",
@@ -290,6 +291,7 @@ DICAS_SUB = {
     "api": "APIs prontas de modelos (LLM grátis, roteamento).",
     "agentes": "Agentes de código, orquestração, voz e engenharia reversa.",
     "workspaces": "Mesas de trabalho para rodar e organizar vários agentes (tipo a Alethe).",
+    "canal": "Canais e perfis que ensinam, com os vídeos de cada um.",
     "terminal": "Agentes que vivem no terminal: Gemini CLI, Aider, OpenHands e afins.",
     "paineis": "Painéis e automação: n8n, Dify, Flowise, dashboards.",
     "reverse": "Ghidra, x64dbg, radare2, Frida e IA para engenharia reversa.",
@@ -301,7 +303,6 @@ DICAS_SUB = {
 
 # páginas de um nível só (sem subpasta)
 SIMPLES = {
-    "canais": ("Canais", "Perfis e canais que ensinam — com os vídeos de cada um."),
     "ports": ("Ports & mods de jogos", "Jogos de console rodando nativo no PC e ferramentas de jogos."),
     "software": ("Windows & software", "Ativadores, CapCut, upscalers e utilitários."),
     "estudos": ("Estudos & livros", "Bibliotecas de programação para estudar."),
@@ -324,7 +325,7 @@ FORA_DO_GITHUB = {
     "L2J oficial · login server": "https://bitbucket.org/l2jserver/l2j-server-login",
     "L2J oficial · commons": "https://bitbucket.org/l2jserver/l2j-server-commons",
     "L2J oficial · docker": "https://bitbucket.org/l2jserver/l2j-server-docker",
-    "L2J · site oficial": "https://www.l2jserver.com/",
+    "L2J · site oficial": "https://web.archive.org/web/20260313053957/https://www.l2jserver.com/pt/docs/installation-guide",
     "sourceforge.net/p/xboxburner": "https://sourceforge.net/p/xboxburner/",
     "slashiee.github.io/cemu_graphic_packs": "https://slashiee.github.io/cemu_graphic_packs/",
 }
@@ -370,6 +371,10 @@ text-decoration:none;color:var(--texto);transition:.15s}
 .categoria h2{margin:0 0 6px;font-size:1.05rem}
 .categoria p{margin:0;color:var(--suave);font-size:.84rem}
 .categoria .num{margin-top:12px;font-size:.78rem;color:var(--roxo);font-weight:800}
+.destaque-area{margin-top:26px;padding-top:20px;border-top:1px dashed var(--borda);display:flex;flex-direction:column;gap:10px;max-width:300px}
+.destaque-rotulo{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.categoria.destaque{border-color:var(--roxo);box-shadow:0 0 0 1px rgba(168,85,247,.45),0 0 22px rgba(168,85,247,.18)}
+.categoria.destaque:hover{background:#241534}
 .busca{width:100%;margin-top:18px;padding:13px 16px;border-radius:12px;border:1px solid var(--borda);
 background:#120c1c;color:var(--texto);font-size:.95rem}
 .busca:focus{outline:none;border-color:var(--roxo)}
@@ -439,12 +444,12 @@ CANAIS = [
 ]
 
 
-def pagina_canais(relativo, titulo, dica, voltar):
+def pagina_canais(relativo, titulo, dica, voltar, subida="../../"):
     cartoes = []
     for canal in CANAIS:
         videos = "".join(
             f'<a class="video-card" href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener">'
-            f'<img src="../img/yt/{vid}.jpg" loading="lazy" alt="">'
+            f'<img src="{subida}img/yt/{vid}.jpg" loading="lazy" alt="">'
             f'<span>{html.escape(titulo_vid)}</span></a>'
             for vid, titulo_vid in canal["videos"]
         )
@@ -452,7 +457,7 @@ def pagina_canais(relativo, titulo, dica, voltar):
 <div class="canal">
   <div class="canal-topo">
     <a href="{html.escape(canal['url'])}" target="_blank" rel="noopener" class="canal-print">
-      <img src="../img/{html.escape(canal['print'])}" loading="lazy" alt="">
+      <img src="{subida}img/{html.escape(canal['print'])}" loading="lazy" alt="">
     </a>
     <div class="canal-info">
       <h2>{html.escape(canal['nome'])}</h2>
@@ -561,7 +566,16 @@ function filtrar(termo) {{
 
 def pagina_grupo(relativo, titulo, dica, subpastas, voltar, raiz_rel):
     cartoes = []
+    destaque = ""
     for slug in subpastas:
+        if slug == "canal":
+            cartao_canal = (
+                f'<a class="categoria destaque" href="{slug}/index.html">'
+                f'<h2>{html.escape(NOMES_SUB.get(slug, slug))}</h2>'
+                f'<p>{html.escape(DICAS_SUB.get(slug, ""))}</p>'
+                f'<div class="num">{len(CANAIS)} canal{"is" if len(CANAIS) > 1 else ""}</div></a>'
+            )
+            continue
         quantidade = len(itens_validos(f"{relativo.split('/')[0]}/{slug}"))
         cartoes.append(
             f'<a class="categoria" href="{slug}/index.html">'
@@ -569,6 +583,9 @@ def pagina_grupo(relativo, titulo, dica, subpastas, voltar, raiz_rel):
             f'<p>{html.escape(DICAS_SUB.get(slug, ""))}</p>'
             f'<div class="num">{quantidade} link{"s" if quantidade > 1 else ""}</div></a>'
         )
+    if "canal" in subpastas:
+        destaque = ('<div class="destaque-area"><span class="destaque-rotulo">Separado</span>'
+                    f'{cartao_canal}</div>')
     escrever(relativo + "/index.html", f"""<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -577,6 +594,7 @@ def pagina_grupo(relativo, titulo, dica, subpastas, voltar, raiz_rel):
 <a class="voltar" href="{voltar[0]}">← {html.escape(voltar[1])}</a>
 <header><h1>{html.escape(titulo)}</h1><p>{html.escape(dica)}</p></header>
 <div class="categorias">{''.join(cartoes)}</div>
+{destaque}
 <footer>{html.escape(titulo)} · links salvos em 12/11/2026</footer>
 </div></body></html>""")
 
@@ -595,15 +613,16 @@ for nome in os.listdir(RAIZ):
 for grupo, (titulo, dica, subs) in GRUPOS.items():
     pagina_grupo(grupo, titulo, dica, subs, ("../index.html", "todos os grupos"), "../")
     for slug in subs:
+        if slug == "canal":
+            pagina_canais(f"{grupo}/{slug}/index.html", NOMES_SUB.get(slug, slug),
+                          DICAS_SUB.get(slug, ""), ("../index.html", titulo))
+            continue
         itens = ITENS.get(f"{grupo}/{slug}", [])
         pagina_tabela(f"{grupo}/{slug}/index.html", NOMES_SUB.get(slug, slug),
                       DICAS_SUB.get(slug, ""), itens, ("../index.html", titulo))
 
 # 2) páginas de um nível
 for chave, (titulo, dica) in SIMPLES.items():
-    if chave == "canais":
-        pagina_canais(f"{chave}/index.html", titulo, dica, ("../index.html", "todos os grupos"))
-        continue
     pagina_tabela(f"{chave}/index.html", titulo, dica, ITENS.get(chave, []),
                   ("../index.html", "todos os grupos"))
 
@@ -611,6 +630,8 @@ for chave, (titulo, dica) in SIMPLES.items():
 cartoes = []
 for grupo, (titulo, _, subs) in GRUPOS.items():
     total_grupo = sum(len(itens_validos(f"{grupo}/{s}")) for s in subs)
+    if "canal" in subs:
+        total_grupo += len(CANAIS)
     cartoes.append(f'<a class="categoria" href="{grupo}/index.html"><h2>{html.escape(titulo)}</h2>'
                    f'<p>{html.escape(dica)}</p>'
                    f'<div class="num">{total_grupo} links · {len(subs)} pasta{"s" if len(subs) > 1 else ""}</div></a>')

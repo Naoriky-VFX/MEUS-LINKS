@@ -18,6 +18,10 @@ text-decoration:none;color:var(--texto);transition:.15s}
 .categoria h2{margin:0 0 6px;font-size:1.05rem}
 .categoria p{margin:0;color:var(--suave);font-size:.84rem}
 .categoria .num{margin-top:12px;font-size:.78rem;color:var(--roxo);font-weight:800}
+.destaque-area{margin-top:26px;padding-top:20px;border-top:1px dashed var(--borda);display:flex;flex-direction:column;gap:10px;max-width:300px}
+.destaque-rotulo{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.categoria.destaque{border-color:var(--roxo);box-shadow:0 0 0 1px rgba(168,85,247,.45),0 0 22px rgba(168,85,247,.18)}
+.categoria.destaque:hover{background:#241534}
 .busca{width:100%;margin-top:18px;padding:13px 16px;border-radius:12px;border:1px solid var(--borda);
 background:#120c1c;color:var(--texto);font-size:.95rem}
 .busca:focus{outline:none;border-color:var(--roxo)}
@@ -50,5 +54,6 @@ footer{margin-top:40px;color:#5d5175;font-size:.76rem;text-align:center}
 <a class="voltar" href="../index.html">← todos os grupos</a>
 <header><h1>Painel de APIs</h1><p>Gateways e roteadores de LLM: uma chave, vários modelos.</p></header>
 <div class="categorias"><a class="categoria" href="roteadores/index.html"><h2>Roteadores &amp; gateways</h2><p>9router, OmniRoute, LiteLLM, new-api, one-api e afins.</p><div class="num">15 links</div></a><a class="categoria" href="observabilidade/index.html"><h2>Observabilidade &amp; evals</h2><p>Langfuse, TensorZero e LangWatch (logs, custo, avaliação).</p><div class="num">3 links</div></a></div>
+
 <footer>Painel de APIs · links salvos em 12/11/2026</footer>
 </div></body></html>
