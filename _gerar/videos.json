@@ -192,8 +192,8 @@
   "titulo": "Loot Filter Setup - Diablo 4"
  },
  "debpalash/VoiceStudio": {
-  "id": "l7EUUINJPVw",
-  "titulo": "ELEVEN LABS NO SEU PC DE GRAÇA? | VoiceStudio Open Source (Tutorial Completo)"
+  "id": "Ksu3WlPnQNo",
+  "titulo": "VoiceStudio: o estúdio de voz grátis (tutorial)"
  },
  "diegolix29/shadPS4": {
   "id": "dyCmc3RhhNI",
@@ -678,5 +678,77 @@
  "vllm-project/semantic-router": {
   "id": "CGgxhaTCB_k",
   "titulo": "vLLM Semantic Router Explicado: Direcione Requisições de IA por meio de uma única API"
+ },
+ "CorentinJ/Real-Time-Voice-Cloning": {
+  "id": "kyzOubLpIVU",
+  "titulo": "🔥Qwen3-TTS é Open Source e Pode Ameaçar o ElevenLabs | Clonagem de Voz Realista com IA"
+ },
+ "DrewThomasson/ebook2audiobook": {
+  "id": "wBRGsEqmvNw",
+  "titulo": "Audiolivros DIY: transforme seus e-books em audiolivros com som natural com ebook2audiobook e Docker"
+ },
+ "OpenBMB/VoxCPM": {
+  "id": "vewPHw0kBwI",
+  "titulo": "Análise e tutorial do VoxCPM 2 - 2026 | Crie clones de voz com IA que reproduzam emoções e soem h..."
+ },
+ "Plachtaa/seed-vc": {
+  "id": "piAEOLr7P4E",
+  "titulo": "Essa é a MELHOR seed para fugir pela PORTA! (É SÉRIO)"
+ },
+ "QuentinFuxa/WhisperLiveKit": {
+  "id": "tF433WHlu-Y",
+  "titulo": "WhisperLiveKit 0.2.17 demo RU to EN realtime translation with AI"
+ },
+ "QwenLM/Qwen3-TTS": {
+  "id": "kyzOubLpIVU",
+  "titulo": "🔥Qwen3-TTS é Open Source e Pode Ameaçar o ElevenLabs | Clonagem de Voz Realista com IA"
+ },
+ "abus-aikorea/voice-pro": {
+  "id": "shpOEg__ICo",
+  "titulo": "Gerador de Voz do Google AI Studio – Tutorial de Texto para Fala"
+ },
+ "cjpais/Handy": {
+  "id": "ARpjKbn4-LU",
+  "titulo": "Handy: Transcrição Local Gratuita"
+ },
+ "coqui-ai/TTS": {
+  "id": "kyzOubLpIVU",
+  "titulo": "🔥Qwen3-TTS é Open Source e Pode Ameaçar o ElevenLabs | Clonagem de Voz Realista com IA"
+ },
+ "index-tts/index-tts": {
+  "id": "nf9Zfbk5KSk",
+  "titulo": "Sota!Index TTS 2.0 Clonagem de voz e controle de emoções novamente"
+ },
+ "jamiepine/voicebox": {
+  "id": "xjCIDXw0vFY",
+  "titulo": "Aprenda a dominar a geração de áudios longos no Voicebox em poucos passos!"
+ },
+ "jianchang512/clone-voice": {
+  "id": "ohIrBUwJPsY",
+  "titulo": "Clone sua voz com EMOÇÃO - DramaBox é MELHOR que o ElevenLabs?  (Text-to-speech 100% grátis)"
+ },
+ "k2-fsa/OmniVoice": {
+  "id": "qko9qw0uSTk",
+  "titulo": "OmniVoice GRÁTIS: Clone Sua Voz e Gere Áudio com IA no Google Colab"
+ },
+ "k2-fsa/sherpa-onnx": {
+  "id": "TdXRkN67SDQ",
+  "titulo": "Sherpa TTS Full Guide – Use Realistic Offline Voice on Android"
+ },
+ "moonshine-ai/moonshine": {
+  "id": "8trdFEPIMjE",
+  "titulo": "Tutorial de como fazer a edit de Real moonshine funk 2😱✝️"
+ },
+ "myshell-ai/OpenVoice": {
+  "id": "8J4H0jE3n_U",
+  "titulo": "COMO CRIAR TENANT | TUTORIAL OPEN VOICE"
+ },
+ "rany2/edge-tts": {
+  "id": "heityg55JW4",
+  "titulo": "Crie um Gerador de Texto para Fala em Python! 🐍🔊 Usando Edge TTS"
+ },
+ "rhasspy/piper": {
+  "id": "Zpg4PkqfF9w",
+  "titulo": "COMO JOGAR DE PIPER - GUIA COMPLETO"
  }
 }

@@ -178,5 +178,22 @@
  "songquanpeng/one-api": "songquanpeng__one-api.png",
  "tbphp/gpt-load": "tbphp__gpt-load.png",
  "tensorzero/tensorzero": "tensorzero__tensorzero.png",
- "vllm-project/semantic-router": "vllm-project__semantic-router.png"
+ "vllm-project/semantic-router": "vllm-project__semantic-router.png",
+ "CorentinJ/Real-Time-Voice-Cloning": "CorentinJ__Real-Time-Voice-Cloning.png",
+ "DrewThomasson/ebook2audiobook": "DrewThomasson__ebook2audiobook.png",
+ "OpenBMB/VoxCPM": "OpenBMB__VoxCPM.png",
+ "Plachtaa/seed-vc": "Plachtaa__seed-vc.png",
+ "QuentinFuxa/WhisperLiveKit": "QuentinFuxa__WhisperLiveKit.png",
+ "QwenLM/Qwen3-TTS": "QwenLM__Qwen3-TTS.png",
+ "abus-aikorea/voice-pro": "abus-aikorea__voice-pro.jpg",
+ "cjpais/Handy": "cjpais__Handy.png",
+ "coqui-ai/TTS": "coqui-ai__TTS.png",
+ "index-tts/index-tts": "index-tts__index-tts.png",
+ "jamiepine/voicebox": "jamiepine__voicebox.webp",
+ "jianchang512/clone-voice": "jianchang512__clone-voice.png",
+ "k2-fsa/OmniVoice": "k2-fsa__OmniVoice.jpg",
+ "k2-fsa/sherpa-onnx": "k2-fsa__sherpa-onnx.png",
+ "myshell-ai/OpenVoice": "myshell-ai__OpenVoice.jpg",
+ "rany2/edge-tts": "rany2__edge-tts.png",
+ "rhasspy/piper": "rhasspy__piper.png"
 }
