@@ -1,0 +1,526 @@
+"""Site de links em PASTAS: grupo -> subpasta (Consoles/PS5, IA/Agentes...).
+
+Cada pasta tem seu index.html com uma tabela. Fonte: favoritos do Firefox
+(github.com / gitlab.com) + L2J oficial (Bitbucket).
+"""
+import html
+import json
+import os
+import shutil
+
+RAIZ = r"D:\PROJETOS DE PROGRAMAÇÃO\LINKS-NAORIKY"
+FONTE = r"C:\Users\danie\AppData\Local\Temp\opencode\github-itens.json"
+
+# (pasta) -> lista de (nome, descricao)
+ITENS = {
+    "consoles/switch": [
+        ("Atmosphere-NX/Atmosphere", "Custom firmware do Switch: é o desbloqueio em si."),
+        ("CTCaer/hekate", "Bootloader/payload do Switch, base de quase todo desbloqueio."),
+        ("WerWolv/Hekate-Toolbox", "Manutenção pelo hekate: backup de partições, eMMC, etc."),
+        ("eliboa/TegraRcmGUI", "Manda o payload do desbloqueio para o Switch pelo PC (RCM)."),
+        ("shchmue/Lockpick_RCM", "Extrai as chaves do Switch (necessário para vários programas)."),
+        ("blawar/tinleaf", "Instalador de NSP/NSZ no Switch (cartão ou rede)."),
+        ("ITotalJustice/sigpatch-updater", "Baixa e atualiza os sigpatches do Atmosphere."),
+        ("HamletDuFromage/aio-switch-updater", "Atualiza firmware, sigpatches e homebrews num app só."),
+        ("rashevskyv/switch", "Pacote KEFIR: arquivos de desbloqueio prontos."),
+        ("FlagBrew/Checkpoint", "Backup e restauração de saves do Switch."),
+        ("julesontheroad/NSC_BUILDER", "Converte e monta NSP/XCI do Switch no PC."),
+        ("ndeadly/MissionControl", "Usa controles de PS/Xbox no Switch por Bluetooth."),
+        ("cathery/sys-con", "Sysmodule para controles genéricos no Switch."),
+        ("AMSNX/cnxpack-updater", "Atualizador de pacotes do CNX (CFW alternativo)."),
+    ],
+    "consoles/switch-2": [
+        ("misshexa66/OunceCake", "Extrai romFS/exeFS não criptografados de jogos do Switch 2."),
+    ],
+    "consoles/playstation-4": [
+        ("diegolix29/shadPS4", "Emulador de PS4 para PC."),
+    ],
+    "consoles/playstation-5": [
+        ("KytyPS5/KytyPS5", "Camada de tradução de PS5 para Windows/Linux/macOS (experimental)."),
+        ("drakmor/ShadowMountPlus", "Payload que monta discos externos sozinho no PS5 desbloqueado."),
+        ("notmaj0r/Y2JB", "Execução de código no PS5 pelo app do YouTube (jailbreak)."),
+        ("leolobato/playden-ps5", "Roda jogos Windows da Steam na biblioteca do PS5 desbloqueado."),
+    ],
+    "consoles/ps-vita": [
+        ("blastrock/pkgj", "PKGj: instala jogos e DLCs direto no PS Vita."),
+    ],
+    "consoles/wii-u": [
+        ("slashiee.github.io/cemu_graphic_packs", "Graphic packs do Cemu (emulador de Wii U): texturas e resolução melhores."),
+    ],
+
+    "servidores/lineage-ii": [
+        ("L2J oficial · game server", "Core do servidor L2J oficial (Java). Mantido no Bitbucket."),
+        ("L2J oficial · datapack", "Datapack oficial: NPCs, quests, scripts e configuração do mundo."),
+        ("L2J oficial · login server", "Login server oficial (autenticação das contas)."),
+        ("L2J oficial · commons", "Biblioteca comum usada pelo game e pelo login."),
+        ("L2J oficial · docker", "Docker com game + login + banco prontos para subir."),
+        ("L2J · site oficial", "Site do L2J: downloads, fórum e documentação."),
+        ("MobiusDevelopment/L2J_Mobius", "L2J Mobius: servidor de Lineage II (Interlude/Essence e derivados)."),
+        ("MobiusDevelopment/l2clientdat", "Editor de L2ClientDat (arquivos .dat do cliente)."),
+        ("L2Miko/L2FileEdit", "L2FileEdit: edita arquivos do cliente Lineage II."),
+    ],
+    "servidores/palworld": [
+        ("jammsen/docker-palworld-dedicated-server", "Servidor dedicado de Palworld em Docker."),
+        ("xNul/palworld-host-save-fix", "Corrige o bug de save do Palworld em servidor."),
+        ("deafdudecomputers/PalWorldSaveTools", "Ferramentas para editar/converter saves do Palworld."),
+    ],
+
+    "ia/terminal": [
+        ("google-gemini/gemini-cli", "108k★ · agente de IA do Gemini direto no terminal."),
+        ("OpenHands/OpenHands", "93k★ · agente que escreve, testa e corrige software sozinho."),
+        ("cline/cline", "71k★ · agente que programa dentro do editor/CLI e pede aprovação."),
+        ("openinterpreter/openinterpreter", "68k★ · escreve e roda código na sua máquina pra cumprir a tarefa."),
+        ("herdrdev/herdr", "50k★ · runtime onde os agentes de código rodam em paralelo."),
+        ("Aider-AI/aider", "50k★ · pair programming de IA no terminal (edita seu repositório)."),
+        ("QwenLM/qwen-code", "29k★ · agente de código da Qwen que vive no terminal."),
+        ("manaflow-ai/cmux", "28k★ · terminal com abas verticais e avisos para agentes."),
+        ("plandex-ai/plandex", "15k★ · agente para projetos grandes, com plano e contexto."),
+        ("TheR1D/shell_gpt", "12k★ · comandos e respostas de IA no shell."),
+        ("smtg-ai/claude-squad", "8.7k★ · gerencia vários agentes de terminal ao mesmo tempo."),
+        ("graykode/abtop", "3.8k★ · “htop dos agentes”: tokens e sessões em tempo real."),
+        ("SeemSeam/claude_codex_bridge", "3.6k★ · mistura Codex, Claude, Gemini e Kimi num workspace só."),
+    ],
+    "ia/api": [
+        ("firecrawl/firecrawl", "201k★ · qualquer site vira conteúdo limpo pra IA (crawl + MCP)."),
+        ("browser-use/browser-use", "120k★ · agente que clica, preenche e pesquisa no navegador."),
+        ("punkpeye/awesome-mcp-servers", "97k★ · catálogo gigante de servidores MCP."),
+        ("modelcontextprotocol/servers", "91k★ · servidores MCP de referência (oficial)."),
+        ("zylon-ai/private-gpt", "57k★ · API completa de IA privada em cima de modelos locais."),
+        ("microsoft/playwright-mcp", "39k★ · MCP oficial do Playwright (automação de navegador)."),
+        ("github/github-mcp-server", "34k★ · MCP oficial do GitHub (repos, issues, PRs)."),
+        ("PrefectHQ/fastmcp", "28k★ · jeito rápido de criar servidor/cliente MCP em Python."),
+        ("activepieces/activepieces", "25k★ · automação com ~400 MCPs prontos."),
+        ("modelcontextprotocol/python-sdk", "24k★ · SDK oficial de MCP para Python."),
+        ("czlonkowski/n8n-mcp", "23k★ · MCP que deixa a IA montar/editar fluxos do n8n."),
+        ("tashfeenahmed/freellmapi", "34 provedores de LLM grátis e 635 endpoints numa API só."),
+        ("Mans230/dsh-llm-cli", "Roteia modelos DeepSeek pelas CLIs de agente instaladas na máquina."),
+    ],
+    "ia/workspaces": [
+        ("gastownhall/gastown", "18.8k★ · gerenciador de workspace multi-agente (o mais estrelado da lista)."),
+        ("NanmiCoder/cc-haha", "15.4k★ · mesa de trabalho desktop do Claude Code: worktrees, diff, multi-modelo."),
+        ("EKKOLearnAI/ekko-studio", "11.8k★ · workspace local-first multi-agente (chat, código, fluxo visual)."),
+        ("ValueCell-ai/ClawX", "7.6k★ · app desktop com interface gráfica para agentes OpenClaw."),
+        ("xingkongliang/skills-manager", "7.5k★ · app para organizar/sincronizar skills entre 50+ ferramentas."),
+        ("Devin-AXIS/iPolloWork", "7.4k★ · workbench local-first para times de agentes."),
+        ("Gaurav-Gosain/tuios", "6.5k★ · gerenciador de janelas de terminal que acompanha os agentes."),
+        ("spacering-net/codeg", "4.4k★ · workspace colaborativo (Claude, Codex, OpenCode)."),
+        ("golutra/golutra", "3.9k★ · plataforma de orquestração multi-agente."),
+        ("eneskirca/nodeterm", "2.5k★ · terminal com nós, tmux e sessões paralelas de agentes."),
+        ("phodal/routa", "1.8k★ · coordenação multi-agente com specs e kanban."),
+        ("Ryder-Sun/Meldwork", "1.6k★ · workspace local-first para colaboração entre agentes."),
+        ("kbwo/ccmanager", "1.3k★ · gerenciador de sessões (Claude, Gemini, Codex, Cursor)."),
+        ("asheshgoplani/agent-deck", "1.3k★ · TUI para gerenciar sessões de agentes."),
+        ("AI-QL/tuui", "1.2k★ · cliente MCP desktop para integrar ferramentas."),
+        ("chriswritescode-dev/opencode-manager", "1k★ · central de comando self-hosted para o OpenCode."),
+        ("greenfield-inc/Pane", "620★ · gerenciador de agentes CLI (qualquer SO)."),
+        ("kdcokenny/opencode-workspace", "584★ · harness pronto de multi-agente para OpenCode."),
+        ("tony1223/better-agent-terminal", "522★ · agregador de terminais multi-workspace com Claude Code."),
+        ("Kc1t/alethe-agents", "1.2k★ · workspace local-first para rodar e retomar vários agentes (a sua)."),
+    ],
+    "ia/agentes": [
+        ("langchain-ai/langchain", "149k★ · plataforma de engenharia de agentes (base de muita coisa)."),
+        ("paperclipai/paperclip", "113k★ · app open-source pra gerenciar agentes no trabalho."),
+        ("stablyai/orca", "123k★ · roda uma frota de agentes de código com a sua assinatura."),
+        ("FoundationAgents/MetaGPT", "71k★ · framework multi-agente que simula uma empresa de software."),
+        ("microsoft/autogen", "61k★ · framework da Microsoft pra agentes e conversas entre eles."),
+        ("crewAIInc/crewAI", "60k★ · orquestra agentes com papéis e tarefas (crew)."),
+        ("langchain-ai/langgraph", "44k★ · agentes resilientes com estado e ciclos."),
+        ("Yeachan-Heo/oh-my-claudecode", "40k★ · orquestração multi-agente para o Claude Code."),
+        ("openai/swarm", "22k★ · framework leve de orquestração multi-agente (OpenAI)."),
+        ("HKUDS/DeepCode", "16k★ · código aberto com harness e loop multi-agente."),
+        ("microsoft/agent-framework", "14k★ · cria, orquestra e publica agentes/multi-agentes."),
+        ("kyegomez/swarms", "7.3k★ · orquestração multi-agente em escala."),
+        ("VRSEN/agency-swarm", "4.6k★ · multi-agente confiável com agentes especializados."),
+        ("abhi1693/openclaw-mission-control", "4k★ · painel de controle de agentes (tarefas e coordenação)."),
+        ("Kc1t/alethe-orchestrate-skill", "Skill que orquestra Codex, Claude Code, Antigravity, Kimi e outros."),
+        ("Kc1t/fish-audio-voice-agents", "Agentes de terminal (Claude Code, Codex) que falam pela API da Fish Audio."),
+        ("morluto/rea", "Engenharia reversa com agentes: de comportamento de app até binários."),
+        ("togg53192-cmd/jailbreaks", "Lista de jailbreaks/prompts sem filtro para modelos."),
+    ],
+    "ia/paineis": [
+        ("n8n-io/n8n", "210k★ · automação com IA no seu servidor (funcionário digital 24h)."),
+        ("langgenius/dify", "161k★ · apps e agentes montados arrastando blocos."),
+        ("lobehub/lobehub", "85k★ · “super-agentes” com tarefas, horários e relatórios."),
+        ("FlowiseAI/Flowise", "55k★ · agentes de IA montados ligando blocos na tela."),
+        ("appsmithorg/appsmith", "41k★ · painéis administrativos e ferramentas internas."),
+        ("ToolJet/ToolJet", "41k★ · plataforma de apps internos e dashboards."),
+        ("glanceapp/glance", "38k★ · dashboard self-hosted com seus feeds num lugar só."),
+        ("gethomepage/homepage", "33k★ · homepage/dashboard de aplicações com Docker."),
+        ("lissy93/dashy", "26k★ · dashboard pessoal com status e widgets."),
+        ("TwiN/gatus", "12k★ · página de status com alertas (health checks)."),
+        ("illacloud/illa-builder", "12k★ · low-code para apps internos."),
+        ("bastienwirtz/homer", "11k★ · homepage estática simples pro servidor."),
+    ],
+    "ia/reverse": [
+        ("NationalSecurityAgency/ghidra", "99k★ · framework de engenharia reversa da NSA."),
+        ("WerWolv/ImHex", "55k★ · editor hexadecimal feito para engenharia reversa."),
+        ("x64dbg/x64dbg", "50k★ · debugger de Windows para RE e malware."),
+        ("iBotPeaches/Apktool", "27k★ · engenharia reversa de APK (Android)."),
+        ("radareorg/radare2", "25k★ · framework de RE em linha de comando."),
+        ("frida/frida", "22k★ · instrumentação dinâmica (hook em apps e jogos)."),
+        ("rizinorg/cutter", "20k★ · plataforma gráfica de RE (base Rizin)."),
+        ("Konloch/bytecode-viewer", "15k★ · decompilador/editor de JAR e APK."),
+        ("mrexodia/ida-pro-mcp", "13k★ · liga o IDA Pro a modelos de IA (RE assistida)."),
+        ("pwndbg/pwndbg", "11k★ · GDB/LLDB com superpoderes para RE e exploit."),
+        ("angr/angr", "9.3k★ · análise de binários e execução simbólica."),
+        ("rehan-remade/universal-modder", "9.6k★ · skills/tools que deixam o Claude Code moddar jogos."),
+    ],
+    "ia/modelos-locais": [
+        ("ollama/ollama", "186k★ · DeepSeek, Qwen e Gemma no seu PC com um comando."),
+        ("open-webui/open-webui", "158k★ · interface estilo ChatGPT ligada em modelos locais."),
+        ("Comfy-Org/ComfyUI", "146k★ · imagem e vídeo por nós, rodando local."),
+        ("ggml-org/llama.cpp", "134k★ · motor de inferência que roda até em notebook."),
+        ("infiniflow/ragflow", "94k★ · RAG nos seus documentos mostrando de onde tirou."),
+        ("unslothai/unsloth", "79k★ · treina e roda LLM local (GGUF/MLX)."),
+        ("Mintplex-Labs/anything-llm", "68k★ · conversa com PDFs e planilhas sem mandar pra fora."),
+        ("mudler/LocalAI", "50k★ · engine local para LLM, visão, voz e imagem."),
+        ("PurpleDoubleD/locally-uncensored", "Estúdio de IA local: chat, imagem e vídeo sem filtro."),
+        ("debpalash/VoiceStudio", "Alternativa local ao ElevenLabs: clonagem de voz e TTS."),
+        ("Naoriky-VFX/canirun.ai", "“Can I Run AI”: diz se a máquina roda determinado modelo."),
+    ],
+
+    "ia/whatsapp": [
+        ("WhiskeySockets/Baileys", "API não oficial do WhatsApp Web em TypeScript/JavaScript (sessão por QR)."),
+        ("evolution-foundation/evolution-api", "API de WhatsApp open-source, multi-instância, com webhooks."),
+        ("wppconnect-team/wppconnect", "Automação do WhatsApp Web para Node.js/TypeScript."),
+    ],
+
+    "ports": [
+        ("BlackLabelHQ/SymphonyRecomp", "Recompilação de Castlevania: Symphony of the Night para PC."),
+        ("Revivedx/SavageWindRecomp", "Recompilação estática de Zelda: Breath of the Wild (em progresso)."),
+        ("keepvaibin/nebula", "Port/descompilação de Super Mario Galaxy para PC."),
+        ("kuraeow/ultratears", "Port nativo de Zelda: Tears of the Kingdom 1.4.3 para Windows."),
+        ("yozander2009-stack/Metroid-Dread-Recomp", "Recompilação de Metroid Dread para PC."),
+        ("d4lfteam/d4lf", "D4LF: filtro de loot automático para Diablo IV."),
+        ("HoldMyBeer-gg/d4builder", "Monta builds de Diablo IV com a matemática do jogo."),
+        ("praydog/RE2-Mod-Framework", "Framework de mods em primeira pessoa para Resident Evil 2/3."),
+    ],
+
+    "software": [
+        ("massgravel/Microsoft-Activation-Scripts", "Ativador open-source de Windows e Office (HWID, Ohook, TSforge)."),
+        ("ProjectBukkit/CapcutVersions", "Links oficiais das versões do CapCut para PC."),
+        ("juliusjus/Capcut-pro-activator", "Ativador do CapCut Pro (projeto de terceiros)."),
+        ("Agustinm28/Optiscaler-Client", "OptiScaler: troca DLSS/FSR/XeSS nos jogos (frame generation)."),
+        ("anefzaoui/misterdownloadmanager", "Gerenciador de downloads open-source (estilo IDM)."),
+        ("Frizti/Fritchii", "Fork especializado (Lichii) de firmware para portátil."),
+        ("sourceforge.net/p/xboxburner", "XboxBurner: grava e prepara mídia/DVD de jogos de Xbox 360 (SourceForge)."),
+    ],
+
+    "estudos": [
+        ("KAYOKG/BibliotecaDev", "Biblioteca de livros de programação em PDF."),
+    ],
+}
+
+# grupo -> (titulo, dica, subpastas)
+GRUPOS = {
+    "consoles": ("Consoles", "Desbloqueio, payloads, instaladores e emuladores por console.",
+                 ["switch", "switch-2", "playstation-4", "playstation-5", "ps-vita", "wii-u"]),
+    "servidores": ("Servidores de jogos online", "Servidores e ferramentas de Lineage II e Palworld.",
+                   ["lineage-ii", "palworld"]),
+    "ia": ("IA", "Agentes, terminal, APIs/MCP, painéis, engenharia reversa e modelos locais.",
+           ["terminal", "agentes", "workspaces", "api", "paineis", "reverse", "modelos-locais", "whatsapp"]),
+}
+
+NOMES_SUB = {
+    "switch": "Nintendo Switch",
+    "switch-2": "Nintendo Switch 2",
+    "playstation-4": "PlayStation 4",
+    "playstation-5": "PlayStation 5",
+    "ps-vita": "PS Vita",
+    "wii-u": "Wii U / Cemu",
+    "lineage-ii": "Lineage II / L2J",
+    "palworld": "Palworld",
+    "api": "APIs de IA",
+    "agentes": "Agentes",
+    "workspaces": "Workspaces de agentes",
+    "terminal": "Terminal / CLI",
+    "paineis": "Painéis & automação",
+    "reverse": "Engenharia reversa",
+    "modelos-locais": "Modelos locais",
+    "whatsapp": "APIs de WhatsApp",
+}
+
+DICAS_SUB = {
+    "switch": "Atmosphere, hekate, instaladores, sigpatches, saves e controles.",
+    "switch-2": "Dump de jogos e ferramentas iniciais do Switch 2.",
+    "playstation-4": "Emulador de PS4 no PC.",
+    "playstation-5": "Jailbreak, payloads e rodar Steam no PS5.",
+    "ps-vita": "Homebrew e instalação de jogos no Vita.",
+    "wii-u": "Cemu (emulador de Wii U) e graphic packs.",
+    "lineage-ii": "L2J oficial (Bitbucket), Mobius e editores de cliente.",
+    "palworld": "Servidor dedicado, correção de save e ferramentas.",
+    "api": "APIs prontas de modelos (LLM grátis, roteamento).",
+    "agentes": "Agentes de código, orquestração, voz e engenharia reversa.",
+    "workspaces": "Mesas de trabalho para rodar e organizar vários agentes (tipo a Alethe).",
+    "terminal": "Agentes que vivem no terminal: Gemini CLI, Aider, OpenHands e afins.",
+    "paineis": "Painéis e automação: n8n, Dify, Flowise, dashboards.",
+    "reverse": "Ghidra, x64dbg, radare2, Frida e IA para engenharia reversa.",
+    "modelos-locais": "IA rodando no seu PC (chat, voz, imagem).",
+    "whatsapp": "Baileys, Evolution API e WPPConnect — WhatsApp fora da Meta.",
+}
+
+# páginas de um nível só (sem subpasta)
+SIMPLES = {
+    "ports": ("Ports & mods de jogos", "Jogos de console rodando nativo no PC e ferramentas de jogos."),
+    "software": ("Windows & software", "Ativadores, CapCut, upscalers e utilitários."),
+    "estudos": ("Estudos & livros", "Bibliotecas de programação para estudar."),
+}
+
+# Hospedagem de projeto: GitHub + as outras forjas (o dono quis o conjunto).
+DOMINIOS = (
+    "github.com",
+    "gitlab.com",
+    "bitbucket.org",
+    "sourceforge.net",
+    "codeberg.org",
+    "gitea.com",
+    "sr.ht",
+)
+
+FORA_DO_GITHUB = {
+    "L2J oficial · game server": "https://bitbucket.org/l2jserver/l2j-server-game",
+    "L2J oficial · datapack": "https://bitbucket.org/l2jserver/l2j-server-datapack",
+    "L2J oficial · login server": "https://bitbucket.org/l2jserver/l2j-server-login",
+    "L2J oficial · commons": "https://bitbucket.org/l2jserver/l2j-server-commons",
+    "L2J oficial · docker": "https://bitbucket.org/l2jserver/l2j-server-docker",
+    "L2J · site oficial": "https://www.l2jserver.com/",
+    "sourceforge.net/p/xboxburner": "https://sourceforge.net/p/xboxburner/",
+    "slashiee.github.io/cemu_graphic_packs": "https://slashiee.github.io/cemu_graphic_packs/",
+}
+
+with open(FONTE, encoding="utf-8") as f:
+    favoritos = json.load(f)
+
+# prints baixados (img/manifest.json)
+try:
+    with open(os.path.join(RAIZ, "img", "manifest.json"), encoding="utf-8") as f:
+        MANIFEST = json.load(f)
+except Exception:
+    MANIFEST = {}
+
+# vídeos tutoriais (_gerar/videos.json)
+try:
+    with open(os.path.join(RAIZ, "_gerar", "videos.json"), encoding="utf-8") as f:
+        VIDEOS = json.load(f)
+except Exception:
+    VIDEOS = {}
+
+urls, pastas = {}, {}
+for item in favoritos:
+    if not any(d in item["url"] for d in DOMINIOS):
+        continue          # só sites que hospedam projeto
+    urls.setdefault(item["repo"], item["url"])
+    pastas.setdefault(item["repo"], item["pasta"].replace("menu / ", ""))
+
+CSS = """
+:root{--fundo:#0b0710;--card:#160f22;--card2:#1d1429;--borda:#3a2f4e;--texto:#f4f0ff;--suave:#9a8bb5;--roxo:#a855f7}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#2a1145 0,#0b0710 60%);
+color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:32px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:1.7rem}
+header p{margin:0;color:var(--suave)}
+.voltar{display:inline-block;margin-bottom:18px;color:var(--roxo);text-decoration:none;font-weight:700;font-size:.9rem}
+.voltar:hover{text-decoration:underline}
+.categorias{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:26px}
+.categoria{display:block;background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:20px;
+text-decoration:none;color:var(--texto);transition:.15s}
+.categoria:hover{border-color:var(--roxo);background:var(--card2)}
+.categoria h2{margin:0 0 6px;font-size:1.05rem}
+.categoria p{margin:0;color:var(--suave);font-size:.84rem}
+.categoria .num{margin-top:12px;font-size:.78rem;color:var(--roxo);font-weight:800}
+.busca{width:100%;margin-top:18px;padding:13px 16px;border-radius:12px;border:1px solid var(--borda);
+background:#120c1c;color:var(--texto);font-size:.95rem}
+.busca:focus{outline:none;border-color:var(--roxo)}
+.contagem{margin-top:10px;font-size:.8rem;color:var(--suave)}
+table{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--borda);
+border-radius:14px;overflow:hidden}
+th{text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);
+padding:12px 14px;background:#1a1126;border-bottom:1px solid var(--borda);white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid #241a33;font-size:.88rem;vertical-align:top}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:#1b1228}
+td a{color:var(--texto);text-decoration:none;font-family:ui-monospace,Consolas,monospace;font-weight:600}
+td a:hover{color:var(--roxo);text-decoration:underline}
+td.desc{color:#cfc3e6}
+td.pasta{color:#6b5d85;font-size:.72rem;font-family:ui-monospace,Consolas,monospace}
+td.thumb{width:180px}
+td.thumb img{width:160px;border-radius:8px;border:1px solid var(--borda);display:block;background:#0e0916}
+td.thumb a:hover img{border-color:var(--roxo)}
+td.video{width:170px}
+td.video img{width:150px;border-radius:8px;border:1px solid var(--borda);display:block}
+td.video a{text-decoration:none}
+td.video a:hover img{border-color:var(--roxo)}
+.titulo-video{display:block;margin-top:4px;font-size:.68rem;color:var(--suave);line-height:1.25;
+font-family:system-ui,sans-serif;font-weight:500}
+.sem-img{color:#4d4266;font-size:.72rem}
+footer{margin-top:40px;color:#5d5175;font-size:.76rem;text-align:center}
+@media (max-width:720px){ td.pasta{display:none} th.col-pasta{display:none} }
+"""
+
+
+def url_de(nome):
+    """URL do item: caso especial, favorito do Firefox, ou GitHub (curado)."""
+    if nome in FORA_DO_GITHUB:
+        return FORA_DO_GITHUB[nome]
+    if nome in urls:
+        return urls[nome]
+    if "/" in nome and " " not in nome:
+        return "https://github.com/" + nome
+    return None
+
+
+def itens_validos(chave):
+    """Só o que tem URL."""
+    return [(n, d) for n, d in ITENS.get(chave, []) if url_de(n)]
+
+
+def escrever(relativo, conteudo):
+    caminho = os.path.join(RAIZ, relativo)
+    os.makedirs(os.path.dirname(caminho), exist_ok=True)
+    with open(caminho, "w", encoding="utf-8") as f:
+        f.write(conteudo)
+
+
+def pagina_tabela(relativo, titulo, dica, itens, voltar):
+    subida = "../" * relativo.count("/")
+    linhas = []
+    for nome, descricao in itens:
+        url = url_de(nome)
+        if not url:
+            continue
+        pasta = pastas.get(nome) or (
+            "curado — busca na internet" if "github.com" in url
+            else "fora do GitHub (Bitbucket / site oficial)"
+        )
+        busca = (nome + " " + descricao + " " + pasta).lower()
+        arquivo_img = MANIFEST.get(nome)
+        if arquivo_img:
+            print_html = (f'<a href="{html.escape(url)}" target="_blank" rel="noopener">'
+                          f'<img src="{subida}img/{html.escape(arquivo_img)}" loading="lazy" alt=""></a>')
+        else:
+            print_html = '<span class="sem-img">sem print</span>'
+
+        video = VIDEOS.get(nome) or {}
+        if video.get("id"):
+            titulo_video = html.escape((video.get("titulo") or "")[:70])
+            video_html = (
+                f'<a href="https://www.youtube.com/watch?v={video["id"]}" target="_blank" '
+                f'rel="noopener" title="{titulo_video}">'
+                f'<img src="{subida}img/yt/{video["id"]}.jpg" loading="lazy" alt="">'
+                f'<span class="titulo-video">{titulo_video[:48]}</span></a>'
+            )
+        else:
+            video_html = '<span class="sem-img">sem vídeo</span>'
+
+        linhas.append(
+            f'<tr data-busca="{html.escape(busca)}">'
+            f'<td class="video">{video_html}</td>'
+            f'<td class="thumb">{print_html}</td>'
+            f'<td><a href="{html.escape(url)}" target="_blank" rel="noopener">{html.escape(nome)}</a></td>'
+            f'<td class="desc">{html.escape(descricao)}</td>'
+            f'<td class="pasta">{html.escape(pasta)}</td></tr>'
+        )
+
+    escrever(relativo, f"""<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{html.escape(titulo)} - Links</title><style>{CSS}</style></head>
+<body><div class="wrap">
+<a class="voltar" href="{voltar[0]}">← {html.escape(voltar[1])}</a>
+<header><h1>{html.escape(titulo)}</h1><p>{html.escape(dica)}</p></header>
+<input class="busca" placeholder="Procurar por nome, descrição ou pasta…" oninput="filtrar(this.value)">
+<div class="contagem" id="contagem">{len(linhas)} link{"s" if len(linhas) > 1 else ""}</div>
+<table><thead><tr><th>Vídeo</th><th>Print</th><th>Projeto</th><th>O que faz</th><th class="col-pasta">Pasta de origem</th></tr></thead>
+<tbody id="corpo">{''.join(linhas)}</tbody></table>
+<footer>{html.escape(titulo)} · links salvos em 12/11/2026</footer>
+</div>
+<script>
+function filtrar(termo) {{
+  termo = (termo || '').toLowerCase().trim();
+  let visiveis = 0;
+  document.querySelectorAll('#corpo tr').forEach(tr => {{
+    const mostra = !termo || tr.dataset.busca.includes(termo);
+    tr.style.display = mostra ? '' : 'none';
+    if (mostra) visiveis++;
+  }});
+  document.getElementById('contagem').textContent =
+    visiveis + (visiveis === 1 ? ' link' : ' links');
+}}
+</script></body></html>""")
+
+
+def pagina_grupo(relativo, titulo, dica, subpastas, voltar, raiz_rel):
+    cartoes = []
+    for slug in subpastas:
+        quantidade = len(itens_validos(f"{relativo.split('/')[0]}/{slug}"))
+        cartoes.append(
+            f'<a class="categoria" href="{slug}/index.html">'
+            f'<h2>{html.escape(NOMES_SUB.get(slug, slug))}</h2>'
+            f'<p>{html.escape(DICAS_SUB.get(slug, ""))}</p>'
+            f'<div class="num">{quantidade} link{"s" if quantidade > 1 else ""}</div></a>'
+        )
+    escrever(relativo + "/index.html", f"""<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{html.escape(titulo)} - Links</title><style>{CSS}</style></head>
+<body><div class="wrap">
+<a class="voltar" href="{voltar[0]}">← {html.escape(voltar[1])}</a>
+<header><h1>{html.escape(titulo)}</h1><p>{html.escape(dica)}</p></header>
+<div class="categorias">{''.join(cartoes)}</div>
+<footer>{html.escape(titulo)} · links salvos em 12/11/2026</footer>
+</div></body></html>""")
+
+
+# limpa a pasta antes de gerar (menos img/ e _gerar/)
+for nome in os.listdir(RAIZ):
+    if nome in ("img", "_gerar"):
+        continue
+    caminho = os.path.join(RAIZ, nome)
+    if os.path.isdir(caminho):
+        shutil.rmtree(caminho)
+    elif nome.endswith(".html"):
+        os.remove(caminho)
+
+# 1) grupos com subpastas
+for grupo, (titulo, dica, subs) in GRUPOS.items():
+    pagina_grupo(grupo, titulo, dica, subs, ("../index.html", "todos os grupos"), "../")
+    for slug in subs:
+        itens = ITENS.get(f"{grupo}/{slug}", [])
+        pagina_tabela(f"{grupo}/{slug}/index.html", NOMES_SUB.get(slug, slug),
+                      DICAS_SUB.get(slug, ""), itens, ("../index.html", titulo))
+
+# 2) páginas de um nível
+for chave, (titulo, dica) in SIMPLES.items():
+    pagina_tabela(f"{chave}/index.html", titulo, dica, ITENS.get(chave, []),
+                  ("../index.html", "todos os grupos"))
+
+# 3) raiz
+cartoes = []
+for grupo, (titulo, dica, subs) in GRUPOS.items():
+    total_grupo = sum(len(ITENS.get(f"{grupo}/{s}", [])) for s in subs)
+    cartoes.append(f'<a class="categoria" href="{grupo}/index.html"><h2>{html.escape(titulo)}</h2>'
+                   f'<p>{html.escape(dica)}</p>'
+                   f'<div class="num">{total_grupo} links · {len(subs)} pasta{"s" if len(subs) > 1 else ""}</div></a>')
+for chave, (titulo, dica) in SIMPLES.items():
+    cartoes.append(f'<a class="categoria" href="{chave}/index.html"><h2>{html.escape(titulo)}</h2>'
+                   f'<p>{html.escape(dica)}</p>'
+                   f'<div class="num">{len(ITENS.get(chave, []))} links</div></a>')
+
+total = sum(len(v) for v in ITENS.values())
+escrever("index.html", f"""<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Links - Naoriky</title><style>{CSS}</style></head>
+<body><div class="wrap">
+<header><h1>Links</h1><p>{total} projetos salvos, separados por assunto.</p></header>
+<div class="categorias">{''.join(cartoes)}</div>
+<footer>Gerado a partir dos favoritos do Firefox · atualizado em 12/11/2026</footer>
+</div></body></html>""")
+
+print("pasta:", RAIZ)
+for grupo, (titulo, _, subs) in GRUPOS.items():
+    print(f"{titulo}: " + " · ".join(f"{NOMES_SUB.get(s, s)}={len(ITENS.get(f'{grupo}/{s}', []))}" for s in subs))
+for chave, (titulo, _) in SIMPLES.items():
+    print(f"{titulo}: {len(ITENS.get(chave, []))}")
+print("total:", total)

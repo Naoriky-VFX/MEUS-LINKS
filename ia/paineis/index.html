@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painéis &amp; automação - Links</title><style>
+:root{--fundo:#0b0710;--card:#160f22;--card2:#1d1429;--borda:#3a2f4e;--texto:#f4f0ff;--suave:#9a8bb5;--roxo:#a855f7}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#2a1145 0,#0b0710 60%);
+color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:32px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:1.7rem}
+header p{margin:0;color:var(--suave)}
+.voltar{display:inline-block;margin-bottom:18px;color:var(--roxo);text-decoration:none;font-weight:700;font-size:.9rem}
+.voltar:hover{text-decoration:underline}
+.categorias{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:26px}
+.categoria{display:block;background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:20px;
+text-decoration:none;color:var(--texto);transition:.15s}
+.categoria:hover{border-color:var(--roxo);background:var(--card2)}
+.categoria h2{margin:0 0 6px;font-size:1.05rem}
+.categoria p{margin:0;color:var(--suave);font-size:.84rem}
+.categoria .num{margin-top:12px;font-size:.78rem;color:var(--roxo);font-weight:800}
+.busca{width:100%;margin-top:18px;padding:13px 16px;border-radius:12px;border:1px solid var(--borda);
+background:#120c1c;color:var(--texto);font-size:.95rem}
+.busca:focus{outline:none;border-color:var(--roxo)}
+.contagem{margin-top:10px;font-size:.8rem;color:var(--suave)}
+table{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--borda);
+border-radius:14px;overflow:hidden}
+th{text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);
+padding:12px 14px;background:#1a1126;border-bottom:1px solid var(--borda);white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid #241a33;font-size:.88rem;vertical-align:top}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:#1b1228}
+td a{color:var(--texto);text-decoration:none;font-family:ui-monospace,Consolas,monospace;font-weight:600}
+td a:hover{color:var(--roxo);text-decoration:underline}
+td.desc{color:#cfc3e6}
+td.pasta{color:#6b5d85;font-size:.72rem;font-family:ui-monospace,Consolas,monospace}
+td.thumb{width:180px}
+td.thumb img{width:160px;border-radius:8px;border:1px solid var(--borda);display:block;background:#0e0916}
+td.thumb a:hover img{border-color:var(--roxo)}
+td.video{width:170px}
+td.video img{width:150px;border-radius:8px;border:1px solid var(--borda);display:block}
+td.video a{text-decoration:none}
+td.video a:hover img{border-color:var(--roxo)}
+.titulo-video{display:block;margin-top:4px;font-size:.68rem;color:var(--suave);line-height:1.25;
+font-family:system-ui,sans-serif;font-weight:500}
+.sem-img{color:#4d4266;font-size:.72rem}
+footer{margin-top:40px;color:#5d5175;font-size:.76rem;text-align:center}
+@media (max-width:720px){ td.pasta{display:none} th.col-pasta{display:none} }
+</style></head>
+<body><div class="wrap">
+<a class="voltar" href="../index.html">← IA</a>
+<header><h1>Painéis &amp; automação</h1><p>Painéis e automação: n8n, Dify, Flowise, dashboards.</p></header>
+<input class="busca" placeholder="Procurar por nome, descrição ou pasta…" oninput="filtrar(this.value)">
+<div class="contagem" id="contagem">12 links</div>
+<table><thead><tr><th>Vídeo</th><th>Print</th><th>Projeto</th><th>O que faz</th><th class="col-pasta">Pasta de origem</th></tr></thead>
+<tbody id="corpo"><tr data-busca="n8n-io/n8n 210k★ · automação com ia no seu servidor (funcionário digital 24h). curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=TBwYT8q1pgE" target="_blank" rel="noopener" title="Nod by n8n: conheça o novo assistente pessoal open source"><img src="../../img/yt/TBwYT8q1pgE.jpg" loading="lazy" alt=""><span class="titulo-video">Nod by n8n: conheça o novo assistente pessoal op</span></a></td><td class="thumb"><a href="https://github.com/n8n-io/n8n" target="_blank" rel="noopener"><img src="../../img/n8n-io__n8n.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/n8n-io/n8n" target="_blank" rel="noopener">n8n-io/n8n</a></td><td class="desc">210k★ · automação com IA no seu servidor (funcionário digital 24h).</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="langgenius/dify 161k★ · apps e agentes montados arrastando blocos. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=hFhhmAZwBjU" target="_blank" rel="noopener" title="Curso Dify Gratuito para Iniciantes | Agente de IA do Zero com Dify"><img src="../../img/yt/hFhhmAZwBjU.jpg" loading="lazy" alt=""><span class="titulo-video">Curso Dify Gratuito para Iniciantes | Agente de </span></a></td><td class="thumb"><a href="https://github.com/langgenius/dify" target="_blank" rel="noopener"><img src="../../img/langgenius__dify.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/langgenius/dify" target="_blank" rel="noopener">langgenius/dify</a></td><td class="desc">161k★ · apps e agentes montados arrastando blocos.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="lobehub/lobehub 85k★ · “super-agentes” com tarefas, horários e relatórios. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=QHijipAUI68" target="_blank" rel="noopener" title="Nova IA que SUPERA o Chat?| LobeHub"><img src="../../img/yt/QHijipAUI68.jpg" loading="lazy" alt=""><span class="titulo-video">Nova IA que SUPERA o Chat?| LobeHub</span></a></td><td class="thumb"><a href="https://github.com/lobehub/lobehub" target="_blank" rel="noopener"><img src="../../img/lobehub__lobehub.webp" loading="lazy" alt=""></a></td><td><a href="https://github.com/lobehub/lobehub" target="_blank" rel="noopener">lobehub/lobehub</a></td><td class="desc">85k★ · “super-agentes” com tarefas, horários e relatórios.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="flowiseai/flowise 55k★ · agentes de ia montados ligando blocos na tela. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=AXNSEkJfmgo" target="_blank" rel="noopener" title="Você Não Vai Acreditar O Quão Fácil É Construir Agentes De IA Usando O"><img src="../../img/yt/AXNSEkJfmgo.jpg" loading="lazy" alt=""><span class="titulo-video">Você Não Vai Acreditar O Quão Fácil É Construir </span></a></td><td class="thumb"><a href="https://github.com/FlowiseAI/Flowise" target="_blank" rel="noopener"><img src="../../img/FlowiseAI__Flowise.svg" loading="lazy" alt=""></a></td><td><a href="https://github.com/FlowiseAI/Flowise" target="_blank" rel="noopener">FlowiseAI/Flowise</a></td><td class="desc">55k★ · agentes de IA montados ligando blocos na tela.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="appsmithorg/appsmith 41k★ · painéis administrativos e ferramentas internas. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=nOrgb9lEHJk" target="_blank" rel="noopener" title="Crie Sistemas de Graça Sem Programar - Appsmith"><img src="../../img/yt/nOrgb9lEHJk.jpg" loading="lazy" alt=""><span class="titulo-video">Crie Sistemas de Graça Sem Programar - Appsmith</span></a></td><td class="thumb"><a href="https://github.com/appsmithorg/appsmith" target="_blank" rel="noopener"><img src="../../img/appsmithorg__appsmith.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/appsmithorg/appsmith" target="_blank" rel="noopener">appsmithorg/appsmith</a></td><td class="desc">41k★ · painéis administrativos e ferramentas internas.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="tooljet/tooljet 41k★ · plataforma de apps internos e dashboards. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=n-HObHIHVGM" target="_blank" rel="noopener" title="Testei a ToolJet, uma plataforma Low-Code Open Source!"><img src="../../img/yt/n-HObHIHVGM.jpg" loading="lazy" alt=""><span class="titulo-video">Testei a ToolJet, uma plataforma Low-Code Open S</span></a></td><td class="thumb"><a href="https://github.com/ToolJet/ToolJet" target="_blank" rel="noopener"><img src="../../img/ToolJet__ToolJet.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/ToolJet/ToolJet" target="_blank" rel="noopener">ToolJet/ToolJet</a></td><td class="desc">41k★ · plataforma de apps internos e dashboards.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="glanceapp/glance 38k★ · dashboard self-hosted com seus feeds num lugar só. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=F4kfeHDnpMI" target="_blank" rel="noopener" title="O QUE É GLANCE E COMO DESATIVAR"><img src="../../img/yt/F4kfeHDnpMI.jpg" loading="lazy" alt=""><span class="titulo-video">O QUE É GLANCE E COMO DESATIVAR</span></a></td><td class="thumb"><a href="https://github.com/glanceapp/glance" target="_blank" rel="noopener"><img src="../../img/glanceapp__glance.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/glanceapp/glance" target="_blank" rel="noopener">glanceapp/glance</a></td><td class="desc">38k★ · dashboard self-hosted com seus feeds num lugar só.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="gethomepage/homepage 33k★ · homepage/dashboard de aplicações com docker. curado — busca na internet"><td class="video"><span class="sem-img">sem vídeo</span></td><td class="thumb"><a href="https://github.com/gethomepage/homepage" target="_blank" rel="noopener"><img src="../../img/gethomepage__homepage.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/gethomepage/homepage" target="_blank" rel="noopener">gethomepage/homepage</a></td><td class="desc">33k★ · homepage/dashboard de aplicações com Docker.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="lissy93/dashy 26k★ · dashboard pessoal com status e widgets. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=ckbwV9IWrw8" target="_blank" rel="noopener" title="Scrap, Dashy, HyDra e TjHaly são pura comédia na mesma call! 🤣 (HILÁRI"><img src="../../img/yt/ckbwV9IWrw8.jpg" loading="lazy" alt=""><span class="titulo-video">Scrap, Dashy, HyDra e TjHaly são pura comédia na</span></a></td><td class="thumb"><a href="https://github.com/lissy93/dashy" target="_blank" rel="noopener"><img src="../../img/lissy93__dashy.svg" loading="lazy" alt=""></a></td><td><a href="https://github.com/lissy93/dashy" target="_blank" rel="noopener">lissy93/dashy</a></td><td class="desc">26k★ · dashboard pessoal com status e widgets.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="twin/gatus 12k★ · página de status com alertas (health checks). curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=hpGvyf9hOj4" target="_blank" rel="noopener" title="FILIPINO LIVE MASS TODAY ONLINE *NOVEMBER 13, 2026* FR. JOWEL JOMARSUS"><img src="../../img/yt/hpGvyf9hOj4.jpg" loading="lazy" alt=""><span class="titulo-video">FILIPINO LIVE MASS TODAY ONLINE *NOVEMBER 13, 20</span></a></td><td class="thumb"><a href="https://github.com/TwiN/gatus" target="_blank" rel="noopener"><img src="../../img/TwiN__gatus.jpg" loading="lazy" alt=""></a></td><td><a href="https://github.com/TwiN/gatus" target="_blank" rel="noopener">TwiN/gatus</a></td><td class="desc">12k★ · página de status com alertas (health checks).</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="illacloud/illa-builder 12k★ · low-code para apps internos. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=Fe5vjBCR2qU" target="_blank" rel="noopener" title="Study Buddy ILLA Builder"><img src="../../img/yt/Fe5vjBCR2qU.jpg" loading="lazy" alt=""><span class="titulo-video">Study Buddy ILLA Builder</span></a></td><td class="thumb"><a href="https://github.com/illacloud/illa-builder" target="_blank" rel="noopener"><img src="../../img/illacloud__illa-builder.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/illacloud/illa-builder" target="_blank" rel="noopener">illacloud/illa-builder</a></td><td class="desc">12k★ · low-code para apps internos.</td><td class="pasta">curado — busca na internet</td></tr><tr data-busca="bastienwirtz/homer 11k★ · homepage estática simples pro servidor. curado — busca na internet"><td class="video"><a href="https://www.youtube.com/watch?v=ImxacFS_FRo" target="_blank" rel="noopener" title="Homer 062 feat Carah de anjoh ( sintonia presente ) ( prod complexo do"><img src="../../img/yt/ImxacFS_FRo.jpg" loading="lazy" alt=""><span class="titulo-video">Homer 062 feat Carah de anjoh ( sintonia present</span></a></td><td class="thumb"><a href="https://github.com/bastienwirtz/homer" target="_blank" rel="noopener"><img src="../../img/bastienwirtz__homer.png" loading="lazy" alt=""></a></td><td><a href="https://github.com/bastienwirtz/homer" target="_blank" rel="noopener">bastienwirtz/homer</a></td><td class="desc">11k★ · homepage estática simples pro servidor.</td><td class="pasta">curado — busca na internet</td></tr></tbody></table>
+<footer>Painéis &amp; automação · links salvos em 12/11/2026</footer>
+</div>
+<script>
+function filtrar(termo) {
+  termo = (termo || '').toLowerCase().trim();
+  let visiveis = 0;
+  document.querySelectorAll('#corpo tr').forEach(tr => {
+    const mostra = !termo || tr.dataset.busca.includes(termo);
+    tr.style.display = mostra ? '' : 'none';
+    if (mostra) visiveis++;
+  });
+  document.getElementById('contagem').textContent =
+    visiveis + (visiveis === 1 ? ' link' : ' links');
+}
+</script></body></html>
