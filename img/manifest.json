@@ -224,5 +224,17 @@
  "nomic-ai/gpt4all": "nomic-ai__gpt4all.png",
  "oobabooga/textgen": "oobabooga__textgen.png",
  "vllm-project/vllm": "vllm-project__vllm.png",
- "withcatai/node-llama-cpp": "withcatai__node-llama-cpp.heif"
+ "withcatai/node-llama-cpp": "withcatai__node-llama-cpp.heif",
+ "Anil-matcha/Open-Generative-AI": "Anil-matcha__Open-Generative-AI.jpg",
+ "HumanAIGC/AnimateAnyone": "HumanAIGC__AnimateAnyone.png",
+ "KoljaB/RealtimeSTT": "KoljaB__RealtimeSTT.png",
+ "Lightricks/LTX-Video": "Lightricks__LTX-Video.png",
+ "QwenLM/Qwen-Image": "QwenLM__Qwen-Image.png",
+ "QwenLM/Qwen-Image-2.1": "QwenLM__Qwen-Image-2.1.webp",
+ "SkyworkAI/SkyReels-V1": "SkyworkAI__SkyReels-V1.png",
+ "Tencent-Hunyuan/HunyuanVideo": "Tencent-Hunyuan__HunyuanVideo.png",
+ "Wan-Video/Wan2.2": "Wan-Video__Wan2.2.png",
+ "huggingface/diffusers": "huggingface__diffusers.png",
+ "yl4579/StyleTTS2": "yl4579__StyleTTS2.png",
+ "zai-org/CogVideo": "zai-org__CogVideo.png"
 }

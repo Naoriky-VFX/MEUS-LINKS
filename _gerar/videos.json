@@ -870,5 +870,53 @@
  "withcatai/node-llama-cpp": {
   "id": "ZR9S9zXm4ZU",
   "titulo": "Execute modelos de IA localmente com llama.cpp"
+ },
+ "Anil-matcha/Open-Generative-AI": {
+  "id": "Lrvi-7m3DNY",
+  "titulo": "TUTORIAL: Como usar o CLAUDE AI? | IAs Generativas"
+ },
+ "HumanAIGC/AnimateAnyone": {
+  "id": "W7wu9ZwPFcg",
+  "titulo": "Animate Anyone tutorial | Animate anyone ai"
+ },
+ "Lightricks/LTX-Video": {
+  "id": "GjLL3vpE-gE",
+  "titulo": "🔥Atualizou! Nova IA de vídeo LTX-2.3 liberada Grátis, um Guia Completo com testes!"
+ },
+ "QwenLM/Qwen-Image": {
+  "id": "NtJTJ0awY0s",
+  "titulo": "🚨 SURREAL! IA DE IMAGEM GRÁTIS  SUPEROU O NANO BANANA! (QWEN IMAGE 2.1) 🎨🔥"
+ },
+ "QwenLM/Qwen-Image-2.1": {
+  "id": "NtJTJ0awY0s",
+  "titulo": "🚨 SURREAL! IA DE IMAGEM GRÁTIS  SUPEROU O NANO BANANA! (QWEN IMAGE 2.1) 🎨🔥"
+ },
+ "SkyworkAI/SkyReels-V1": {
+  "id": "3ghhLPWqRNs",
+  "titulo": "Análise do Skyrover V1 - NÃO COMPRE antes de assistir a isto!"
+ },
+ "Tencent-Hunyuan/HunyuanVideo": {
+  "id": "bj88OJ2xYWs",
+  "titulo": "100% GRÁTIS: NOVA IA Chinesa Cria VÍDEOS e IMAGENS ILIMITADAS (Hunyuan)"
+ },
+ "Wan-Video/Wan2.2": {
+  "id": "Hs-psVyCWis",
+  "titulo": "Gerar Vídeos 100% Grátis ficou ainda melhor - Wan 2.2"
+ },
+ "ali-vilab/VGen": {
+  "id": "RMFCH4V70oI",
+  "titulo": "Como configurar e usar o vgen?"
+ },
+ "genmoai/mochi": {
+  "id": "UgjCQ3IqpmY",
+  "titulo": "MOCHI | Mochi fácil com 3 ingredientes no microondas"
+ },
+ "huggingface/diffusers": {
+  "id": "1MtJOGXVZ1w",
+  "titulo": "Conceitos de DIFUSÃO explicados - Como funcionam os difusores acústicos e qual é o ideal para você"
+ },
+ "zai-org/CogVideo": {
+  "id": "SvO5uA1JdkQ",
+  "titulo": "GUIA COMPLETO para usar COGVIDEO (COGVIDEOX) localmente e na nuvem"
  }
 }
