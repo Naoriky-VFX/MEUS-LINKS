@@ -499,26 +499,104 @@ for chave, (titulo, dica) in SIMPLES.items():
 
 # 3) raiz
 cartoes = []
-for grupo, (titulo, dica, subs) in GRUPOS.items():
-    total_grupo = sum(len(ITENS.get(f"{grupo}/{s}", [])) for s in subs)
+for grupo, (titulo, _, subs) in GRUPOS.items():
+    total_grupo = sum(len(itens_validos(f"{grupo}/{s}")) for s in subs)
     cartoes.append(f'<a class="categoria" href="{grupo}/index.html"><h2>{html.escape(titulo)}</h2>'
                    f'<p>{html.escape(dica)}</p>'
                    f'<div class="num">{total_grupo} links · {len(subs)} pasta{"s" if len(subs) > 1 else ""}</div></a>')
 for chave, (titulo, dica) in SIMPLES.items():
     cartoes.append(f'<a class="categoria" href="{chave}/index.html"><h2>{html.escape(titulo)}</h2>'
                    f'<p>{html.escape(dica)}</p>'
-                   f'<div class="num">{len(ITENS.get(chave, []))} links</div></a>')
+                   f'<div class="num">{len(itens_validos(chave))} links</div></a>')
 
-total = sum(len(v) for v in ITENS.values())
+total = sum(len(itens_validos(k)) for k in ITENS)
+
+# ---------- dados para a busca da tela inicial ----------
+lista = []
+for grupo, (titulo_grupo, _, subs) in GRUPOS.items():
+    for slug in subs:
+        for nome, descricao in itens_validos(f"{grupo}/{slug}"):
+            url = url_de(nome)
+            lista.append({
+                "nome": nome,
+                "desc": descricao,
+                "url": url,
+                "cat": f"{titulo_grupo} · {NOMES_SUB.get(slug, slug)}",
+                "img": MANIFEST.get(nome) or "",
+                "video": (VIDEOS.get(nome) or {}).get("id") or "",
+            })
+for chave, (titulo_simples, _) in SIMPLES.items():
+    for nome, descricao in itens_validos(chave):
+        url = url_de(nome)
+        lista.append({
+            "nome": nome,
+            "desc": descricao,
+            "url": url,
+            "cat": titulo_simples,
+            "img": MANIFEST.get(nome) or "",
+            "video": (VIDEOS.get(nome) or {}).get("id") or "",
+        })
+
+with open(os.path.join(RAIZ, "dados.json"), "w", encoding="utf-8") as f:
+    json.dump(lista, f, ensure_ascii=False)
+
 escrever("index.html", f"""<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Links - Naoriky</title><style>{CSS}</style></head>
+<title>MEUS LINKS GITHUB + TUTORIAL</title><style>{CSS}</style></head>
 <body><div class="wrap">
-<header><h1>Links</h1><p>{total} projetos salvos, separados por assunto.</p></header>
+<header><h1>MEUS LINKS GITHUB + TUTORIAL</h1><p>{total} projetos com print e vídeo tutorial, separados por assunto.</p></header>
+<input class="busca" id="busca" placeholder="Buscar em todos os links (nome, descrição, categoria)…" autocomplete="off">
+<div class="contagem" id="contagem" style="display:none"></div>
+<div id="resultados"></div>
 <div class="categorias">{''.join(cartoes)}</div>
 <footer>Gerado a partir dos favoritos do Firefox · atualizado em 12/11/2026</footer>
-</div></body></html>""")
+</div>
+<script>
+const LISTA = {json.dumps(lista, ensure_ascii=False)};
+const campo = document.getElementById('busca');
+const alvo = document.getElementById('resultados');
+const contagem = document.getElementById('contagem');
+const categorias = document.querySelector('.categorias');
+
+function limpar(t) {{
+  return (t || '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '');
+}}
+
+function linha(item) {{
+  const img = item.img ? '<img src="img/' + item.img + '" loading="lazy" alt="">' : '';
+  const video = item.video
+    ? '<a class="vid" href="https://www.youtube.com/watch?v=' + item.video + '" target="_blank" rel="noopener"><img src="img/yt/' + item.video + '.jpg" loading="lazy" alt=""></a>'
+    : '<span class="sem-img">sem vídeo</span>';
+  return '<tr><td class="video">' + video + '</td><td class="thumb"><a href="' + item.url + '" target="_blank" rel="noopener">' + img + '</a></td>' +
+    '<td><a href="' + item.url + '" target="_blank" rel="noopener">' + item.nome + '</a></td>' +
+    '<td class="desc">' + item.desc + '</td><td class="pasta">' + item.cat + '</td></tr>';
+}}
+
+function mostrar(itens) {{
+  contagem.style.display = '';
+  contagem.textContent = itens.length + (itens.length === 1 ? ' resultado' : ' resultados');
+  alvo.innerHTML = itens.length
+    ? '<table><thead><tr><th>Vídeo</th><th>Print</th><th>Projeto</th><th>O que faz</th><th class="col-pasta">Categoria</th></tr></thead><tbody>' +
+      itens.slice(0, 80).map(linha).join('') + '</tbody></table>'
+    : '<p class="sem-img" style="padding:16px 0">Nada encontrado para essa busca.</p>';
+}}
+
+campo.addEventListener('input', () => {{
+  const termo = limpar(campo.value.trim());
+  if (termo.length < 2) {{
+    alvo.innerHTML = '';
+    contagem.style.display = 'none';
+    categorias.style.display = '';
+    return;
+  }}
+  categorias.style.display = 'none';
+  const achados = LISTA.filter((i) =>
+    limpar(i.nome).includes(termo) || limpar(i.desc).includes(termo) || limpar(i.cat).includes(termo));
+  mostrar(achados);
+}});
+</script>
+</body></html>""")
 
 print("pasta:", RAIZ)
 for grupo, (titulo, _, subs) in GRUPOS.items():
