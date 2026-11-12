@@ -329,18 +329,23 @@ ITENS = {
     ],
 }
 
+# "IA local" e "Painel de APIs" ficam DENTRO do grupo IA (cada um vira uma pasta)
+ITENS["ia/local"] = (
+    ITENS.pop("ia-local/motores")
+    + ITENS.pop("ia-local/interfaces")
+    + ITENS.pop("ia-local/imagem-video")
+    + ITENS.pop("ia-local/agentes-locais")
+)
+ITENS["ia/api-painel"] = ITENS.pop("painel-apis/roteadores") + ITENS.pop("painel-apis/observabilidade")
+
 # grupo -> (titulo, dica, subpastas)
 GRUPOS = {
-    "ia-local": ("IA local", "Rodar IA no seu próprio PC: motores, interfaces, imagem/vídeo e agentes.",
-                 ["motores", "interfaces", "imagem-video", "agentes-locais"]),
-    "painel-apis": ("Painel de APIs", "Gateways e roteadores de LLM: uma chave, vários modelos.",
-                    ["roteadores", "observabilidade"]),
     "consoles": ("Consoles", "Desbloqueio, payloads, instaladores e emuladores por console.",
                  ["switch", "switch-2", "playstation-4", "playstation-5", "ps-vita", "wii-u"]),
     "servidores": ("Servidores de jogos online", "Servidores e ferramentas de Lineage II e Palworld.",
                    ["lineage-ii", "palworld"]),
     "ia": ("IA", "Agentes, terminal, APIs/MCP, painéis, engenharia reversa e modelos locais.",
-           ["terminal", "agentes", "workspaces", "canal", "api", "paineis", "voz", "reverse", "whatsapp"]),
+           ["terminal", "agentes", "workspaces", "canal", "api", "paineis", "local", "api-painel", "voz", "reverse", "whatsapp"]),
 }
 
 NOMES_SUB = {
@@ -357,6 +362,8 @@ NOMES_SUB = {
     "workspaces": "Workspaces de agentes",
     "canal": "Canais",
     "voz": "Voz & áudio",
+    "local": "IA local",
+    "api-painel": "Painel de APIs",
     "motores": "Motores (runtimes)",
     "interfaces": "Interfaces de chat",
     "imagem-video": "Imagem & vídeo local",
@@ -384,6 +391,8 @@ DICAS_SUB = {
     "workspaces": "Mesas de trabalho para rodar e organizar vários agentes (tipo a Alethe).",
     "canal": "Canais e perfis que ensinam, com os vídeos de cada um.",
     "voz": "TTS, clonagem de voz, transcrição e conversão de fala.",
+    "local": "Rodar IA no seu PC: motores, interfaces, imagem/vídeo e agentes locais.",
+    "api-painel": "Gateways e roteadores de LLM (uma chave, vários modelos) + observabilidade.",
     "motores": "Ollama, llama.cpp, vLLM, GPT4All, LocalAI e afins.",
     "interfaces": "Open WebUI, LobeHub, AnythingLLM, LibreChat, SillyTavern.",
     "imagem-video": "Stable Diffusion, ComfyUI, Fooocus e InvokeAI.",
