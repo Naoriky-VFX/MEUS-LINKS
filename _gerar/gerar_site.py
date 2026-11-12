@@ -194,6 +194,29 @@ ITENS = {
         ("wppconnect-team/wppconnect", "Automação do WhatsApp Web para Node.js/TypeScript."),
     ],
 
+    "painel-apis/roteadores": [
+        ("cheaper-inference/OmniRoute", "86.8k★ · gateway de IA grátis: um endpoint para 375 provedores (150+ grátis)."),
+        ("BerriAI/litellm", "63k★ · chama 100+ APIs de LLM no formato OpenAI, com controle de chaves e custo."),
+        ("QuantumNous/new-api", "51.8k★ · gateway self-hosted compatível com OpenAI, Claude e Gemini."),
+        ("songquanpeng/one-api", "37.4k★ · gestão e distribuição de chaves de API (OpenAI, Claude, Gemini, DeepSeek)."),
+        ("decolua/9router", "32.3k★ · conecta Claude Code, Codex, Cursor e Cline em modelos grátis (a base do seu painel)."),
+        ("Portkey-AI/gateway", "13.4k★ · gateway rápido com guardrails, roteando para 1.600+ LLMs."),
+        ("maximhq/bifrost", "9.5k★ · gateway de LLM e MCP de alta performance."),
+        ("coaidev/coai", "9.3k★ · solução multi-tenant de IA com painel admin e cobrança."),
+        ("mnfst/llm-gateway", "7.6k★ · gateway de LLM open-source."),
+        ("tbphp/gpt-load", "7.2k★ · gateway self-hosted para várias contas/chaves com balanceamento."),
+        ("katanemo/plano", "7.1k★ · proxy/data plane para apps com agentes, com roteamento inteligente."),
+        ("BlockRunAI/ClawRouter", "6.7k★ · roteador de LLM para agentes autônomos (uma carteira só)."),
+        ("vllm-project/semantic-router", "6.5k★ · camada de decisão programável para escolher o modelo certo."),
+        ("lm-sys/RouteLLM", "5.7k★ · framework para rotear entre modelos caros e baratos e economizar."),
+        ("qixing-jk/all-api-hub", "5k★ · painel de contas/uso (saldo, check-in, chaves) para gateways."),
+    ],
+    "painel-apis/observabilidade": [
+        ("langfuse/langfuse", "37.4k★ · plataforma de observabilidade, eval e prompt management de LLM."),
+        ("tensorzero/tensorzero", "11.7k★ · LLMOps: gateway + observabilidade + experimentos num lugar."),
+        ("langwatch/langwatch", "5k★ · observabilidade e avaliação de agentes para times de IA."),
+    ],
+
     "ports": [
         ("BlackLabelHQ/SymphonyRecomp", "Recompilação de Castlevania: Symphony of the Night para PC."),
         ("Revivedx/SavageWindRecomp", "Recompilação estática de Zelda: Breath of the Wild (em progresso)."),
@@ -224,6 +247,8 @@ ITENS = {
 
 # grupo -> (titulo, dica, subpastas)
 GRUPOS = {
+    "painel-apis": ("Painel de APIs", "Gateways e roteadores de LLM: uma chave, vários modelos.",
+                    ["roteadores", "observabilidade"]),
     "consoles": ("Consoles", "Desbloqueio, payloads, instaladores e emuladores por console.",
                  ["switch", "switch-2", "playstation-4", "playstation-5", "ps-vita", "wii-u"]),
     "servidores": ("Servidores de jogos online", "Servidores e ferramentas de Lineage II e Palworld.",
@@ -249,6 +274,8 @@ NOMES_SUB = {
     "reverse": "Engenharia reversa",
     "modelos-locais": "Modelos locais",
     "whatsapp": "APIs de WhatsApp",
+    "roteadores": "Roteadores & gateways",
+    "observabilidade": "Observabilidade & evals",
 }
 
 DICAS_SUB = {
@@ -268,6 +295,8 @@ DICAS_SUB = {
     "reverse": "Ghidra, x64dbg, radare2, Frida e IA para engenharia reversa.",
     "modelos-locais": "IA rodando no seu PC (chat, voz, imagem).",
     "whatsapp": "Baileys, Evolution API e WPPConnect — WhatsApp fora da Meta.",
+    "roteadores": "9router, OmniRoute, LiteLLM, new-api, one-api e afins.",
+    "observabilidade": "Langfuse, TensorZero e LangWatch (logs, custo, avaliação).",
 }
 
 # páginas de um nível só (sem subpasta)

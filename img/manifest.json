@@ -161,5 +161,22 @@
  "janhq/jan": "janhq__jan.png",
  "microsoft/markitdown": "microsoft__markitdown.png",
  "openai/whisper": "openai__whisper.png",
- "presenton/presenton": "presenton__presenton.gif"
+ "presenton/presenton": "presenton__presenton.gif",
+ "BlockRunAI/ClawRouter": "BlockRunAI__ClawRouter.png",
+ "Portkey-AI/gateway": "Portkey-AI__gateway.gif",
+ "QuantumNous/new-api": "QuantumNous__new-api.jpg",
+ "cheaper-inference/OmniRoute": "cheaper-inference__OmniRoute.png",
+ "coaidev/coai": "coaidev__coai.png",
+ "decolua/9router": "decolua__9router.png",
+ "katanemo/plano": "katanemo__plano.png",
+ "langfuse/langfuse": "langfuse__langfuse.png",
+ "langwatch/langwatch": "langwatch__langwatch.jpg",
+ "lm-sys/RouteLLM": "lm-sys__RouteLLM.png",
+ "maximhq/bifrost": "maximhq__bifrost.png",
+ "mnfst/llm-gateway": "mnfst__llm-gateway.gif",
+ "qixing-jk/all-api-hub": "qixing-jk__all-api-hub.png",
+ "songquanpeng/one-api": "songquanpeng__one-api.png",
+ "tbphp/gpt-load": "tbphp__gpt-load.png",
+ "tensorzero/tensorzero": "tensorzero__tensorzero.png",
+ "vllm-project/semantic-router": "vllm-project__semantic-router.png"
 }

@@ -602,5 +602,81 @@
  "presenton/presenton": {
   "id": "TQXuSxfJGdE",
   "titulo": "Presenton GitHub Tutorial: Self-Hosted AI Presentations With Presenton"
+ },
+ "BerriAI/litellm": {
+  "id": "UoRKlB_tTjU",
+  "titulo": "LiteLLM: API Unificada para Mais de 100 Modelos LLM com Proxy e Load Balancer | Tutorial Completo"
+ },
+ "BlockRunAI/ClawRouter": {
+  "id": "_JVvsTS8L5Q",
+  "titulo": "TinyClaw + ClawRouter: IA multiagente e roteamento inteligente baseado em modelos explicados"
+ },
+ "Portkey-AI/gateway": {
+  "id": "WT0SjvKJ6Fg",
+  "titulo": "O que é Gateway?"
+ },
+ "QuantumNous/new-api": {
+  "id": "fbAu8GEjIz8",
+  "titulo": "NOVO PROVEDOR LIBEROU CLAUDE, GEMINI E KIMI QUASE DE GRAÇA! 😱"
+ },
+ "cheaper-inference/OmniRoute": {
+  "id": "razqHMAxLb4",
+  "titulo": "Como usar Claude Code GRÁTIS e ILIMITADO com Omniroute"
+ },
+ "coaidev/coai": {
+  "id": "TaZrkzutle8",
+  "titulo": "🚀COMO ESTUDAR PARA O ENCCEJA: O QUE CAI NA PROVA E QUANTAS QUESTÕES PRECISA ACERTAR! (Débora Aladim)"
+ },
+ "decolua/9router": {
+  "id": "GegI71YY4ms",
+  "titulo": "Como Usar o 9Router: IA pra Programar Infinita e DE GRAÇA #9router #ia #iagratis #claudecode #gratis"
+ },
+ "gethomepage/homepage": {
+  "id": "KIHLVtaZ6Ek",
+  "titulo": "Passo a Passo ''You're Under Arrest - ILLIT'' em Português - Espelhado/Mirrored"
+ },
+ "katanemo/plano": {
+  "id": "gfE8nArWQ1Y",
+  "titulo": "[Em Português] Play 2.13 | Tutorial completo (todos os planos) | Metrica Sports"
+ },
+ "langfuse/langfuse": {
+  "id": "ihL7v89lZhE",
+  "titulo": "Overview e primeiros passos com Langfuse"
+ },
+ "langwatch/langwatch": {
+  "id": "dZG44oRTz84",
+  "titulo": "LangWatch LLM Optimization Studio"
+ },
+ "lm-sys/RouteLLM": {
+  "id": "jUnXLwiQy60",
+  "titulo": "RouteLLM - use o modelo certo para cada pergunta"
+ },
+ "maximhq/bifrost": {
+  "id": "xPdAOvvxtLs",
+  "titulo": "Bifrost: High-Speed Open Source AI Gateway"
+ },
+ "mnfst/llm-gateway": {
+  "id": "UoRKlB_tTjU",
+  "titulo": "LiteLLM: API Unificada para Mais de 100 Modelos LLM com Proxy e Load Balancer | Tutorial Completo"
+ },
+ "qixing-jk/all-api-hub": {
+  "id": "dPhwFSzTxfU",
+  "titulo": "Welcome to Zyla API Hub"
+ },
+ "songquanpeng/one-api": {
+  "id": "_9yEJGh2mCE",
+  "titulo": "oneAPI: Compiladores de C/C++ e Fortran - Ferramenta Data Parallel C++ (DPC++) - Jupyter Notebook."
+ },
+ "tbphp/gpt-load": {
+  "id": "73FqJRja_kE",
+  "titulo": "CHAT GPT: Você Chegou ao Limite de Criação de Imagens. (COMO RESOLVER)"
+ },
+ "tensorzero/tensorzero": {
+  "id": "j1sqPRkWnnA",
+  "titulo": "TensorZero Demo"
+ },
+ "vllm-project/semantic-router": {
+  "id": "CGgxhaTCB_k",
+  "titulo": "vLLM Semantic Router Explicado: Direcione Requisições de IA por meio de uma única API"
  }
 }
