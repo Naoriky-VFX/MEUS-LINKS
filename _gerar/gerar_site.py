@@ -301,6 +301,7 @@ DICAS_SUB = {
 
 # páginas de um nível só (sem subpasta)
 SIMPLES = {
+    "canais": ("Canais", "Perfis e canais que ensinam — com os vídeos de cada um."),
     "ports": ("Ports & mods de jogos", "Jogos de console rodando nativo no PC e ferramentas de jogos."),
     "software": ("Windows & software", "Ativadores, CapCut, upscalers e utilitários."),
     "estudos": ("Estudos & livros", "Bibliotecas de programação para estudar."),
@@ -422,6 +423,74 @@ def escrever(relativo, conteudo):
         f.write(conteudo)
 
 
+# canais (perfis + vídeos) — aba "Canais"
+CANAIS = [
+    {
+        "nome": "Kauã Miguel (Kc1t)",
+        "url": "https://github.com/Kc1t",
+        "print": "canal-kc1t.png",
+        "bio": "Dev brasileiro: engenharia reversa com IA, orquestração de agentes e skills para Claude Code / Codex.",
+        "videos": [
+            ("fbSyFc-izIg", "Como usar o REA: engenharia reversa com IA de graça"),
+            ("ujW-e6w3NQA", "Como orquestrar agentes de IA com uma skill de graça"),
+            ("8jvrucR7QCU", "Pare de usar 1 agente por vez: orquestre agentes de IA"),
+        ],
+    },
+]
+
+
+def pagina_canais(relativo, titulo, dica, voltar):
+    cartoes = []
+    for canal in CANAIS:
+        videos = "".join(
+            f'<a class="video-card" href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener">'
+            f'<img src="../img/yt/{vid}.jpg" loading="lazy" alt="">'
+            f'<span>{html.escape(titulo_vid)}</span></a>'
+            for vid, titulo_vid in canal["videos"]
+        )
+        cartoes.append(f"""
+<div class="canal">
+  <div class="canal-topo">
+    <a href="{html.escape(canal['url'])}" target="_blank" rel="noopener" class="canal-print">
+      <img src="../img/{html.escape(canal['print'])}" loading="lazy" alt="">
+    </a>
+    <div class="canal-info">
+      <h2>{html.escape(canal['nome'])}</h2>
+      <p>{html.escape(canal['bio'])}</p>
+      <a class="canal-link" href="{html.escape(canal['url'])}" target="_blank" rel="noopener">github.com/Kc1t →</a>
+    </div>
+  </div>
+  <div class="videos">{videos}</div>
+</div>""")
+
+    escrever(relativo, f"""<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{html.escape(titulo)} - Links</title><style>{CSS}
+.canal{{background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:20px;margin-top:22px}}
+.canal-topo{{display:flex;gap:18px;flex-wrap:wrap}}
+.canal-print img{{width:330px;max-width:100%;border-radius:12px;border:1px solid var(--borda);display:block}}
+.canal-info{{flex:1 1 300px}}
+.canal-info h2{{margin:0 0 6px;font-size:1.2rem}}
+.canal-info p{{margin:0 0 10px;color:var(--suave);font-size:.9rem}}
+.canal-link{{color:var(--roxo);text-decoration:none;font-weight:700;font-size:.9rem}}
+.canal-link:hover{{text-decoration:underline}}
+.videos{{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:18px}}
+.video-card{{display:block;background:var(--card2);border:1px solid var(--borda);border-radius:14px;padding:10px;
+text-decoration:none;color:var(--texto);transition:.15s}}
+.video-card:hover{{border-color:var(--roxo);transform:translateY(-2px)}}
+.video-card img{{width:100%;border-radius:10px;display:block}}
+.video-card span{{display:block;margin-top:8px;font-size:.84rem;line-height:1.3}}
+</style></head>
+<body><div class="wrap">
+<a class="voltar" href="{voltar[0]}">← {html.escape(voltar[1])}</a>
+<header><h1>{html.escape(titulo)}</h1><p>{html.escape(dica)}</p></header>
+{''.join(cartoes)}
+<footer>{html.escape(titulo)} · atualizado em 12/11/2026</footer>
+</div></body></html>""")
+
+
+
 def pagina_tabela(relativo, titulo, dica, itens, voltar):
     subida = "../" * relativo.count("/")
     linhas = []
@@ -532,6 +601,9 @@ for grupo, (titulo, dica, subs) in GRUPOS.items():
 
 # 2) páginas de um nível
 for chave, (titulo, dica) in SIMPLES.items():
+    if chave == "canais":
+        pagina_canais(f"{chave}/index.html", titulo, dica, ("../index.html", "todos os grupos"))
+        continue
     pagina_tabela(f"{chave}/index.html", titulo, dica, ITENS.get(chave, []),
                   ("../index.html", "todos os grupos"))
 
@@ -543,9 +615,10 @@ for grupo, (titulo, _, subs) in GRUPOS.items():
                    f'<p>{html.escape(dica)}</p>'
                    f'<div class="num">{total_grupo} links · {len(subs)} pasta{"s" if len(subs) > 1 else ""}</div></a>')
 for chave, (titulo, dica) in SIMPLES.items():
+    quantidade = len(CANAIS) if chave == "canais" else len(itens_validos(chave))
     cartoes.append(f'<a class="categoria" href="{chave}/index.html"><h2>{html.escape(titulo)}</h2>'
                    f'<p>{html.escape(dica)}</p>'
-                   f'<div class="num">{len(itens_validos(chave))} links</div></a>')
+                   f'<div class="num">{quantidade} {"canais" if chave == "canais" else "links"}</div></a>')
 
 total = sum(len(itens_validos(k)) for k in ITENS)
 

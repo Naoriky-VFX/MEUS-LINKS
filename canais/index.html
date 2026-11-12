@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Canais - Links</title><style>
+:root{--fundo:#0b0710;--card:#160f22;--card2:#1d1429;--borda:#3a2f4e;--texto:#f4f0ff;--suave:#9a8bb5;--roxo:#a855f7}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#2a1145 0,#0b0710 60%);
+color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:32px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:1.7rem}
+header p{margin:0;color:var(--suave)}
+.voltar{display:inline-block;margin-bottom:18px;color:var(--roxo);text-decoration:none;font-weight:700;font-size:.9rem}
+.voltar:hover{text-decoration:underline}
+.categorias{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:26px}
+.categoria{display:block;background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:20px;
+text-decoration:none;color:var(--texto);transition:.15s}
+.categoria:hover{border-color:var(--roxo);background:var(--card2)}
+.categoria h2{margin:0 0 6px;font-size:1.05rem}
+.categoria p{margin:0;color:var(--suave);font-size:.84rem}
+.categoria .num{margin-top:12px;font-size:.78rem;color:var(--roxo);font-weight:800}
+.busca{width:100%;margin-top:18px;padding:13px 16px;border-radius:12px;border:1px solid var(--borda);
+background:#120c1c;color:var(--texto);font-size:.95rem}
+.busca:focus{outline:none;border-color:var(--roxo)}
+.contagem{margin-top:10px;font-size:.8rem;color:var(--suave)}
+table{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--borda);
+border-radius:14px;overflow:hidden}
+th{text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);
+padding:12px 14px;background:#1a1126;border-bottom:1px solid var(--borda);white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid #241a33;font-size:.88rem;vertical-align:top}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:#1b1228}
+td a{color:var(--texto);text-decoration:none;font-family:ui-monospace,Consolas,monospace;font-weight:600}
+td a:hover{color:var(--roxo);text-decoration:underline}
+td.desc{color:#cfc3e6}
+td.pasta{color:#6b5d85;font-size:.72rem;font-family:ui-monospace,Consolas,monospace}
+td.thumb{width:180px}
+td.thumb img{width:160px;border-radius:8px;border:1px solid var(--borda);display:block;background:#0e0916}
+td.thumb a:hover img{border-color:var(--roxo)}
+td.video{width:170px}
+td.video img{width:150px;border-radius:8px;border:1px solid var(--borda);display:block}
+td.video a{text-decoration:none}
+td.video a:hover img{border-color:var(--roxo)}
+.titulo-video{display:block;margin-top:4px;font-size:.68rem;color:var(--suave);line-height:1.25;
+font-family:system-ui,sans-serif;font-weight:500}
+.sem-img{color:#4d4266;font-size:.72rem}
+footer{margin-top:40px;color:#5d5175;font-size:.76rem;text-align:center}
+@media (max-width:720px){ td.pasta{display:none} th.col-pasta{display:none} }
+
+.canal{background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:20px;margin-top:22px}
+.canal-topo{display:flex;gap:18px;flex-wrap:wrap}
+.canal-print img{width:330px;max-width:100%;border-radius:12px;border:1px solid var(--borda);display:block}
+.canal-info{flex:1 1 300px}
+.canal-info h2{margin:0 0 6px;font-size:1.2rem}
+.canal-info p{margin:0 0 10px;color:var(--suave);font-size:.9rem}
+.canal-link{color:var(--roxo);text-decoration:none;font-weight:700;font-size:.9rem}
+.canal-link:hover{text-decoration:underline}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:18px}
+.video-card{display:block;background:var(--card2);border:1px solid var(--borda);border-radius:14px;padding:10px;
+text-decoration:none;color:var(--texto);transition:.15s}
+.video-card:hover{border-color:var(--roxo);transform:translateY(-2px)}
+.video-card img{width:100%;border-radius:10px;display:block}
+.video-card span{display:block;margin-top:8px;font-size:.84rem;line-height:1.3}
+</style></head>
+<body><div class="wrap">
+<a class="voltar" href="../index.html">← todos os grupos</a>
+<header><h1>Canais</h1><p>Perfis e canais que ensinam — com os vídeos de cada um.</p></header>
+
+<div class="canal">
+  <div class="canal-topo">
+    <a href="https://github.com/Kc1t" target="_blank" rel="noopener" class="canal-print">
+      <img src="../img/canal-kc1t.png" loading="lazy" alt="">
+    </a>
+    <div class="canal-info">
+      <h2>Kauã Miguel (Kc1t)</h2>
+      <p>Dev brasileiro: engenharia reversa com IA, orquestração de agentes e skills para Claude Code / Codex.</p>
+      <a class="canal-link" href="https://github.com/Kc1t" target="_blank" rel="noopener">github.com/Kc1t →</a>
+    </div>
+  </div>
+  <div class="videos"><a class="video-card" href="https://www.youtube.com/watch?v=fbSyFc-izIg" target="_blank" rel="noopener"><img src="../img/yt/fbSyFc-izIg.jpg" loading="lazy" alt=""><span>Como usar o REA: engenharia reversa com IA de graça</span></a><a class="video-card" href="https://www.youtube.com/watch?v=ujW-e6w3NQA" target="_blank" rel="noopener"><img src="../img/yt/ujW-e6w3NQA.jpg" loading="lazy" alt=""><span>Como orquestrar agentes de IA com uma skill de graça</span></a><a class="video-card" href="https://www.youtube.com/watch?v=8jvrucR7QCU" target="_blank" rel="noopener"><img src="../img/yt/8jvrucR7QCU.jpg" loading="lazy" alt=""><span>Pare de usar 1 agente por vez: orquestre agentes de IA</span></a></div>
+</div>
+<footer>Canais · atualizado em 12/11/2026</footer>
+</div></body></html>
