@@ -754,5 +754,65 @@
  "ggml-org/whisper.cpp": {
   "id": "qEmRZPUdEiw",
   "titulo": "Transcrição e Sumarização de vídeos com OpenAI Whisper"
+ },
+ "KoljaB/RealtimeSTT": {
+  "id": "atE9hVDN1wk",
+  "titulo": "Second demo: fast, high quality realtime speech to text with new RealtimeSTT library v0.3.0"
+ },
+ "NVIDIA-NeMo/Speech": {
+  "id": "4nJ7XZXJiPQ",
+  "titulo": "⭐ Speechelo Português | O melhor Text-to-Speech online"
+ },
+ "PaddlePaddle/PaddleSpeech": {
+  "id": "OmC40FaRGz8",
+  "titulo": "PaddlePaddle/PaddleSpeech - Gource visualisation"
+ },
+ "SWivid/F5-TTS": {
+  "id": "WTbIVsCq3eg",
+  "titulo": "COMO CRIAR VOZES COM IA GRÁTIS PT-BR no ComfyUI | Tutorial F5-TTS em Português"
+ },
+ "SYSTRAN/faster-whisper": {
+  "id": "y15070biffg",
+  "titulo": "Whisper OpenAI: Guia Completo de Transcrição com Inteligência Artificial (vídeo e áudio)"
+ },
+ "Vaibhavs10/insanely-fast-whisper": {
+  "id": "k6nIxWGdrS4",
+  "titulo": "Transcrição de fala em texto em tempo real com IA SUPER rápida - Whisper/Python mais rápido"
+ },
+ "chidiwilliams/buzz": {
+  "id": "WCOCzoL-Sf4",
+  "titulo": "COMO JOGAR BEM DE BUZZ 🔥GUIA COMPLETO"
+ },
+ "jhj0517/Whisper-WebUI": {
+  "id": "xN4ETjo3Vrk",
+  "titulo": "Whisper-WebUI na NUVEM com MIMICPC: Transcreva e Traduza Áudio sem Servidor"
+ },
+ "livekit/agents": {
+  "id": "_F9AetJGiAU",
+  "titulo": "2026 Best AI Agent Video Editor (Plot Party Agentic Canvas Tutorial)"
+ },
+ "m-bain/whisperX": {
+  "id": "syN9_Qm7Cwk",
+  "titulo": "Troquei a OpenAI pelo meu próprio modelo de transcrição de vídeos (WhisperX, Modal e Trigger.dev)"
+ },
+ "pipecat-ai/pipecat": {
+  "id": "Uxz3Uo9py_4",
+  "titulo": "Como criar seu primeiro Agente de Voz com IA usando Pipecat: Passo a passo"
+ },
+ "pyannote/pyannote-audio": {
+  "id": "YoyJI6Es0y4",
+  "titulo": "O que é o Pyannote Speaker Diarization 3.1?"
+ },
+ "speechbrain/speechbrain": {
+  "id": "XETiKbN9ojE",
+  "titulo": "The SpeechBrain Project"
+ },
+ "vocodedev/vocode-core": {
+  "id": "o7QWA_SMY9o",
+  "titulo": "Apresentando o Behringer Vocoder VC16"
+ },
+ "yl4579/StyleTTS2": {
+  "id": "JoGk4wvebPc",
+  "titulo": "Instalando o Pinokio na GTX 1070TI Em 2025 + Testes no StyleTTS2"
  }
 }

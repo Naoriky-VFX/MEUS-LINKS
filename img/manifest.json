@@ -197,5 +197,16 @@
  "rany2/edge-tts": "rany2__edge-tts.png",
  "rhasspy/piper": "rhasspy__piper.png",
  "ggml-org/whisper.cpp": "ggml-org__whisper.cpp.png",
- "moonshine-ai/moonshine": "moonshine-ai__moonshine.png"
+ "moonshine-ai/moonshine": "moonshine-ai__moonshine.png",
+ "NVIDIA-NeMo/Speech": "NVIDIA-NeMo__Speech.png",
+ "PaddlePaddle/PaddleSpeech": "PaddlePaddle__PaddleSpeech.png",
+ "Vaibhavs10/insanely-fast-whisper": "Vaibhavs10__insanely-fast-whisper.png",
+ "chidiwilliams/buzz": "chidiwilliams__buzz.png",
+ "jhj0517/Whisper-WebUI": "jhj0517__Whisper-WebUI.png",
+ "livekit/agents": "livekit__agents.png",
+ "m-bain/whisperX": "m-bain__whisperX.png",
+ "pipecat-ai/pipecat": "pipecat-ai__pipecat.png",
+ "pyannote/pyannote-audio": "pyannote__pyannote-audio.png",
+ "speechbrain/speechbrain": "speechbrain__speechbrain.png",
+ "vocodedev/vocode-core": "vocodedev__vocode-core.png"
 }
