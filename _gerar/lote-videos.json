@@ -1,0 +1,106 @@
+[
+ {
+  "repo": "lucianodiisouza/flecha-browser",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "Flecha",
+  "desc": "Navegador open-source estilo Arc para macOS: Chromium com Spaces, barra de comando e MCP embutido.",
+  "video": "CS0FoPunGww",
+  "titulo": "COMO FLECHA ( playback ) Samuel Dias - Carol Braga"
+ },
+ {
+  "repo": "fzakaria/rewindvm",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "Rewind VM",
+  "desc": "VMs Linux determinísticas: dá pra rebobinar, congelar e bifurcar pra achar e repetir build/teste que falha.",
+  "video": "T7xoL5NlgmI",
+  "titulo": "Rewind VM 2025 Recap"
+ },
+ {
+  "repo": "uditya-kumar/MultiPath",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "MultiPath",
+  "desc": "Junta Wi-Fi, cabo e 4G do celular numa conexão só, com balanceamento por app (Tauri + Rust, sem servidor).",
+  "video": "Wp0Kr3B64tA",
+  "titulo": "Tutorial de Multipath TCP"
+ },
+ {
+  "repo": "oMaN-Rod/Pulsar",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "Pulsar",
+  "desc": "Estatísticas do PC ao vivo direto na barra de tarefas."
+ },
+ {
+  "repo": "ZigaoWang/zigzag",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "Zigzag",
+  "desc": "Navegador leve para Mac: rápido e sem peso."
+ },
+ {
+  "repo": "SeniorMatt/kinoklip",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "Kinoklip",
+  "desc": "Editor de vídeo não-linear acelerado por GPU para Linux (Qt 6 + FFmpeg)."
+ },
+ {
+  "repo": "howznguyen/shorts-kit",
+  "pasta": "ia/agentes",
+  "cat": "IA · Agentes",
+  "nome": "shorts-kit",
+  "desc": "Shorts verticais narrados (TikTok/Reels/Shorts) feitos por agente de código + Remotion, com skills e estoques prontos."
+ },
+ {
+  "repo": "SaarthurR/atticus-mac",
+  "pasta": "ia/voz",
+  "cat": "IA · Voz & áudio",
+  "nome": "Atticus",
+  "desc": "Assistente de voz grátis para Mac, sem API key: lembra de você e aprende seus atalhos (⌃⌥Espaço e fala)."
+ },
+ {
+  "repo": "justrach/nanoui",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "nanoui",
+  "desc": "Apps desktop em Zig com UI nativa desenhada na GPU (ou frontend web)."
+ },
+ {
+  "repo": "ItsAlphaNeon/Lemon-Studio",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "Lemon Studio",
+  "desc": "DAW open-source e grátis, no estilo que você já sabe usar."
+ },
+ {
+  "repo": "blendi-remade/dioramas",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "Dioramas",
+  "desc": "Framework open-source para sites 3D cinematográficos e interativos, com assets gerados por IA."
+ },
+ {
+  "repo": "chenxiachan/textfold",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "TextFold",
+  "desc": "Dobra papéis, páginas, arquivos e respostas de IA em 5 níveis de detalhe — do resumo ao texto original."
+ },
+ {
+  "repo": "Leonxlnx/cinetic",
+  "pasta": "ia/agentes",
+  "cat": "IA · Agentes",
+  "nome": "cinetic",
+  "desc": "Filmes de lançamento e motion design feitos a partir de código, dirigidos pelo seu agente."
+ },
+ {
+  "repo": "kevinraymond/florilegium",
+  "pasta": "software",
+  "cat": "Windows & software",
+  "nome": "florilegium",
+  "desc": "Margens florais azul-Delft geradas por procedimento para LuaLaTeX, com plantas e visitantes vindos de genomas."
+ }
+]
