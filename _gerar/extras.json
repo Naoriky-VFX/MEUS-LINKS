@@ -1,0 +1,160 @@
+{
+ "ia/agentes": [
+  [
+   "rerun-build/rerun",
+   "AI coworkers que rodam a sua fila de trabalho. Self-hostable (AGPL)."
+  ],
+  [
+   "HelixDB/helix-foundry",
+   "Um agente desenha o grafo de dados da empresa e carrega tudo no HelixDB."
+  ],
+  [
+   "koshimazaki/genobi",
+   "Estúdio de IA generativa voice-first: vídeo, edição e worldbuilding. Ver o demo (30 s) → https://raw.githubusercontent.com/koshimazaki/genobi/main/docs/media/acoustic-spaces-v2-readme.mp4"
+  ],
+  [
+   "NousResearch/hermes-agent",
+   "Agente da Nous Research (264k★): cresce com você, com memória e ferramentas próprias — a base que o resto do ecossistema usa."
+  ],
+  [
+   "kerpopule/hermes-jev-skills",
+   "Skills de JEV para Hermes: roteamento de modelo, memória, compactação de contexto, seleção de skill e uso de computador/navegador (também serve no Claude Code e Codex)."
+  ],
+  [
+   "howznguyen/shorts-kit",
+   "Shorts verticais narrados (TikTok/Reels/Shorts) feitos por agente de código + Remotion, com skills e estoques prontos."
+  ],
+  [
+   "Leonxlnx/cinetic",
+   "Filmes de lançamento e motion design feitos a partir de código, dirigidos pelo seu agente."
+  ],
+  [
+   "multica-ai/andrej-karpathy-skills",
+   "Um único CLAUDE.md que melhora o comportamento do Claude Code, baseado nas observações do Andrej Karpathy sobre as mancadas dos LLMs escrevendo código."
+  ],
+  [
+   "czlonkowski/n8n-skills",
+   "Conjunto de skills de n8n para o Claude Code montar workflows sem erro (nodes, expressões e boas práticas)."
+  ]
+ ],
+ "ia/local": [
+  [
+   "jtydhr88/ComfyArt",
+   "Canvas de design 100% local (estilo Figma) ligado no ComfyUI."
+  ],
+  [
+   "rhymeas/Creativefield",
+   "Estúdio criativo de imagem, vídeo e 3D em cima do ComfyUI."
+  ],
+  [
+   "nomadoor/ComfyUI-Panorama-Stickers",
+   "Nós do ComfyUI para colocar imagens, vídeos e 3D dentro de um panorama 360°, tirar a foto de qualquer ângulo e devolver o resultado pro lugar — tudo no mesmo workflow."
+  ]
+ ],
+ "software": [
+  [
+   "net-merge/net-merge",
+   "Soma todas as conexões de internet numa só, com balanceamento por app."
+  ],
+  [
+   "dinbtechit/vscode-theme",
+   "Tema do VS Code portado para todas as IDEs da JetBrains."
+  ],
+  [
+   "OpenSelena/omniget",
+   "Gerenciador de downloads de cursos (Udemy/Hotmart), YouTube e +1.800 sites."
+  ],
+  [
+   "medhachim/CapRocket",
+   "Clone open-source do CapCut: timeline, legendas automáticas offline e exportação."
+  ],
+  [
+   "lucianodiisouza/flecha-browser",
+   "Navegador open-source estilo Arc para macOS: Chromium com Spaces, barra de comando e MCP embutido."
+  ],
+  [
+   "fzakaria/rewindvm",
+   "VMs Linux determinísticas: dá pra rebobinar, congelar e bifurcar pra achar e repetir build/teste que falha."
+  ],
+  [
+   "uditya-kumar/MultiPath",
+   "Junta Wi-Fi, cabo e 4G do celular numa conexão só, com balanceamento por app (Tauri + Rust, sem servidor)."
+  ],
+  [
+   "oMaN-Rod/Pulsar",
+   "Estatísticas do PC ao vivo direto na barra de tarefas."
+  ],
+  [
+   "ZigaoWang/zigzag",
+   "Navegador leve para Mac: rápido e sem peso."
+  ],
+  [
+   "justrach/nanoui",
+   "Apps desktop em Zig com UI nativa desenhada na GPU (ou frontend web)."
+  ],
+  [
+   "ItsAlphaNeon/Lemon-Studio",
+   "DAW open-source e grátis, no estilo que você já sabe usar."
+  ],
+  [
+   "blendi-remade/dioramas",
+   "Framework open-source para sites 3D cinematográficos e interativos, com assets gerados por IA."
+  ],
+  [
+   "chenxiachan/textfold",
+   "Dobra papéis, páginas, arquivos e respostas de IA em 5 níveis de detalhe — do resumo ao texto original."
+  ],
+  [
+   "kevinraymond/florilegium",
+   "Margens florais azul-Delft geradas por procedimento para LuaLaTeX, com plantas e visitantes vindos de genomas."
+  ],
+  [
+   "SeniorMatt/kinoklip",
+   "Editor de vídeo não-linear acelerado por GPU para Linux (Qt 6 + FFmpeg)."
+  ]
+ ],
+ "estudos": [
+  [
+   "magosheimus/hotmart-course-downloader",
+   "Baixa cursos da Hotmart automaticamente (m3u8 + ffmpeg)."
+  ]
+ ],
+ "consoles/switch": [
+  [
+   "seedds/nxnative",
+   "Jogos de Switch nativos no iPhone, iPad e Mac (converte NSP em IPA)."
+  ]
+ ],
+ "consoles/playstation-5": [
+  [
+   "elripalda/RecompStore",
+   "Loja de homebrew do PS5 desbloqueado: ports recompilados e emuladores."
+  ]
+ ],
+ "ports": [
+  [
+   "Lothrik/diablo4-build-calc",
+   "Calculadora de builds do Diablo IV."
+  ],
+  [
+   "DarkDBx/DiabloIV.Helper",
+   "Assistente de combate e caixa de ferramentas para Diablo IV."
+  ],
+  [
+   "MagicBeanDev/Longshot",
+   "Recompilação estática de Zelda: Ocarina of Time rodando nativo no Windows e Linux, sem emulador, a partir da sua cópia do jogo (continuação do Hookshot)."
+  ]
+ ],
+ "servidores/amp": [
+  [
+   "CubeCoders/AMPTemplates",
+   "Painel CubeCoders para hospedar servidores de jogos: ligar/desligar, console, backup, portas e atualização pelo navegador. Este repo são as receitas (templates) que ensinam o painel a instalar e rodar cada jogo."
+  ]
+ ],
+ "ia/voz": [
+  [
+   "SaarthurR/atticus-mac",
+   "Assistente de voz grátis para Mac, sem API key: lembra de você e aprende seus atalhos (⌃⌥Espaço e fala)."
+  ]
+ ]
+}

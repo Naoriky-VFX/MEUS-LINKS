@@ -338,12 +338,26 @@ ITENS["ia/local"] = (
 )
 ITENS["ia/api-painel"] = ITENS.pop("painel-apis/roteadores") + ITENS.pop("painel-apis/observabilidade")
 
+# Links novos que ficam fora das listas fixas: _gerar/extras.json (pasta -> [[repo, desc], ...]).
+# Assim regenerar o site nunca perde link que ja apareceu na pagina.
+try:
+    with open(os.path.join(RAIZ, "_gerar", "extras.json"), encoding="utf-8") as _f:
+        for _chave, _lista in json.load(_f).items():
+            _atual = ITENS.setdefault(_chave, [])
+            _nomes = {n for n, _ in _atual}
+            for _nome, _desc in _lista:
+                if _nome not in _nomes:
+                    _atual.append((_nome, _desc))
+except FileNotFoundError:
+    pass
+
+
 # grupo -> (titulo, dica, subpastas)
 GRUPOS = {
     "consoles": ("Consoles", "Desbloqueio, payloads, instaladores e emuladores por console.",
                  ["switch", "switch-2", "playstation-4", "playstation-5", "ps-vita", "wii-u"]),
     "servidores": ("Servidores de jogos online", "Servidores e ferramentas de Lineage II e Palworld.",
-                   ["lineage-ii", "palworld"]),
+                   ["lineage-ii", "palworld", "amp"]),
     "ia": ("IA", "Agentes, terminal, APIs/MCP, painéis, engenharia reversa e modelos locais.",
            ["terminal", "agentes", "workspaces", "canal", "api", "paineis", "local", "api-painel", "voz", "reverse", "whatsapp"]),
 }
@@ -357,6 +371,7 @@ NOMES_SUB = {
     "wii-u": "Wii U / Cemu",
     "lineage-ii": "Lineage II / L2J",
     "palworld": "Palworld",
+    "amp": "Painel AMP",
     "api": "APIs de IA",
     "agentes": "Agentes",
     "workspaces": "Workspaces de agentes",
@@ -433,6 +448,7 @@ FORA_DO_GITHUB = {
     "L2J · site oficial": "https://web.archive.org/web/20260313053957/https://www.l2jserver.com/pt/docs/installation-guide",
     "sourceforge.net/p/xboxburner": "https://sourceforge.net/p/xboxburner/",
     "slashiee.github.io/cemu_graphic_packs": "https://slashiee.github.io/cemu_graphic_packs/",
+    "MagicBeanDev/Longshot": "https://git.magicbean.dev/MagicBeanDev/Longshot",
 }
 
 with open(FONTE, encoding="utf-8") as f:
@@ -536,18 +552,55 @@ def escrever(relativo, conteudo):
 # canais (perfis + vídeos) — aba "Canais"
 CANAIS = [
     {
-        "nome": "Kauã Miguel (Kc1t)",
-        "url": "https://github.com/Kc1t",
-        "print": "canal-kc1t.png",
-        "bio": "Dev brasileiro: engenharia reversa com IA, orquestração de agentes e skills para Claude Code / Codex.",
-        "videos": [
-            ("fbSyFc-izIg", "Como usar o REA: engenharia reversa com IA de graça"),
-            ("ujW-e6w3NQA", "Como orquestrar agentes de IA com uma skill de graça"),
-            ("8jvrucR7QCU", "Pare de usar 1 agente por vez: orquestre agentes de IA"),
-        ],
+        "nome": 'Kauã Miguel (Kc1t)',
+        "print": 'canal-kc1t.png',
+        "bio": 'Dev brasileiro: engenharia reversa com IA, orquestração de agentes e skills para Claude Code / Codex.',
+        "links": [('github.com/Kc1t', 'https://github.com/Kc1t')],
+        "videos": [('fbSyFc-izIg', 'Como usar o REA: engenharia reversa com IA de graça'), ('ujW-e6w3NQA', 'Como orquestrar agentes de IA com uma skill de graça'), ('8jvrucR7QCU', 'Pare de usar 1 agente por vez: orquestre agentes de IA')],
+    },
+    {
+        "nome": 'You Ensina',
+        "print": 'yt/LsshCim_XAQ.jpg',
+        "bio": 'Canal que garimpa projetos do GitHub. O vídeo mostra o CapRocket — clone open-source do CapCut (timeline e legendas automáticas offline).',
+        "links": [('youtube.com/@YouEnsina', 'https://www.youtube.com/@YouEnsina'), ('github.com/medhachim/CapRocket', 'https://github.com/medhachim/CapRocket'), ('Google Flow ↗', 'https://flow.google.com/project/bf6df23c-fb4c-43d8-b521-ddbe44cb0b58/tool/a40d923f-e12a-4148-a500-31679263e33e')],
+        "videos": [('LsshCim_XAQ', 'Recriaram o CapCut e liberaram tudo de graça no GitHub')],
+    },
+    {
+        "nome": 'João Ernani',
+        "print": 'yt/dyCTYItJV4w.jpg',
+        "bio": 'Mostra o Google Flow (flow.google.com): estúdio do Google pra criar vídeo com IA, montar storyboard e organizar cenas — de graça.',
+        "links": [('youtube.com/@joaoernani', 'https://www.youtube.com/@joaoernani'), ('Google Flow ↗', 'https://flow.google.com/')],
+        "videos": [('dyCTYItJV4w', 'Google Flow Storyboard: a ferramenta grátis que substitui seu roteiro confuso')],
+    },
+    {
+        "nome": 'Willian IA',
+        "print": 'yt/HkFFRObi35U.jpg',
+        "bio": 'Ensina ComfyUI na prática: instalação, versão portable e o desafio do ComfyUI — a alternativa open-source ao Higgsfield (comfy.org).',
+        "links": [('youtube.com/@willian.design', 'https://www.youtube.com/@willian.design'), ('comfy.org', 'https://comfy.org'), ('comfy.org/open-source-higgsfield#challen', 'https://comfy.org/open-source-higgsfield#challenge-content')],
+        "videos": [('HkFFRObi35U', 'Como baixar e usar a ComfyUI em 2026 (IA 100% grátis)'), ('ByY4LOcs_1Q', 'ComfyUI Portable: baixar e usar em 2026 (versão avançada)')],
+    },
+    {
+        "nome": 'Gustavo Honorato',
+        "print": 'yt/uEKxxL7T7eA.jpg',
+        "bio": 'Vídeo com IA rodando local (WanGP, MiniMax H3 e LTX 2.5), sem depender de ComfyUI — e o comfy.org como alternativa quando quiser montar o fluxo por nós.',
+        "links": [('youtube.com/@gus_honorato', 'https://www.youtube.com/@gus_honorato'), ('comfy.org', 'https://comfy.org')],
+        "videos": [('uEKxxL7T7eA', 'Como gerar vídeos com IA local: rápido, fácil, sem ComfyUI (WanGP, MiniMax H3, LTX 2.5)')],
+    },
+    {
+        "nome": 'Felipe Borges - Fala IA!',
+        "print": 'yt/GN2tvitzuzw.jpg',
+        "bio": 'Ensina IA na prática em português. O vídeo instala e testa o Hermes Agent do zero — o agente open-source da Nous Research.',
+        "links": [('youtube.com/@FelipeBorgesFalaIA', 'https://www.youtube.com/@FelipeBorgesFalaIA'), ('github.com/NousResearch/hermes-agent', 'https://github.com/NousResearch/hermes-agent'), ('github.com/multica-ai/andrej-karpathy-skills', 'https://github.com/multica-ai/andrej-karpathy-skills'), ('github.com/czlonkowski/n8n-skills', 'https://github.com/czlonkowski/n8n-skills')],
+        "videos": [('GN2tvitzuzw', 'Hermes Agent do zero: instalando e testando na prática'), ('77rBw7G3xGA', 'Antigravity /goal foi lançado, e é perfeito!'), ('hhe7_78C0do', 'A melhor forma de criar skills no Antigravity (skills do n8n)'), ('xorpLd0SzJQ', 'Essa skill vai deixar seu Claude Code muito melhor (Karpathy)')],
+    },
+    {
+        "nome": "Metics Media",
+        "print": "canal-metics.png",
+        "bio": "Guia completo do Hermes Agent (Nous Research): instala\u00e7\u00e3o, mem\u00f3ria, subagentes, ferramentas e gateway para Telegram/WhatsApp.",
+        "links": [("youtube.com/@MeticsMedia", "https://www.youtube.com/@MeticsMedia"), ("hermes-agent.nousresearch.com", "https://hermes-agent.nousresearch.com/")],
+        "videos": [("XNcKUSL1CTE", "The Ultimate Beginner's Guide to Hermes Agent")],
     },
 ]
-
 
 def pagina_canais(relativo, titulo, dica, voltar, subida="../../"):
     cartoes = []
@@ -558,16 +611,23 @@ def pagina_canais(relativo, titulo, dica, voltar, subida="../../"):
             f'<span>{html.escape(titulo_vid)}</span></a>'
             for vid, titulo_vid in canal["videos"]
         )
+        links = canal.get("links") or []
+        if not links and canal.get("url"):
+            links = [(canal["url"], canal["url"])]
+        links_html = "<br>".join(
+            f'<a class="canal-link" href="{html.escape(u)}" target="_blank" rel="noopener">{html.escape(t)} &#8599;</a>'
+            for t, u in links
+        )
         cartoes.append(f"""
 <div class="canal">
   <div class="canal-topo">
-    <a href="{html.escape(canal['url'])}" target="_blank" rel="noopener" class="canal-print">
+    <a href="{html.escape(links[0][1] if links else '#')}" target="_blank" rel="noopener" class="canal-print">
       <img src="{subida}img/{html.escape(canal['print'])}" loading="lazy" alt="">
     </a>
     <div class="canal-info">
       <h2>{html.escape(canal['nome'])}</h2>
       <p>{html.escape(canal['bio'])}</p>
-      <a class="canal-link" href="{html.escape(canal['url'])}" target="_blank" rel="noopener">github.com/Kc1t →</a>
+      {links_html}
     </div>
   </div>
   <div class="videos">{videos}</div>
