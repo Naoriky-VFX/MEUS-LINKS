@@ -679,6 +679,13 @@ CANAIS = [
         "links": [("youtube.com/@osantinello", "https://www.youtube.com/@osantinello"), ("Pasta no Google Drive", "https://drive.google.com/drive/folders/1S1CXoAQy6fhbN6KZcGy_ER4hY-U_WIdz")],
         "videos": [("3AClTToRt5U", "NOVA IA gratis troca pessoas em fotos: Minimax H3 Character Swap no ComfyUI")],
     },
+    {
+        "nome": "Leonardo Amoyr",
+        "print": "canal-leonardo-amoyr.png",
+        "bio": "Canal de automacao com IA. O video mostra o OpenBot numa VPS rodando agentes como um time e gerando conteudo sozinho.",
+        "links": [("youtube.com/@LeonardoAmoyr", "https://www.youtube.com/@LeonardoAmoyr"), ("openbot.run", "https://openbot.run/")],
+        "videos": [("pQI742k8KnQ", "OpenBot + VPS: a maquina de gerar conteudo automatico")],
+    },
 ]
 
 def pagina_canais(relativo, titulo, dica, voltar, subida="../../"):
