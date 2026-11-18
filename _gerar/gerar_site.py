@@ -338,7 +338,7 @@ ITENS["ia/local"] = (
 )
 ITENS["ia/api-painel"] = ITENS.pop("painel-apis/roteadores") + ITENS.pop("painel-apis/observabilidade")
 
-ITENS["design/padroes"] = [
+ITENS["Tutos-Design-Produto-Padroes-Code/padroes"] = [
     ("ui-patterns.com", "Biblioteca clássica de padrões de interface: modal, drawer, wizard, filtros, cada um com o problema que resolve."),
     ("nngroup.com", "NN/g: referência de UX. Explica dashboard, empty state, navegação, formulários e teste de usabilidade."),
     ("mobbin.com", "Prints de telas reais de apps e sites (iOS, Android, web) pra ver o padrão aplicado."),
@@ -347,7 +347,7 @@ ITENS["design/padroes"] = [
     ("component.gallery", "Catálogo de componentes de design systems: acordeão, combobox, tooltip e o nome certo de cada um."),
     ("saas-ui-patterns", "Padrões de interface de SaaS moderno: tabela com filtros, kanban, detalhe lateral, estados vazios."),
 ]
-ITENS["design/design"] = [
+ITENS["Tutos-Design-Produto-Padroes-Code/design"] = [
     ("m3.material.io", "Material 3 (Google): componentes, layout, cor, tipografia e movimento com nome e regra de uso."),
     ("developer.apple.com/design", "Apple Human Interface Guidelines: padrões de app iOS/macOS."),
     ("designsystemsrepo.com", "Diretório de design systems públicos (Shopify, Atlassian, IBM...) pra copiar estrutura e nomes."),
@@ -356,7 +356,7 @@ ITENS["design/design"] = [
     ("untitledui.com", "UI kit grande (Figma + React) com telas de dashboard, CRM e settings."),
     ("laws-of-ux", "Leis de UX (Fitts, Hick, Jakob...): por que filtro, hierarquia e atalhos funcionam."),
 ]
-ITENS["design/codigo"] = [
+ITENS["Tutos-Design-Produto-Padroes-Code/codigo"] = [
     ("patterns.dev", "Padrões de front-end modernos (React, performance, rendering) explicados com exemplo."),
     ("developer.mozilla.org", "MDN: o dicionário da web (HTML, CSS, JS, APIs do navegador)."),
     ("web.dev", "Boas práticas do Google: performance, acessibilidade, PWA."),
@@ -364,7 +364,7 @@ ITENS["design/codigo"] = [
     ("refactoring.guru", "Padrões de projeto (GoF) e refatoração com exemplos visuais."),
     ("12factor.net", "Os 12 fatores de app/serviço: config, logs, build, deploy."),
 ]
-ITENS["design/arquitetura"] = [
+ITENS["Tutos-Design-Produto-Padroes-Code/arquitetura"] = [
     ("martinfowler.com", "Arquitetura e padrões de sistema: camadas, DDD, microsserviço, event-driven."),
     ("c4model.com", "Modelo C4: como desenhar contexto, containers, componentes e código."),
     ("usability.gov", "Guia de UX e usabilidade do governo dos EUA: métodos, pesquisa e checklist."),
@@ -392,7 +392,7 @@ GRUPOS = {
                  ["switch", "switch-2", "playstation-4", "playstation-5", "ps-vita", "wii-u"]),
     "servidores": ("Servidores de jogos online", "Servidores e ferramentas de Lineage II e Palworld.",
                    ["lineage-ii", "palworld", "amp"]),
-    "design": ("Design & Produto", "Padrões de interface, design systems, front-end e arquitetura: o vocabulário pra montar app, site e sistema.",
+    "Tutos-Design-Produto-Padroes-Code": ("Design & Produto", "Padrões de interface, design systems, front-end e arquitetura: o vocabulário pra montar app, site e sistema.",
                  ["padroes", "design", "codigo", "arquitetura"]),
     "ia": ("IA", "Agentes, terminal, APIs/MCP, painéis, engenharia reversa e modelos locais.",
            ["terminal", "agentes", "workspaces", "canal", "api", "paineis", "local", "api-painel", "voz", "reverse", "whatsapp"]),
