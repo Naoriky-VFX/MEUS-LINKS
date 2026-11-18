@@ -809,7 +809,7 @@ def pagina_grupo(relativo, titulo, dica, subpastas, voltar, raiz_rel):
                 f'<a class="categoria destaque" href="{slug}/index.html">'
                 f'<h2>{html.escape(NOMES_SUB.get(slug, slug))}</h2>'
                 f'<p>{html.escape(DICAS_SUB.get(slug, ""))}</p>'
-                f'<div class="num">{len(CANAIS)} canal{"is" if len(CANAIS) > 1 else ""}</div></a>'
+                f'<div class="num">{len(CANAIS)} cana{"is" if len(CANAIS) > 1 else "l"}</div></a>'
             )
             continue
         quantidade = len(itens_validos(f"{relativo.split('/')[0]}/{slug}"))
