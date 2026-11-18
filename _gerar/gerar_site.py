@@ -672,6 +672,13 @@ CANAIS = [
         "links": [("youtube.com/@Denoise-AI", "https://www.youtube.com/@Denoise-AI"), ("github.com/Deno2026", "https://github.com/Deno2026/comfyui-deno-custom-nodes")],
         "videos": [("JA4BJTvgM20", "MiniMax H3 tile sampler: 15s em 1080p com 16GB de VRAM (ComfyUI)")],
     },
+    {
+        "nome": "Santinello",
+        "print": "canal-santinello.png",
+        "bio": "Canal do criador do Ref Map. O video testa o Minimax H3 Image Character Swap no ComfyUI: troca a pessoa da foto mantendo cenario e roupa. A pasta do Drive tem os arquivos do tutorial.",
+        "links": [("youtube.com/@osantinello", "https://www.youtube.com/@osantinello"), ("Pasta no Google Drive", "https://drive.google.com/drive/folders/1S1CXoAQy6fhbN6KZcGy_ER4hY-U_WIdz")],
+        "videos": [("3AClTToRt5U", "NOVA IA gratis troca pessoas em fotos: Minimax H3 Character Swap no ComfyUI")],
+    },
 ]
 
 def pagina_canais(relativo, titulo, dica, voltar, subida="../../"):
