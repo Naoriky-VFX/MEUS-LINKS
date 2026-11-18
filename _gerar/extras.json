@@ -49,6 +49,10 @@
   [
    "nomadoor/ComfyUI-Panorama-Stickers",
    "Nós do ComfyUI para colocar imagens, vídeos e 3D dentro de um panorama 360°, tirar a foto de qualquer ângulo e devolver o resultado pro lugar — tudo no mesmo workflow."
+  ],
+  [
+   "Deno2026/comfyui-deno-custom-nodes",
+   "Nodes de ComfyUI do Deno: RTX Video Super Resolution, NVIDIA VFX (nvvfx), LTX 2.3, Wan 2.2 reference video edit, comparador de imagem/vídeo e helpers de workflow."
   ]
  ],
  "software": [

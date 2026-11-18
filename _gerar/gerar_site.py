@@ -600,6 +600,13 @@ CANAIS = [
         "links": [("youtube.com/@MeticsMedia", "https://www.youtube.com/@MeticsMedia"), ("hermes-agent.nousresearch.com", "https://hermes-agent.nousresearch.com/")],
         "videos": [("XNcKUSL1CTE", "The Ultimate Beginner's Guide to Hermes Agent")],
     },
+    {
+        "nome": "Deno (Denoise AI)",
+        "print": "canal-deno.png",
+        "bio": "Canal coreano que testa workflow de ComfyUI. O video mostra o sampler por tiles do MiniMax H3: video de 15s em 1080p rodando em 16GB de VRAM.",
+        "links": [("youtube.com/@Denoise-AI", "https://www.youtube.com/@Denoise-AI"), ("github.com/Deno2026", "https://github.com/Deno2026/comfyui-deno-custom-nodes")],
+        "videos": [("JA4BJTvgM20", "MiniMax H3 tile sampler: 15s em 1080p com 16GB de VRAM (ComfyUI)")],
+    },
 ]
 
 def pagina_canais(relativo, titulo, dica, voltar, subida="../../"):
