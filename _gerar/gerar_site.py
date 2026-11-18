@@ -392,7 +392,7 @@ GRUPOS = {
                  ["switch", "switch-2", "playstation-4", "playstation-5", "ps-vita", "wii-u"]),
     "servidores": ("Servidores de jogos online", "Servidores e ferramentas de Lineage II e Palworld.",
                    ["lineage-ii", "palworld", "amp"]),
-    "design": ("Design & Produto", "Padrões de interface, design systems, front-end e arquitetura: o vocabulário pra montar app, site e sistema.",
+    "design": ("Tutos-Design-Produto-Padrõe-Code", "Padrões de interface, design systems, front-end e arquitetura: o vocabulário pra montar app, site e sistema.",
                  ["padroes", "design", "codigo", "arquitetura"]),
     "ia": ("IA", "Agentes, terminal, APIs/MCP, painéis, engenharia reversa e modelos locais.",
            ["terminal", "agentes", "workspaces", "canal", "api", "paineis", "local", "api-painel", "voz", "reverse", "whatsapp"]),
@@ -864,12 +864,12 @@ for chave, (titulo, dica) in SIMPLES.items():
 
 # 3) raiz
 cartoes = []
-for grupo, (titulo, _, subs) in GRUPOS.items():
+for grupo, (titulo, dica_grupo, subs) in GRUPOS.items():
     total_grupo = sum(len(itens_validos(f"{grupo}/{s}")) for s in subs)
     if "canal" in subs:
         total_grupo += len(CANAIS)
     cartoes.append(f'<a class="categoria" href="{grupo}/index.html"><h2>{html.escape(titulo)}</h2>'
-                   f'<p>{html.escape(dica)}</p>'
+                   f'<p>{html.escape(dica_grupo)}</p>'
                    f'<div class="num">{total_grupo} links · {len(subs)} pasta{"s" if len(subs) > 1 else ""}</div></a>')
 for chave, (titulo, dica) in SIMPLES.items():
     quantidade = len(CANAIS) if chave == "canais" else len(itens_validos(chave))
