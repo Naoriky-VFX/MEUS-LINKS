@@ -95,7 +95,6 @@ ITENS = {
         ("czlonkowski/n8n-mcp", "23k★ · MCP que deixa a IA montar/editar fluxos do n8n."),
         ("tashfeenahmed/freellmapi", "34 provedores de LLM grátis e 635 endpoints numa API só."),
         ("Mans230/dsh-llm-cli", "Roteia modelos DeepSeek pelas CLIs de agente instaladas na máquina."),
-        ("higgsfield.ai/mcp", "MCP oficial do Higgsfield: gera imagem/vídeo por agente (Claude Code, Cursor...). Convite do Felipe Borges."),
     ],
     "ia/workspaces": [
         ("gastownhall/gastown", "18.8k★ · gerenciador de workspace multi-agente (o mais estrelado da lista)."),
@@ -514,7 +513,7 @@ FORA_DO_GITHUB = {
     "c4model.com": "https://c4model.com/",
     "usability.gov": "https://www.usability.gov/",
     "baymard.com": "https://baymard.com/",
-    "higgsfield.ai/mcp": "https://higgsfield.ai/mcp",
+    "higgsfield.ai/mcp": "https://higgsfield.ai/mcp?utm_source=yt&utm_medium=social&utm_category=gr&utm_campaign=Higgsfield_MCP_General_YT&utm_creator=felipeborgesfalaia&utm_platform_id=UCZ4tbbWqY4QvZti5MXEc5Cg&utm_content_type=de&utm_post=BHtBeR&invite_code=higgsfield-mcp-general-yt-felipeborgesfalaia-BHtBeR&tab=claude",
 }
 
 with open(FONTE, encoding="utf-8") as f:
@@ -656,7 +655,7 @@ CANAIS = [
         "nome": 'Felipe Borges - Fala IA!',
         "print": 'yt/GN2tvitzuzw.jpg',
         "bio": 'Ensina IA na prática em português. O vídeo instala e testa o Hermes Agent do zero — o agente open-source da Nous Research.',
-        "links": [('youtube.com/@FelipeBorgesFalaIA', 'https://www.youtube.com/@FelipeBorgesFalaIA'), ('github.com/NousResearch/hermes-agent', 'https://github.com/NousResearch/hermes-agent'), ('github.com/multica-ai/andrej-karpathy-skills', 'https://github.com/multica-ai/andrej-karpathy-skills'), ('github.com/czlonkowski/n8n-skills', 'https://github.com/czlonkowski/n8n-skills')],
+        "links": [('Higgsfield MCP (convite)', 'https://higgsfield.ai/mcp?invite_code=higgsfield-mcp-general-yt-felipeborgesfalaia-BHtBeR&tab=claude'), ('youtube.com/@FelipeBorgesFalaIA', 'https://www.youtube.com/@FelipeBorgesFalaIA'), ('github.com/NousResearch/hermes-agent', 'https://github.com/NousResearch/hermes-agent'), ('github.com/multica-ai/andrej-karpathy-skills', 'https://github.com/multica-ai/andrej-karpathy-skills'), ('github.com/czlonkowski/n8n-skills', 'https://github.com/czlonkowski/n8n-skills')],
         "videos": [('GN2tvitzuzw', 'Hermes Agent do zero: instalando e testando na prática'), ('77rBw7G3xGA', 'Antigravity /goal foi lançado, e é perfeito!'), ('hhe7_78C0do', 'A melhor forma de criar skills no Antigravity (skills do n8n)'), ('xorpLd0SzJQ', 'Essa skill vai deixar seu Claude Code muito melhor (Karpathy)'), ('dTzkBlmcQZo', 'Crie Reels/Shorts virais sem aparecer com Claude Code')],
     },
     {
