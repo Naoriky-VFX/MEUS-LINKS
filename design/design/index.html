@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design systems - Links</title><style>
+:root{--fundo:#0b0710;--card:#160f22;--card2:#1d1429;--borda:#3a2f4e;--texto:#f4f0ff;--suave:#9a8bb5;--roxo:#a855f7}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#2a1145 0,#0b0710 60%);
+color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:32px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:1.7rem}
+header p{margin:0;color:var(--suave)}
+.voltar{display:inline-block;margin-bottom:18px;color:var(--roxo);text-decoration:none;font-weight:700;font-size:.9rem}
+.voltar:hover{text-decoration:underline}
+.categorias{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:26px}
+.categoria{display:block;background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:20px;
+text-decoration:none;color:var(--texto);transition:.15s}
+.categoria:hover{border-color:var(--roxo);background:var(--card2)}
+.categoria h2{margin:0 0 6px;font-size:1.05rem}
+.categoria p{margin:0;color:var(--suave);font-size:.84rem}
+.categoria .num{margin-top:12px;font-size:.78rem;color:var(--roxo);font-weight:800}
+.destaque-area{margin-top:26px;padding-top:20px;border-top:1px dashed var(--borda);display:flex;flex-direction:column;gap:10px;max-width:300px}
+.destaque-rotulo{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.categoria.destaque{border-color:var(--roxo);box-shadow:0 0 0 1px rgba(168,85,247,.45),0 0 22px rgba(168,85,247,.18)}
+.categoria.destaque:hover{background:#241534}
+.busca{width:100%;margin-top:18px;padding:13px 16px;border-radius:12px;border:1px solid var(--borda);
+background:#120c1c;color:var(--texto);font-size:.95rem}
+.busca:focus{outline:none;border-color:var(--roxo)}
+.contagem{margin-top:10px;font-size:.8rem;color:var(--suave)}
+table{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--borda);
+border-radius:14px;overflow:hidden}
+th{text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);
+padding:12px 14px;background:#1a1126;border-bottom:1px solid var(--borda);white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid #241a33;font-size:.88rem;vertical-align:top}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:#1b1228}
+td a{color:var(--texto);text-decoration:none;font-family:ui-monospace,Consolas,monospace;font-weight:600}
+td a:hover{color:var(--roxo);text-decoration:underline}
+td.desc{color:#cfc3e6}
+td.pasta{color:#6b5d85;font-size:.72rem;font-family:ui-monospace,Consolas,monospace}
+td.thumb{width:180px}
+td.thumb img{width:160px;border-radius:8px;border:1px solid var(--borda);display:block;background:#0e0916}
+td.thumb a:hover img{border-color:var(--roxo)}
+td.video{width:170px}
+td.video img{width:150px;border-radius:8px;border:1px solid var(--borda);display:block}
+td.video a{text-decoration:none}
+td.video a:hover img{border-color:var(--roxo)}
+.titulo-video{display:block;margin-top:4px;font-size:.68rem;color:var(--suave);line-height:1.25;
+font-family:system-ui,sans-serif;font-weight:500}
+.sem-img{color:#4d4266;font-size:.72rem}
+footer{margin-top:40px;color:#5d5175;font-size:.76rem;text-align:center}
+@media (max-width:720px){ td.pasta{display:none} th.col-pasta{display:none} }
+</style></head>
+<body><div class="wrap">
+<a class="voltar" href="../index.html">← Design &amp; Produto</a>
+<header><h1>Design systems</h1><p></p></header>
+<input class="busca" placeholder="Procurar por nome, descrição ou pasta…" oninput="filtrar(this.value)">
+<div class="contagem" id="contagem">7 links</div>
+<table><thead><tr><th>Vídeo</th><th>Print</th><th>Projeto</th><th>O que faz</th><th class="col-pasta">Pasta de origem</th></tr></thead>
+<tbody id="corpo"><tr data-busca="m3.material.io material 3 (google): componentes, layout, cor, tipografia e movimento com nome e regra de uso. fora do github (bitbucket / site oficial)"><td class="video"><span class="sem-img">sem vídeo</span></td><td class="thumb"><span class="sem-img">sem print</span></td><td><a href="https://m3.material.io/" target="_blank" rel="noopener">m3.material.io</a></td><td class="desc">Material 3 (Google): componentes, layout, cor, tipografia e movimento com nome e regra de uso.</td><td class="pasta">fora do GitHub (Bitbucket / site oficial)</td></tr><tr data-busca="developer.apple.com/design apple human interface guidelines: padrões de app ios/macos. fora do github (bitbucket / site oficial)"><td class="video"><span class="sem-img">sem vídeo</span></td><td class="thumb"><span class="sem-img">sem print</span></td><td><a href="https://developer.apple.com/design/human-interface-guidelines/" target="_blank" rel="noopener">developer.apple.com/design</a></td><td class="desc">Apple Human Interface Guidelines: padrões de app iOS/macOS.</td><td class="pasta">fora do GitHub (Bitbucket / site oficial)</td></tr><tr data-busca="designsystemsrepo.com diretório de design systems públicos (shopify, atlassian, ibm...) pra copiar estrutura e nomes. fora do github (bitbucket / site oficial)"><td class="video"><span class="sem-img">sem vídeo</span></td><td class="thumb"><span class="sem-img">sem print</span></td><td><a href="https://designsystemsrepo.com/design-systems/" target="_blank" rel="noopener">designsystemsrepo.com</a></td><td class="desc">Diretório de design systems públicos (Shopify, Atlassian, IBM...) pra copiar estrutura e nomes.</td><td class="pasta">fora do GitHub (Bitbucket / site oficial)</td></tr><tr data-busca="ui.shadcn.com shadcn/ui: componentes react prontos e legíveis, ótimos pra entender composição. fora do github (bitbucket / site oficial)"><td class="video"><span class="sem-img">sem vídeo</span></td><td class="thumb"><span class="sem-img">sem print</span></td><td><a href="https://ui.shadcn.com/" target="_blank" rel="noopener">ui.shadcn.com</a></td><td class="desc">shadcn/ui: componentes React prontos e legíveis, ótimos pra entender composição.</td><td class="pasta">fora do GitHub (Bitbucket / site oficial)</td></tr><tr data-busca="21st.dev componentes prontos pra copiar (react/tailwind), com prévia. fora do github (bitbucket / site oficial)"><td class="video"><span class="sem-img">sem vídeo</span></td><td class="thumb"><span class="sem-img">sem print</span></td><td><a href="https://21st.dev/" target="_blank" rel="noopener">21st.dev</a></td><td class="desc">Componentes prontos pra copiar (React/Tailwind), com prévia.</td><td class="pasta">fora do GitHub (Bitbucket / site oficial)</td></tr><tr data-busca="untitledui.com ui kit grande (figma + react) com telas de dashboard, crm e settings. fora do github (bitbucket / site oficial)"><td class="video"><span class="sem-img">sem vídeo</span></td><td class="thumb"><span class="sem-img">sem print</span></td><td><a href="https://www.untitledui.com/" target="_blank" rel="noopener">untitledui.com</a></td><td class="desc">UI kit grande (Figma + React) com telas de dashboard, CRM e settings.</td><td class="pasta">fora do GitHub (Bitbucket / site oficial)</td></tr><tr data-busca="laws-of-ux leis de ux (fitts, hick, jakob...): por que filtro, hierarquia e atalhos funcionam. fora do github (bitbucket / site oficial)"><td class="video"><span class="sem-img">sem vídeo</span></td><td class="thumb"><span class="sem-img">sem print</span></td><td><a href="https://lawsofux.com/" target="_blank" rel="noopener">laws-of-ux</a></td><td class="desc">Leis de UX (Fitts, Hick, Jakob...): por que filtro, hierarquia e atalhos funcionam.</td><td class="pasta">fora do GitHub (Bitbucket / site oficial)</td></tr></tbody></table>
+<footer>Design systems · links salvos em 12/11/2026</footer>
+</div>
+<script>
+function filtrar(termo) {
+  termo = (termo || '').toLowerCase().trim();
+  let visiveis = 0;
+  document.querySelectorAll('#corpo tr').forEach(tr => {
+    const mostra = !termo || tr.dataset.busca.includes(termo);
+    tr.style.display = mostra ? '' : 'none';
+    if (mostra) visiveis++;
+  });
+  document.getElementById('contagem').textContent =
+    visiveis + (visiveis === 1 ? ' link' : ' links');
+}
+</script></body></html>

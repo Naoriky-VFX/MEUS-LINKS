@@ -338,6 +338,40 @@ ITENS["ia/local"] = (
 )
 ITENS["ia/api-painel"] = ITENS.pop("painel-apis/roteadores") + ITENS.pop("painel-apis/observabilidade")
 
+ITENS["design/padroes"] = [
+    ("ui-patterns.com", "Biblioteca clássica de padrões de interface: modal, drawer, wizard, filtros, cada um com o problema que resolve."),
+    ("nngroup.com", "NN/g: referência de UX. Explica dashboard, empty state, navegação, formulários e teste de usabilidade."),
+    ("mobbin.com", "Prints de telas reais de apps e sites (iOS, Android, web) pra ver o padrão aplicado."),
+    ("refero.design", "Galeria de fluxos completos de produtos reais: onboarding, busca, checkout, configurações."),
+    ("pttrns.com", "Capturas de telas mobile organizadas por tipo de tela e componente."),
+    ("component.gallery", "Catálogo de componentes de design systems: acordeão, combobox, tooltip e o nome certo de cada um."),
+    ("saas-ui-patterns", "Padrões de interface de SaaS moderno: tabela com filtros, kanban, detalhe lateral, estados vazios."),
+]
+ITENS["design/design"] = [
+    ("m3.material.io", "Material 3 (Google): componentes, layout, cor, tipografia e movimento com nome e regra de uso."),
+    ("developer.apple.com/design", "Apple Human Interface Guidelines: padrões de app iOS/macOS."),
+    ("designsystemsrepo.com", "Diretório de design systems públicos (Shopify, Atlassian, IBM...) pra copiar estrutura e nomes."),
+    ("ui.shadcn.com", "shadcn/ui: componentes React prontos e legíveis, ótimos pra entender composição."),
+    ("21st.dev", "Componentes prontos pra copiar (React/Tailwind), com prévia."),
+    ("untitledui.com", "UI kit grande (Figma + React) com telas de dashboard, CRM e settings."),
+    ("laws-of-ux", "Leis de UX (Fitts, Hick, Jakob...): por que filtro, hierarquia e atalhos funcionam."),
+]
+ITENS["design/codigo"] = [
+    ("patterns.dev", "Padrões de front-end modernos (React, performance, rendering) explicados com exemplo."),
+    ("developer.mozilla.org", "MDN: o dicionário da web (HTML, CSS, JS, APIs do navegador)."),
+    ("web.dev", "Boas práticas do Google: performance, acessibilidade, PWA."),
+    ("roadmap.sh", "Trilhas de estudo por área: front-end, back-end, mobile, DevOps."),
+    ("refactoring.guru", "Padrões de projeto (GoF) e refatoração com exemplos visuais."),
+    ("12factor.net", "Os 12 fatores de app/serviço: config, logs, build, deploy."),
+]
+ITENS["design/arquitetura"] = [
+    ("martinfowler.com", "Arquitetura e padrões de sistema: camadas, DDD, microsserviço, event-driven."),
+    ("c4model.com", "Modelo C4: como desenhar contexto, containers, componentes e código."),
+    ("usability.gov", "Guia de UX e usabilidade do governo dos EUA: métodos, pesquisa e checklist."),
+    ("baymard.com", "Pesquisa de e-commerce: checkout, busca, filtros e por que o usuário desiste."),
+]
+
+
 # Links novos que ficam fora das listas fixas: _gerar/extras.json (pasta -> [[repo, desc], ...]).
 # Assim regenerar o site nunca perde link que ja apareceu na pagina.
 try:
@@ -358,6 +392,8 @@ GRUPOS = {
                  ["switch", "switch-2", "playstation-4", "playstation-5", "ps-vita", "wii-u"]),
     "servidores": ("Servidores de jogos online", "Servidores e ferramentas de Lineage II e Palworld.",
                    ["lineage-ii", "palworld", "amp"]),
+    "design": ("Design & Produto", "Padrões de interface, design systems, front-end e arquitetura: o vocabulário pra montar app, site e sistema.",
+                 ["padroes", "design", "codigo", "arquitetura"]),
     "ia": ("IA", "Agentes, terminal, APIs/MCP, painéis, engenharia reversa e modelos locais.",
            ["terminal", "agentes", "workspaces", "canal", "api", "paineis", "local", "api-painel", "voz", "reverse", "whatsapp"]),
 }
@@ -372,6 +408,10 @@ NOMES_SUB = {
     "lineage-ii": "Lineage II / L2J",
     "palworld": "Palworld",
     "amp": "Painel AMP",
+    "padroes": "Padrões de interface",
+    "design": "Design systems",
+    "codigo": "Front-end & código",
+    "arquitetura": "Arquitetura & produto",
     "api": "APIs de IA",
     "agentes": "Agentes",
     "workspaces": "Workspaces de agentes",
@@ -449,6 +489,30 @@ FORA_DO_GITHUB = {
     "sourceforge.net/p/xboxburner": "https://sourceforge.net/p/xboxburner/",
     "slashiee.github.io/cemu_graphic_packs": "https://slashiee.github.io/cemu_graphic_packs/",
     "MagicBeanDev/Longshot": "https://git.magicbean.dev/MagicBeanDev/Longshot",
+    "ui-patterns.com": "https://ui-patterns.com/",
+    "nngroup.com": "https://www.nngroup.com/articles/",
+    "mobbin.com": "https://mobbin.com/",
+    "refero.design": "https://refero.design/",
+    "pttrns.com": "https://pttrns.com/",
+    "component.gallery": "https://component.gallery/",
+    "saas-ui-patterns": "https://github.com/rvailleux/saas-ui-patterns",
+    "m3.material.io": "https://m3.material.io/",
+    "developer.apple.com/design": "https://developer.apple.com/design/human-interface-guidelines/",
+    "designsystemsrepo.com": "https://designsystemsrepo.com/design-systems/",
+    "ui.shadcn.com": "https://ui.shadcn.com/",
+    "21st.dev": "https://21st.dev/",
+    "untitledui.com": "https://www.untitledui.com/",
+    "laws-of-ux": "https://lawsofux.com/",
+    "patterns.dev": "https://www.patterns.dev/",
+    "developer.mozilla.org": "https://developer.mozilla.org/pt-BR/",
+    "web.dev": "https://web.dev/",
+    "roadmap.sh": "https://roadmap.sh/",
+    "refactoring.guru": "https://refactoring.guru/",
+    "12factor.net": "https://12factor.net/pt_br/",
+    "martinfowler.com": "https://martinfowler.com/",
+    "c4model.com": "https://c4model.com/",
+    "usability.gov": "https://www.usability.gov/",
+    "baymard.com": "https://baymard.com/",
 }
 
 with open(FONTE, encoding="utf-8") as f:
