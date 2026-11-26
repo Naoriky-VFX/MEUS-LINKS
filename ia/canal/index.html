@@ -58,6 +58,11 @@ footer{margin-top:40px;color:#5d5175;font-size:.76rem;text-align:center}
 .canal-info p{margin:0 0 10px;color:var(--suave);font-size:.9rem}
 .canal-link{color:var(--roxo);text-decoration:none;font-weight:700;font-size:.9rem}
 .canal-link:hover{text-decoration:underline}
+.abas-canal{display:flex;gap:6px;margin-top:16px;border-bottom:1px solid var(--borda)}
+.aba-canal{background:transparent;border:1px solid transparent;border-bottom:0;color:var(--suave);font:inherit;font-size:.82rem;font-weight:700;padding:9px 14px;border-radius:10px 10px 0 0;cursor:pointer}
+.aba-canal:hover{color:var(--texto)}
+.aba-canal.on{background:var(--card2);border-color:var(--borda);color:var(--texto)}
+
 .videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:18px}
 .video-card{display:block;background:var(--card2);border:1px solid var(--borda);border-radius:14px;padding:10px;
 text-decoration:none;color:var(--texto);transition:.15s}
@@ -68,6 +73,32 @@ text-decoration:none;color:var(--texto);transition:.15s}
 <body><div class="wrap">
 <a class="voltar" href="../index.html">← IA</a>
 <header><h1>Canais</h1><p>Canais e perfis que ensinam, com os vídeos de cada um.</p></header>
+<div class="canal">
+  <div class="canal-topo">
+    <a href="https://getartcraft.com/" target="_blank" rel="noopener" class="canal-print">
+      <img src="../../img/canal-artcraft.png" loading="lazy" alt="">
+    </a>
+    <div class="canal-info">
+      <h2>ArtCraft (storytold)</h2>
+      <p>Ferramenta open source em Rust que estuda um site, app ou jogo e constrói a sua própria versão. É o Craft Anything, com tutoriais completos.</p>
+      <p>
+        <a class="canal-link" href="https://getartcraft.com/" target="_blank" rel="noopener">getartcraft.com &#8599;</a> &middot;
+        <a class="canal-link" href="https://getartcraft.com/apps" target="_blank" rel="noopener">apps &#8599;</a> &middot;
+        <a class="canal-link" href="https://github.com/storytold" target="_blank" rel="noopener">github/storytold &#8599;</a> &middot;
+        <a class="canal-link" href="https://github.com/storytold/craft-anything" target="_blank" rel="noopener">craft-anything &#8599;</a>
+      </p>
+    </div>
+  </div>
+  <div class="videos">
+    <a class="video-card" href="https://www.youtube.com/watch?v=DiEJJLDwgf4" target="_blank" rel="noopener">
+      <img src="../../img/yt/DiEJJLDwgf4.jpg" loading="lazy" alt=""><span>How to Reverse Engineer ANYTHING (Full Guide) &mdash; CyberFlow</span>
+    </a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=496K3_99FiY" target="_blank" rel="noopener">
+      <img src="../../img/yt/496K3_99FiY.jpg" loading="lazy" alt=""><span>ArtCraft &mdash; The Local AI Studio You Keep (Full Tutorial) &mdash; Full Stack</span>
+    </a>
+  </div>
+</div>
+
 
 <div class="canal">
   <div class="canal-topo">
@@ -119,7 +150,22 @@ text-decoration:none;color:var(--texto);transition:.15s}
       <a class="canal-link" href="https://www.youtube.com/@willian.design" target="_blank" rel="noopener">youtube.com/@willian.design &#8599;</a><br><a class="canal-link" href="https://comfy.org" target="_blank" rel="noopener">comfy.org &#8599;</a><br><a class="canal-link" href="https://comfy.org/open-source-higgsfield#challenge-content" target="_blank" rel="noopener">comfy.org/open-source-higgsfield#challen &#8599;</a>
     </div>
   </div>
+  <div class="abas-canal">
+  <button class="aba-canal on" onclick="abaCanal(this,'willian-videos')">Vídeos do canal</button>
+  <button class="aba-canal" onclick="abaCanal(this,'willian-extras')">Links extras</button>
+</div>
+<div class="painel-canal" id="willian-videos">
   <div class="videos"><a class="video-card" href="https://www.youtube.com/watch?v=HkFFRObi35U" target="_blank" rel="noopener"><img src="../../img/yt/HkFFRObi35U.jpg" loading="lazy" alt=""><span>Como baixar e usar a ComfyUI em 2026 (IA 100% grátis)</span></a><a class="video-card" href="https://www.youtube.com/watch?v=ByY4LOcs_1Q" target="_blank" rel="noopener"><img src="../../img/yt/ByY4LOcs_1Q.jpg" loading="lazy" alt=""><span>ComfyUI Portable: baixar e usar em 2026 (versão avançada)</span></a></div>
+</div>
+<div class="painel-canal" id="willian-extras" style="display:none">
+  <div class="videos">
+    <a class="video-card" href="https://www.youtube.com/watch?v=8DALo_Y2Z4I" target="_blank" rel="noopener"><img src="../../img/yt/8DALo_Y2Z4I.jpg" loading="lazy" alt=""><span>Não Gaste Dinheiro com IA: fiz um FILME 100% Grátis no PC (Passo a Passo)</span></a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=SxQ6s02Nfs4" target="_blank" rel="noopener"><img src="../../img/yt/SxQ6s02Nfs4.jpg" loading="lazy" alt=""><span>Faça um FILME INTEIRO com IA grátis (1 clique)</span></a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=VefUJLzxQWg" target="_blank" rel="noopener"><img src="../../img/yt/VefUJLzxQWg.jpg" loading="lazy" alt=""><span>Como Rodar uma IA GIGANTE no Seu PC (100% GRÁTIS)</span></a>
+    <a class="video-card" href="https://drive.google.com/file/d/1C-9cF5_Pe0uLm2Fk4UMoYzNoLBcuVQSO/view?usp=sharing" target="_blank" rel="noopener"><img src="../../img/print_drive_willian.png" loading="lazy" alt=""><span>Google Drive — arquivo do projeto (SINAL-como-eu-fiz.html)</span></a>
+    <a class="video-card" href="https://huggingface.co/Pika-Labs/Pika-H3-Flex/tree/main/comfy/loras" target="_blank" rel="noopener"><img src="../../img/print_huggingface_pika.png" loading="lazy" alt=""><span>Pika-H3-Flex — LoRAs para ComfyUI (Hugging Face)</span></a>
+  </div>
+</div>
 </div>
 <div class="canal">
   <div class="canal-topo">
@@ -199,5 +245,16 @@ text-decoration:none;color:var(--texto);transition:.15s}
   </div>
   <div class="videos"><a class="video-card" href="https://www.youtube.com/watch?v=pQI742k8KnQ" target="_blank" rel="noopener"><img src="../../img/yt/pQI742k8KnQ.jpg" loading="lazy" alt=""><span>OpenBot + VPS: a maquina de gerar conteudo automatico</span></a></div>
 </div>
-<footer>Canais · atualizado em 12/11/2026</footer>
-</div></body></html>
+<footer>Canais · atualizado em 25/11/2026</footer>
+</div><script>
+function abaCanal(botao, id){
+  const card = botao.closest('.canal');
+  card.querySelectorAll('.aba-canal').forEach(function(b){ b.classList.remove('on'); });
+  botao.classList.add('on');
+  card.querySelectorAll('.painel-canal').forEach(function(p){ p.style.display = 'none'; });
+  const painel = card.querySelector('#' + id);
+  if (painel) painel.style.display = '';
+}
+</script>
+<script src="../../_login/login.js"></script>
+</body></html>

@@ -4,6 +4,30 @@ Diário do site de links (uma seção por dia). O "como fazer" está no `AGENTS.
 
 ---
 
+## 23/11/2026 — Leonida (GTA VI no PC)
+
+### O que mudou
+
+- **Ports & mods de jogos** ganhou dois links:
+  - `ItsNotRexed/Leonida` — recompilação estática de GTA VI (versão Xbox Series) para PC,
+    construída na sua máquina a partir da sua cópia. Ainda não inicia o jogo.
+  - `leonidapc.wiki` — site que acompanha o projeto (status, requisitos de build, alerta de
+    downloads falsos).
+- **Sem vídeo tutorial ainda**: as duas linhas aparecem com "sem vídeo".
+  - Capa do repo: `img/ItsNotRexed__Leonida.png` (print da página do GitHub).
+  - Print do site: `img/print_leonidapc.png`.
+- Atualizados `dados.json`, `LISTA` do `index.html`, `ports/index.html` e `img/manifest.json`.
+- Contador de Ports corrigido (11 → 17) no card da home e na página da pasta.
+- Contador da **IA** na home corrigido (211 → 201, soma real das 10 pastas + canais).
+- Rodapé de todas as páginas atualizado para **23/11/2026**.
+
+### Pendências
+
+- Footer das pastas: data atualizada para 23/11/2026 (feito); manter sempre a data do dia.
+- Conferidor novo: `python _gerar/conferir_contadores.py` (somente leitura) — roda antes de fechar o dia.
+
+---
+
 ## 17/11/2026 — dia inteiro de curadoria
 
 ### O que mudou

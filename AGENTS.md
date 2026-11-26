@@ -15,6 +15,13 @@ Quando ele mandar um link de vídeo/canal e disser para colocar em **IA → Cana
    categoria original — só ganha o campo `video` com o ID.
 4. Onde tem vídeo, a linha da pasta mostra a miniatura + título no lugar de "sem vídeo".
 
+## Contadores e datas
+
+- **Sempre que encontrar contador errado, corrija** (o dono autorizou): cards da home
+  (`N links · N pastas`), `N links` das pastas e a data do rodapé.
+- Para conferir sem alterar nada: `python _gerar/conferir_contadores.py`.
+- A data do rodapé deve ser a do dia em que o site foi mexido.
+
 ## Estrutura
 
 - `dados.json` + array `const LISTA` em `index.html` = lista geral (todas as pastas).
