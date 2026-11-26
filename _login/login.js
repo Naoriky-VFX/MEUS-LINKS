@@ -2,7 +2,7 @@
 /* proteção do site de links: conteúdo escondido até o login */
 (function () {
   var CHAVE = "nk_auth";
-  var ALVO = "7db12d29549cce44f9559fb081be287ba66388f58060bbb5b39fb50a1b1cc826";
+  var ALVO = "01b16e0a439da4800dcb379f3e49faac44832f279b5d90e1d41a91cc28cf4b7a";
   var ok = sessionStorage.getItem(CHAVE) === "1";
 
   // esconde tudo antes de qualquer renderização
